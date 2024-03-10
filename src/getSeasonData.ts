@@ -182,7 +182,7 @@ const getSeasonData = (season: Season, adjustmentWeight: number) => {
     );
 
     interConferenceStats[conference].lossValue =
-      1.5 - interConferenceStats[conference].winValue / 2;
+      2 - Math.pow(interConferenceStats[conference].winValue, 0.25);
   });
 
   const teamsWithAdjustedStats = teams.map((team) => {
