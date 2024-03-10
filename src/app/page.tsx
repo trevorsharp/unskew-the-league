@@ -57,16 +57,19 @@ const HomePage = () => (
         </text>
       </div>
 
-      <footer className="text-center text-sm">
-        Data from{" "}
-        <a
-          href="https://www.basketball-reference.com/"
-          className="underline"
-          target="_blank"
-        >
-          Sports Reference
-        </a>
-        . Last updated on March 9, 2024.
+      <footer className="flex flex-col items-center justify-center gap-1 text-center text-sm sm:flex-row">
+        <span>
+          Data from{" "}
+          <a
+            href="https://www.basketball-reference.com/"
+            className="underline"
+            target="_blank"
+          >
+            Sports Reference
+          </a>
+          .
+        </span>
+        <span>Last updated on March 9, 2024.</span>
       </footer>
     </div>
   </main>
