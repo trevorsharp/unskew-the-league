@@ -34,7 +34,7 @@ const ConferenceWeightSelection = ({
         <RadioGroup.Label className="sr-only">
           Adjust Conference Weight
         </RadioGroup.Label>
-        <div className="grid grid-cols-3 gap-3 sm:grid-cols-6">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {weightSelectionOptions.map((option) => (
             <RadioGroup.Option
               key={option.name}
