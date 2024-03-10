@@ -10,11 +10,14 @@ import type { ChangeEvent } from "react";
 import type { Season } from "~/rawSeasonData";
 
 const seasonOptions = [
-  2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014,
+  2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012,
+  2011, 2010, 2009, 2008, 2007, 2006, 2005, 2004, 2003, 2002, 2001, 2000, 1999,
+  1998, 1997, 1996, 1995, 1994, 1993, 1992, 1991, 1990, 1989, 1988, 1987, 1986,
+  1985, 1984, 1983, 1982, 1981,
 ] as const satisfies readonly Season[];
 
 const SeasonSelection = () => {
-  const defaultSeason: Season = 2023;
+  const defaultSeason: Season = 2024;
   const [seasonSelection, setSeasonSelection] = useState<Season>(defaultSeason);
   const [adjustmentWeight, setAdjustmentWeight] = useState<number>(1);
 
@@ -37,7 +40,7 @@ const SeasonSelection = () => {
       >
         {seasonOptions.map((option) => (
           <option key={option} value={option}>
-            {option}-{(option + 1) % 100} Season
+            {option - 1}-{String(option % 100).padStart(2, "0")} Season
           </option>
         ))}
       </select>

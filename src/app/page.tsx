@@ -56,6 +56,18 @@ const HomePage = () => (
           the extent to which conference adjustments influence the rankings.
         </text>
       </div>
+
+      <footer className="text-center text-sm">
+        Data from{" "}
+        <a
+          href="https://www.basketball-reference.com/"
+          className="underline"
+          target="_blank"
+        >
+          Sports Reference
+        </a>
+        . Last updated on March 9, 2024.
+      </footer>
     </div>
   </main>
 );

@@ -37,7 +37,18 @@ const teamConferences = {
   "Sacramento Kings": "West",
   "San Antonio Spurs": "West",
   "Utah Jazz": "West",
-} as const satisfies Record<TeamName, Conference>;
+  "Seattle SuperSonics": "West",
+  "New Jersey Nets": "East",
+  "Vancouver Grizzlies": "West",
+  "New Orleans/Oklahoma City Hornets": "West",
+  "Charlotte Bobcats": "East",
+  "Washington Bullets": "East",
+  "Kansas City Kings": "West",
+  "San Diego Clippers": "West",
+} as const satisfies Record<
+  Exclude<TeamName, "New Orleans Hornets">,
+  Conference
+>;
 
 const teamShortNames = {
   "Atlanta Hawks": "Hawks",
@@ -70,6 +81,15 @@ const teamShortNames = {
   "Toronto Raptors": "Raptors",
   "Utah Jazz": "Jazz",
   "Washington Wizards": "Wizards",
+  "Seattle SuperSonics": "SuperSonics",
+  "New Jersey Nets": "Nets",
+  "Vancouver Grizzlies": "Grizzlies",
+  "New Orleans/Oklahoma City Hornets": "Hornets",
+  "Charlotte Bobcats": "Bobcats",
+  "New Orleans Hornets": "Hornets",
+  "Washington Bullets": "Bullets",
+  "Kansas City Kings": "Kings",
+  "San Diego Clippers": "Clippers",
 } as const satisfies Record<TeamName, string>;
 
 type TeamRecord = `${number}-${number}`;
@@ -95,7 +115,13 @@ const getSeasonData = (season: Season, adjustmentWeight: number) => {
   const teams = rawSeasonData[season].map((data) => {
     const teamName = data.Team;
     const shortTeamName = teamShortNames[teamName];
-    const conference = teamConferences[teamName];
+    const conference =
+      teamName !== "New Orleans Hornets"
+        ? teamConferences[teamName]
+        : season >= 2005
+          ? "West"
+          : "East";
+    1;
 
     const overall = parseWinStats(data.Overall);
     const vsEast = parseWinStats(data.E);
