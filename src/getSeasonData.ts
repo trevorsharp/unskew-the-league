@@ -103,7 +103,8 @@ type GameStats = {
 
 const parseWinStats = (record: TeamRecord): GameStats => {
   const [wins, losses] = record.split("-").map((val) => parseInt(val, 10));
-  if (!wins || !losses) throw "Failed to parse wins and losses from record";
+  if (wins === undefined || losses === undefined)
+    throw "Failed to parse wins and losses from record";
 
   const gamesPlayed = wins + losses;
   const winRatio = wins / gamesPlayed;
