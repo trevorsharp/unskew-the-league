@@ -34,7 +34,7 @@ const SeasonSelection = () => {
       <select
         id="season"
         name="season"
-        className="block w-full max-w-[11rem] rounded-md border-0 py-2 pl-3 pr-10 text-lg font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-gray-600 sm:text-sm sm:leading-6"
+        className="block w-full max-w-[10.5rem] rounded-md border-0 py-2 pl-3 pr-10 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-gray-600"
         defaultValue={defaultSeason}
         onChange={handleSeasonSelection}
       >
