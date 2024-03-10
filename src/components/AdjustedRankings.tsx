@@ -22,9 +22,9 @@ const AdjustedRankings = ({ teams }: AdjustedRankingsProps) => {
               <th scope="col" className="px-3 py-3">
                 Team
               </th>
-              <th scope="col" className="px-3 py-3"></th>
+              <th scope="col" className="px-1 py-3"></th>
               <th scope="col" className="px-3 py-3">
-                Record
+                Adj. Record
               </th>
               <th scope="col" className="px-3 py-3">
                 Win %
@@ -47,7 +47,7 @@ const AdjustedRankings = ({ teams }: AdjustedRankingsProps) => {
                   </td>
                   <td
                     className={clsx(
-                      "w-[3.5rem] px-2 py-2 text-gray-500 sm:px-3",
+                      "w-[3.5rem] px-1 py-2 text-gray-500 sm:px-3",
                       team.rankingChange > 0 && "text-green-600",
                       team.rankingChange < 0 && "text-red-600",
                     )}
