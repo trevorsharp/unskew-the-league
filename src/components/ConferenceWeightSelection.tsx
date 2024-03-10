@@ -26,8 +26,8 @@ const ConferenceWeightSelection = ({
 
   return (
     <div className="flex flex-col gap-3 self-start">
-      <h2 className="text-sm font-medium leading-6 text-gray-900">
-        How much weight should the placed on the conference adjustments?
+      <h2 className="text-base font-medium leading-6 text-gray-900">
+        How much emphasis should be placed on the conference adjustments?
       </h2>
 
       <RadioGroup value={weightSelection} onChange={setWeightSelection}>

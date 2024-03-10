@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import getSeasonData from "~/getSeasonData";
-import CrossConferenceStatsTable from "./CrossConferenceStatsTable";
+import InterConferenceStatsTable from "./InterConferenceStatsTable";
 import Rankings from "./Rankings";
 import AdjustedRankings from "./AdjustedRankings";
 import ConferenceWeightSelection from "./ConferenceWeightSelection";
@@ -14,7 +14,7 @@ type SeasonProps = {
 const Season = ({ season }: SeasonProps) => {
   const [weightSelection, setWeightSelecion] = useState<number>(1);
 
-  const { crossConferenceStatistics, teams } = useMemo(
+  const { interConferenceStatistics, teams } = useMemo(
     () => getSeasonData(season, weightSelection),
     [season, weightSelection],
   );
@@ -23,8 +23,8 @@ const Season = ({ season }: SeasonProps) => {
     <div className="flex flex-col items-center gap-12">
       <ConferenceWeightSelection onSelectWeight={setWeightSelecion} />
 
-      <CrossConferenceStatsTable
-        crossConferenceStatistics={crossConferenceStatistics}
+      <InterConferenceStatsTable
+        interConferenceStatistics={interConferenceStatistics}
       />
 
       <div className="flex flex-col gap-12 lg:flex-row">

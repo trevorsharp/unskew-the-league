@@ -2,21 +2,21 @@ import SeasonSelection from "~/components/SeasonSelection";
 
 const HomePage = () => (
   <main className="flex w-max">
-    <div className="flex max-w-5xl flex-col gap-10 px-8 py-16 md:px-16">
+    <div className="flex max-w-5xl flex-col gap-10 px-8 py-16 pb-24 md:px-16">
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-2">
           <h1 className="text-3xl font-extrabold leading-7 text-gray-900 sm:truncate sm:text-4xl sm:tracking-tight">
             Unskew the League
           </h1>
           <h5 className="text-lg font-medium tracking-tight text-gray-800">
-            Conference-adjusted rankings for the NBA
+            Conference-Adjusted NBA Rankings
           </h5>
         </div>
 
         <text className="max-w-xl text-base text-gray-700">
-          Our goal is to provide insight on how the NBA&apos;s league-wide
-          rankings differ after taking conference difficulty into account. This
-          site was inspired by an episode of the{" "}
+          Our goal is to offer NBA league-wide rankings that have been adjusted
+          to reflect the differences in conference difficulty. This website was
+          inspired by the March 8, 2024 episode of the{" "}
           <a
             href="https://greatestofalltalk.com/"
             className="font-medium underline"
@@ -24,7 +24,12 @@ const HomePage = () => (
           >
             Greatest Of All Talk
           </a>{" "}
-          podcast released on March 8, 2024.
+          podcast. For more information on these conference adjustments, review
+          our{" "}
+          <a href="#methodology" className="font-medium underline">
+            methodology
+          </a>
+          .
         </text>
       </div>
 
@@ -35,18 +40,20 @@ const HomePage = () => (
           Methodology
         </h3>
 
-        <text className="text-base text-gray-700">
-          To account for conference difficulty, we look at all games played
-          between an eastern conference team and a western conference team
-          during the season. From this cross-conference record, we derive the
-          adjusted weight for a win against each conference (&quot;Win
-          Value&quot;). The stronger conference will have a win value greater
-          than one, meaning that a win against this conference will count for
-          more in our adjusted rankings. Inversely, a win to the weaker
-          conference will count for less in the adjusted rankings. Losses are
-          also weighted, though not as heavily as wins, so a loss to a weaker
-          conference opponent is slightly preferred to a loss to a stronger
-          conference opponent.
+        <text id="methodology" className="text-base text-gray-700">
+          To account for the difference in skill levels across conferences, we
+          analyze all games played between teams from the Eastern and Western
+          Conferences throughout the season. From this inter-conference data, we
+          determine the adjusted weight for a win against each conference,
+          referred to as the &quot;Win Value.&quot; The stronger conference will
+          have a Win Value greater than one, indicating that a victory against
+          teams from this conference will carry more weight in our adjusted
+          rankings. Conversely, wins against the weaker conference will
+          contribute less to the adjusted rankings. Losses are also considered
+          but are not weighted as heavily as wins, so losing to a weaker
+          conference opponent is slightly more favorable than losing to a
+          stronger conference opponent. You have the option to manually adjust
+          the extent to which conference adjustments influence the rankings.
         </text>
       </div>
     </div>

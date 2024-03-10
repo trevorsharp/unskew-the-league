@@ -1,27 +1,27 @@
 "use client";
 
 import clsx from "clsx";
-import type { CrossConferenceStatistics } from "~/getSeasonData";
+import type { InterConferenceStatistics } from "~/getSeasonData";
 
-type crossConferenceStatsTableProps = {
-  crossConferenceStatistics: CrossConferenceStatistics;
+type interConferenceStatsTableProps = {
+  interConferenceStatistics: InterConferenceStatistics;
 };
 
-const crossConferenceStatsTable = ({
-  crossConferenceStatistics,
-}: crossConferenceStatsTableProps) => {
+const interConferenceStatsTable = ({
+  interConferenceStatistics,
+}: interConferenceStatsTableProps) => {
   const {
-    totalCrossConferenceGamesPlayed,
+    totalInterConferenceGamesPlayed,
     easternConferenceWins,
     westernConferenceWins,
     easternConferenceWinValue,
     westernConferenceWinValue,
-  } = crossConferenceStatistics;
+  } = interConferenceStatistics;
 
   const stats = [
     {
-      name: "Cross-Conference Games Played",
-      stat: totalCrossConferenceGamesPlayed,
+      name: "Inter-Conference Games Played",
+      stat: totalInterConferenceGamesPlayed,
     },
     {
       name: "Eastern Conference Wins",
@@ -68,7 +68,7 @@ const crossConferenceStatsTable = ({
   return (
     <div className="flex w-full flex-col gap-8">
       <h3 className="text-xl font-semibold leading-6 text-gray-900">
-        Cross-Conference Performance
+        Inter-Conference Performance
       </h3>
 
       <div className="flex flex-col items-center gap-5">
@@ -107,4 +107,4 @@ const crossConferenceStatsTable = ({
   );
 };
 
-export default crossConferenceStatsTable;
+export default interConferenceStatsTable;

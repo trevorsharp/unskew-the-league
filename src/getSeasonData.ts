@@ -229,13 +229,13 @@ const getSeasonData = (season: number, adjustmentWeight: number) => {
     };
   });
 
-  const crossConferenceRecords = teams.reduce(
+  const interConferenceRecords = teams.reduce(
     (acc, val) => {
       if (val.conference === "Eastern") return acc;
 
       return {
-        totalCrossConferenceGamesPlayed:
-          acc.totalCrossConferenceGamesPlayed +
+        totalInterConferenceGamesPlayed:
+          acc.totalInterConferenceGamesPlayed +
           val.winsVsEasternConference +
           val.lossesVsEasternConference,
         easternConferenceWins:
@@ -245,29 +245,29 @@ const getSeasonData = (season: number, adjustmentWeight: number) => {
       };
     },
     {
-      totalCrossConferenceGamesPlayed: 0,
+      totalInterConferenceGamesPlayed: 0,
       easternConferenceWins: 0,
       westernConferenceWins: 0,
     },
   );
 
   const easternConferenceWinValue = Math.pow(
-    (2 * crossConferenceRecords.easternConferenceWins) /
-      crossConferenceRecords.totalCrossConferenceGamesPlayed,
+    (2 * interConferenceRecords.easternConferenceWins) /
+      interConferenceRecords.totalInterConferenceGamesPlayed,
     adjustmentWeight,
   );
 
   const westernConferenceWinValue = Math.pow(
-    (2 * crossConferenceRecords.westernConferenceWins) /
-      crossConferenceRecords.totalCrossConferenceGamesPlayed,
+    (2 * interConferenceRecords.westernConferenceWins) /
+      interConferenceRecords.totalInterConferenceGamesPlayed,
     adjustmentWeight,
   );
 
   const easternConferenceLossValue = 2 - (1 + easternConferenceWinValue) / 2;
   const westernConferenceLossValue = 2 - (1 + westernConferenceWinValue) / 2;
 
-  const crossConferenceStatistics = {
-    ...crossConferenceRecords,
+  const interConferenceStatistics = {
+    ...interConferenceRecords,
     easternConferenceWinValue,
     westernConferenceWinValue,
     easternConferenceLossValue,
@@ -316,15 +316,15 @@ const getSeasonData = (season: number, adjustmentWeight: number) => {
 
   return {
     teams: teamsWithRankings,
-    crossConferenceStatistics,
+    interConferenceStatistics,
   };
 };
 
-type CrossConferenceStatistics = ReturnType<
+type InterConferenceStatistics = ReturnType<
   typeof getSeasonData
->["crossConferenceStatistics"];
+>["interConferenceStatistics"];
 
 type Teams = ReturnType<typeof getSeasonData>["teams"];
 
 export default getSeasonData;
-export type { CrossConferenceStatistics, Teams };
+export type { InterConferenceStatistics, Teams };
