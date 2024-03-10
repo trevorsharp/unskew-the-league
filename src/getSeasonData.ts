@@ -175,7 +175,7 @@ const getConferenceByTeamName = (teamName: TeamName): Conference => {
 const getWinsAndLossesFromRecord = (record: Record) =>
   record.split("-").map((val) => parseInt(val, 10)) as [number, number];
 
-const getSeasonData = (season: number) => {
+const getSeasonData = (season: number, adjustmentWeight: number) => {
   const rawSeasonData = getRawSeasonDataByYear(season);
 
   const parsedData = JSON.parse(rawSeasonData) as {
@@ -251,13 +251,17 @@ const getSeasonData = (season: number) => {
     },
   );
 
-  const easternConferenceWinValue =
+  const easternConferenceWinValue = Math.pow(
     (2 * crossConferenceRecords.easternConferenceWins) /
-    crossConferenceRecords.totalCrossConferenceGamesPlayed;
+      crossConferenceRecords.totalCrossConferenceGamesPlayed,
+    adjustmentWeight,
+  );
 
-  const westernConferenceWinValue =
+  const westernConferenceWinValue = Math.pow(
     (2 * crossConferenceRecords.westernConferenceWins) /
-    crossConferenceRecords.totalCrossConferenceGamesPlayed;
+      crossConferenceRecords.totalCrossConferenceGamesPlayed,
+    adjustmentWeight,
+  );
 
   const easternConferenceLossValue = 2 - (1 + easternConferenceWinValue) / 2;
   const westernConferenceLossValue = 2 - (1 + westernConferenceWinValue) / 2;

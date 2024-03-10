@@ -47,9 +47,9 @@ const crossConferenceStatsTable = ({
       name: "Eastern Conference Win Value",
       stat: easternConferenceWinValue.toFixed(2),
       className:
-        easternConferenceWins > westernConferenceWins
+        easternConferenceWinValue > 1
           ? "text-green-600"
-          : westernConferenceWins > easternConferenceWins
+          : westernConferenceWinValue > 1
             ? "text-red-600"
             : "",
     },
@@ -57,9 +57,9 @@ const crossConferenceStatsTable = ({
       name: "Western Conference Win Value",
       stat: westernConferenceWinValue.toFixed(2),
       className:
-        easternConferenceWins > westernConferenceWins
+        easternConferenceWinValue > 1
           ? "text-red-600"
-          : westernConferenceWins > easternConferenceWins
+          : westernConferenceWinValue > 1
             ? "text-green-600"
             : "",
     },
