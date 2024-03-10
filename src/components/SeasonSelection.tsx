@@ -1,16 +1,30 @@
 "use client";
 
 import { useState } from "react";
-import Season from "./Season";
+import getSeasonData from "~/getSeasonData";
+import AdjustmentWeightSelection from "./AdjustmentWeightSelection";
+import InterConferenceStatsTable from "./InterConferenceStatsTable";
+import AdjustedRankings from "./AdjustedRankings";
+import Rankings from "./Rankings";
 import type { ChangeEvent } from "react";
+import type { Season } from "~/rawSeasonData";
+
+const seasonOptions = [
+  2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014,
+] as const satisfies readonly Season[];
 
 const SeasonSelection = () => {
-  const [seasonSelection, setSeasonSelection] = useState<number>(2023);
-
-  const options = [2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014];
+  const defaultSeason: Season = 2023;
+  const [seasonSelection, setSeasonSelection] = useState<Season>(defaultSeason);
+  const [adjustmentWeight, setAdjustmentWeight] = useState<number>(1);
 
   const handleSeasonSelection = (event: ChangeEvent<HTMLSelectElement>) =>
-    setSeasonSelection(parseInt(event.target.value));
+    setSeasonSelection(parseInt(event.target.value) as Season);
+
+  const { interConferenceStats, teams } = getSeasonData(
+    seasonSelection,
+    adjustmentWeight,
+  );
 
   return (
     <div className="flex flex-col gap-6">
@@ -18,17 +32,30 @@ const SeasonSelection = () => {
         id="season"
         name="season"
         className="block w-full max-w-[11rem] rounded-md border-0 py-2 pl-3 pr-10 text-lg font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-gray-600 sm:text-sm sm:leading-6"
-        defaultValue="2023"
+        defaultValue={defaultSeason}
         onChange={handleSeasonSelection}
       >
-        {options.map((option) => (
+        {seasonOptions.map((option) => (
           <option key={option} value={option}>
             {option}-{(option + 1) % 100} Season
           </option>
         ))}
       </select>
 
-      <Season season={seasonSelection} />
+      <div className="flex flex-col items-center gap-12">
+        <AdjustmentWeightSelection
+          onSelectAdjustmentWeight={setAdjustmentWeight}
+        />
+
+        <InterConferenceStatsTable
+          interConferenceStats={interConferenceStats}
+        />
+
+        <div className="flex flex-col gap-12 lg:flex-row">
+          <AdjustedRankings teams={teams} />
+          <Rankings teams={teams} />
+        </div>
+      </div>
     </div>
   );
 };

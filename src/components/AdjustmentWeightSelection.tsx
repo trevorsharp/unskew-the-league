@@ -2,27 +2,31 @@ import { useEffect, useState } from "react";
 import { RadioGroup } from "@headlessui/react";
 import clsx from "clsx";
 
-const weightSelectionOptions = [
+const adjustmentWeightOptions = [
   { name: "None", weight: 0 },
   { name: "Low", weight: 1 },
   { name: "Medium", weight: 2 },
   { name: "High", weight: 3 },
 ] as const;
 
-type ConferenceWeightSelectionProps = {
-  onSelectWeight: (weight: number) => void;
+type AdjustmentWeightSelectionProps = {
+  onSelectAdjustmentWeight: (weight: number) => void;
 };
 
-const ConferenceWeightSelection = ({
-  onSelectWeight,
-}: ConferenceWeightSelectionProps) => {
-  const [weightSelection, setWeightSelection] = useState<
-    (typeof weightSelectionOptions)[number]
-  >(weightSelectionOptions[1]);
+const AdjustmentWeightSelection = ({
+  onSelectAdjustmentWeight,
+}: AdjustmentWeightSelectionProps) => {
+  const [adjustmentWeightSelection, setAdjustmentWeightSelection] = useState<
+    (typeof adjustmentWeightOptions)[number]
+  >(adjustmentWeightOptions[1]);
 
   useEffect(() => {
-    onSelectWeight(weightSelection.weight);
-  }, [onSelectWeight, weightSelection, weightSelection.weight]);
+    onSelectAdjustmentWeight(adjustmentWeightSelection.weight);
+  }, [
+    onSelectAdjustmentWeight,
+    adjustmentWeightSelection,
+    adjustmentWeightSelection.weight,
+  ]);
 
   return (
     <div className="flex flex-col gap-3 self-start">
@@ -30,12 +34,15 @@ const ConferenceWeightSelection = ({
         How much emphasis should be placed on the conference adjustments?
       </h2>
 
-      <RadioGroup value={weightSelection} onChange={setWeightSelection}>
+      <RadioGroup
+        value={adjustmentWeightSelection}
+        onChange={setAdjustmentWeightSelection}
+      >
         <RadioGroup.Label className="sr-only">
           Adjust Conference Weight
         </RadioGroup.Label>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-          {weightSelectionOptions.map((option) => (
+          {adjustmentWeightOptions.map((option) => (
             <RadioGroup.Option
               key={option.name}
               value={option}
@@ -58,4 +65,4 @@ const ConferenceWeightSelection = ({
   );
 };
 
-export default ConferenceWeightSelection;
+export default AdjustmentWeightSelection;

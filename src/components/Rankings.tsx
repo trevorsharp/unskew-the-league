@@ -47,21 +47,17 @@ const Rankings = ({ teams }: RankingsProps) => {
                     {team.shortTeamName}
                   </td>
                   <td className="px-2 py-2 text-center tabular-nums text-gray-500 sm:px-3">
-                    {team.overallWins}
+                    {team.overall.wins}
                     {" - "}
-                    {team.overallLosses}
+                    {team.overall.losses}
                   </td>
                   <td className="px-2 py-2 text-center tabular-nums text-gray-500 sm:px-3">
-                    {team.conference === "Eastern"
-                      ? team.winsVsEasternConference
-                      : team.winsVsWesternConference}
+                    {team.innerConference.wins}
                     {" - "}
-                    {team.conference === "Eastern"
-                      ? team.lossesVsEasternConference
-                      : team.lossesVsWesternConference}
+                    {team.innerConference.losses}
                   </td>
                   <td className="px-2 py-2 text-center tabular-nums text-gray-500 sm:px-3">
-                    {team.winPercentage.toFixed(1)}%
+                    {(team.overall.winRatio * 100).toFixed(1)}%
                   </td>
                 </tr>
               ))}

@@ -57,12 +57,12 @@ const AdjustedRankings = ({ teams }: AdjustedRankingsProps) => {
                       : `${team.rankingChange < 0 ? "↓" : "↑"} ${Math.abs(team.rankingChange)}`}
                   </td>
                   <td className="px-2 py-2 text-center tabular-nums text-gray-500 sm:px-3">
-                    {team.adjustedWins.toFixed(1)}
+                    {team.adjusted.wins.toFixed(1)}
                     {" - "}
-                    {team.adjustedLosses.toFixed(1)}
+                    {team.adjusted.losses.toFixed(1)}
                   </td>
                   <td className="px-2 py-2 text-center tabular-nums text-gray-500 sm:px-3">
-                    {team.adjustedWinPercentage.toFixed(1)}%
+                    {(team.adjusted.winRatio * 100).toFixed(1)}%
                   </td>
                 </tr>
               ))}

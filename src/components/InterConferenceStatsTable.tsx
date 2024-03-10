@@ -1,35 +1,27 @@
 "use client";
 
 import clsx from "clsx";
-import type { InterConferenceStatistics } from "~/getSeasonData";
+import type { InterConferenceStats } from "~/getSeasonData";
 
 type interConferenceStatsTableProps = {
-  interConferenceStatistics: InterConferenceStatistics;
+  interConferenceStats: InterConferenceStats;
 };
 
 const interConferenceStatsTable = ({
-  interConferenceStatistics,
+  interConferenceStats,
 }: interConferenceStatsTableProps) => {
-  const {
-    totalInterConferenceGamesPlayed,
-    easternConferenceWins,
-    westernConferenceWins,
-    easternConferenceWinValue,
-    westernConferenceWinValue,
-  } = interConferenceStatistics;
-
   const stats = [
     {
       name: "Inter-Conference Games Played",
-      stat: totalInterConferenceGamesPlayed,
+      stat: interConferenceStats.gamesPlayed,
     },
     {
       name: "Eastern Conference Wins",
-      stat: easternConferenceWins,
+      stat: interConferenceStats.East.wins,
     },
     {
       name: "Western Conference Wins",
-      stat: westernConferenceWins,
+      stat: interConferenceStats.West.wins,
     },
   ];
 
@@ -37,30 +29,30 @@ const interConferenceStatsTable = ({
     {
       name: "Stronger Conference",
       stat:
-        easternConferenceWins > westernConferenceWins
+        interConferenceStats.East.wins > interConferenceStats.West.wins
           ? "East"
-          : westernConferenceWins > easternConferenceWins
+          : interConferenceStats.West.wins > interConferenceStats.East.wins
             ? "West"
             : "-",
     },
     {
       name: "Eastern Conference Win Value",
-      stat: easternConferenceWinValue.toFixed(2),
+      stat: interConferenceStats.East.winValue.toFixed(2),
       className:
-        easternConferenceWinValue > 1
+        interConferenceStats.East.winValue > 1
           ? "text-green-600"
-          : westernConferenceWinValue > 1
+          : interConferenceStats.East.winValue < 1
             ? "text-red-600"
             : "",
     },
     {
       name: "Western Conference Win Value",
-      stat: westernConferenceWinValue.toFixed(2),
+      stat: interConferenceStats.West.winValue.toFixed(2),
       className:
-        easternConferenceWinValue > 1
-          ? "text-red-600"
-          : westernConferenceWinValue > 1
-            ? "text-green-600"
+        interConferenceStats.West.winValue > 1
+          ? "text-green-600"
+          : interConferenceStats.West.winValue < 1
+            ? "text-red-600"
             : "",
     },
   ];
