@@ -57,19 +57,28 @@ const HomePage = () => (
         </text>
       </div>
 
-      <footer className="flex flex-col items-center justify-center gap-1 text-center text-sm sm:flex-row">
+      <footer className="flex flex-col items-center justify-center gap-3 text-center text-sm">
+        <div className="flex flex-col items-center justify-center gap-1 sm:flex-row">
+          <span>
+            Data from{" "}
+            <a
+              href="https://www.basketball-reference.com/"
+              className="underline"
+              target="_blank"
+            >
+              Sports Reference
+            </a>
+            .
+          </span>
+          <span>Last updated on March 9, 2024.</span>
+        </div>
         <span>
-          Data from{" "}
-          <a
-            href="https://www.basketball-reference.com/"
-            className="underline"
-            target="_blank"
-          >
-            Sports Reference
+          Send any feeback to{" "}
+          <a href="mailto:feedback@unskewtheleague.com" className="underline">
+            feedback@unskewtheleague.com
           </a>
           .
         </span>
-        <span>Last updated on March 9, 2024.</span>
       </footer>
     </div>
   </main>
