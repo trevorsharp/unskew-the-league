@@ -1,7 +1,5 @@
-"use client";
-
 import clsx from "clsx";
-import type { InterConferenceStats } from "~/getSeasonData";
+import type { InterConferenceStats } from "~/services/getPageData";
 
 type interConferenceStatsTableProps = {
   interConferenceStats: InterConferenceStats;

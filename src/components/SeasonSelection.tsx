@@ -1,30 +1,40 @@
 "use client";
 
 import { useState } from "react";
-import getSeasonData from "~/getSeasonData";
 import AdjustmentWeightSelection from "./AdjustmentWeightSelection";
 import InterConferenceStatsTable from "./InterConferenceStatsTable";
 import AdjustedRankings from "./AdjustedRankings";
 import Rankings from "./Rankings";
+import pastSeasonData from "~/pastSeasonData";
+import getPageData from "~/services/getPageData";
+import { currentSeason, seasons, pastSeasons } from "~/types";
 import type { ChangeEvent } from "react";
-import type { Season } from "~/rawSeasonData";
+import type { SeasonData, Season } from "~/types";
 
-const seasonOptions = [
-  2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012,
-  2011, 2010, 2009, 2008, 2007, 2006, 2005, 2004, 2003, 2002, 2001, 2000, 1999,
-  1998, 1997, 1996, 1995, 1994, 1993, 1992, 1991, 1990, 1989, 1988, 1987, 1986,
-  1985, 1984, 1983, 1982, 1981,
-] as const satisfies readonly Season[];
+type SeasonSelectionProps = {
+  currentSeasonData?: SeasonData;
+};
 
-const SeasonSelection = () => {
-  const defaultSeason: Season = 2024;
+const SeasonSelection = ({ currentSeasonData }: SeasonSelectionProps) => {
+  const defaultSeason = currentSeasonData ? currentSeason : pastSeasons[0];
+  const seasonOptions = currentSeasonData ? seasons : pastSeasons;
+
   const [seasonSelection, setSeasonSelection] = useState<Season>(defaultSeason);
   const [adjustmentWeight, setAdjustmentWeight] = useState<number>(1);
 
   const handleSeasonSelection = (event: ChangeEvent<HTMLSelectElement>) =>
     setSeasonSelection(parseInt(event.target.value) as Season);
 
-  const { interConferenceStats, teams } = getSeasonData(
+  const seasonData =
+    seasonSelection === currentSeason
+      ? currentSeasonData
+      : pastSeasonData[seasonSelection];
+
+  if (!seasonData)
+    return "An unexpected error occurred. Please try again later.";
+
+  const { interConferenceStats, teams } = getPageData(
+    seasonData,
     seasonSelection,
     adjustmentWeight,
   );

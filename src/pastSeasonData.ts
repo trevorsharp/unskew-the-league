@@ -1,7 +1,9 @@
-const rawSeasonData = {
+import type { PastSeason, SeasonData } from "./types";
+
+const pastSeasonData: Record<PastSeason, SeasonData> = {
   1981: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Boston Celtics",
       Overall: "62-20",
       Home: "35-6",
@@ -24,7 +26,7 @@ const rawSeasonData = {
       Mar: "11-5",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Philadelphia 76ers",
       Overall: "62-20",
       Home: "37-4",
@@ -47,7 +49,7 @@ const rawSeasonData = {
       Mar: "8-7",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Milwaukee Bucks",
       Overall: "60-22",
       Home: "34-7",
@@ -70,7 +72,7 @@ const rawSeasonData = {
       Mar: "13-4",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Phoenix Suns",
       Overall: "57-25",
       Home: "36-5",
@@ -93,7 +95,7 @@ const rawSeasonData = {
       Mar: "8-5",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Los Angeles Lakers",
       Overall: "54-28",
       Home: "30-11",
@@ -116,7 +118,7 @@ const rawSeasonData = {
       Mar: "10-6",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "San Antonio Spurs",
       Overall: "52-30",
       Home: "34-7",
@@ -139,7 +141,7 @@ const rawSeasonData = {
       Mar: "8-6",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "New York Knicks",
       Overall: "50-32",
       Home: "28-13",
@@ -162,7 +164,7 @@ const rawSeasonData = {
       Mar: "9-6",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Chicago Bulls",
       Overall: "45-37",
       Home: "26-15",
@@ -185,7 +187,7 @@ const rawSeasonData = {
       Mar: "11-2",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Portland Trail Blazers",
       Overall: "45-37",
       Home: "30-11",
@@ -208,7 +210,7 @@ const rawSeasonData = {
       Mar: "11-4",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Indiana Pacers",
       Overall: "44-38",
       Home: "27-14",
@@ -231,7 +233,7 @@ const rawSeasonData = {
       Mar: "7-8",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Houston Rockets",
       Overall: "40-42",
       Home: "25-16",
@@ -254,7 +256,7 @@ const rawSeasonData = {
       Mar: "7-8",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Kansas City Kings",
       Overall: "40-42",
       Home: "24-17",
@@ -277,7 +279,7 @@ const rawSeasonData = {
       Mar: "7-7",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Golden State Warriors",
       Overall: "39-43",
       Home: "26-15",
@@ -300,7 +302,7 @@ const rawSeasonData = {
       Mar: "6-9",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Washington Bullets",
       Overall: "39-43",
       Home: "26-15",
@@ -323,7 +325,7 @@ const rawSeasonData = {
       Mar: "8-7",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Denver Nuggets",
       Overall: "37-45",
       Home: "23-18",
@@ -346,7 +348,7 @@ const rawSeasonData = {
       Mar: "10-7",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "San Diego Clippers",
       Overall: "36-46",
       Home: "22-19",
@@ -369,7 +371,7 @@ const rawSeasonData = {
       Mar: "6-10",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Seattle SuperSonics",
       Overall: "34-48",
       Home: "22-19",
@@ -392,7 +394,7 @@ const rawSeasonData = {
       Mar: "5-10",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Atlanta Hawks",
       Overall: "31-51",
       Home: "20-21",
@@ -415,7 +417,7 @@ const rawSeasonData = {
       Mar: "7-10",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Cleveland Cavaliers",
       Overall: "28-54",
       Home: "20-21",
@@ -438,7 +440,7 @@ const rawSeasonData = {
       Mar: "3-13",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Utah Jazz",
       Overall: "28-54",
       Home: "20-21",
@@ -461,7 +463,7 @@ const rawSeasonData = {
       Mar: "3-11",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "New Jersey Nets",
       Overall: "24-58",
       Home: "16-25",
@@ -484,7 +486,7 @@ const rawSeasonData = {
       Mar: "4-10",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Detroit Pistons",
       Overall: "21-61",
       Home: "14-27",
@@ -507,7 +509,7 @@ const rawSeasonData = {
       Mar: "5-9",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Dallas Mavericks",
       Overall: "15-67",
       Home: "11-30",
@@ -532,7 +534,7 @@ const rawSeasonData = {
   ],
   1982: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Boston Celtics",
       Overall: "63-19",
       Home: "35-6",
@@ -556,7 +558,7 @@ const rawSeasonData = {
       Apr: "7-3",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Philadelphia 76ers",
       Overall: "58-24",
       Home: "32-9",
@@ -580,7 +582,7 @@ const rawSeasonData = {
       Apr: "8-2",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Los Angeles Lakers",
       Overall: "57-25",
       Home: "30-11",
@@ -604,7 +606,7 @@ const rawSeasonData = {
       Apr: "8-2",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Milwaukee Bucks",
       Overall: "55-27",
       Home: "31-10",
@@ -628,7 +630,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Seattle SuperSonics",
       Overall: "52-30",
       Home: "31-10",
@@ -652,7 +654,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "San Antonio Spurs",
       Overall: "48-34",
       Home: "29-12",
@@ -676,7 +678,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Denver Nuggets",
       Overall: "46-36",
       Home: "29-12",
@@ -700,7 +702,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Houston Rockets",
       Overall: "46-36",
       Home: "25-16",
@@ -724,7 +726,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Phoenix Suns",
       Overall: "46-36",
       Home: "31-10",
@@ -748,7 +750,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Golden State Warriors",
       Overall: "45-37",
       Home: "28-13",
@@ -772,7 +774,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "New Jersey Nets",
       Overall: "44-38",
       Home: "25-16",
@@ -796,7 +798,7 @@ const rawSeasonData = {
       Apr: "7-2",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Washington Bullets",
       Overall: "43-39",
       Home: "22-19",
@@ -820,7 +822,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Atlanta Hawks",
       Overall: "42-40",
       Home: "24-17",
@@ -844,7 +846,7 @@ const rawSeasonData = {
       Apr: "6-5",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Portland Trail Blazers",
       Overall: "42-40",
       Home: "27-14",
@@ -868,7 +870,7 @@ const rawSeasonData = {
       Apr: "6-5",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Detroit Pistons",
       Overall: "39-43",
       Home: "23-18",
@@ -892,7 +894,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Indiana Pacers",
       Overall: "35-47",
       Home: "25-16",
@@ -916,7 +918,7 @@ const rawSeasonData = {
       Apr: "2-7",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Chicago Bulls",
       Overall: "34-48",
       Home: "22-19",
@@ -940,7 +942,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "New York Knicks",
       Overall: "33-49",
       Home: "19-22",
@@ -964,7 +966,7 @@ const rawSeasonData = {
       Apr: "2-8",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Kansas City Kings",
       Overall: "30-52",
       Home: "23-18",
@@ -988,7 +990,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Dallas Mavericks",
       Overall: "28-54",
       Home: "16-25",
@@ -1012,7 +1014,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Utah Jazz",
       Overall: "25-57",
       Home: "18-23",
@@ -1036,7 +1038,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "San Diego Clippers",
       Overall: "17-65",
       Home: "11-30",
@@ -1060,7 +1062,7 @@ const rawSeasonData = {
       Apr: "1-8",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Cleveland Cavaliers",
       Overall: "15-67",
       Home: "9-32",
@@ -1086,7 +1088,7 @@ const rawSeasonData = {
   ],
   1983: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Philadelphia 76ers",
       Overall: "65-17",
       Home: "35-6",
@@ -1110,7 +1112,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Los Angeles Lakers",
       Overall: "58-24",
       Home: "33-8",
@@ -1134,7 +1136,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Boston Celtics",
       Overall: "56-26",
       Home: "33-8",
@@ -1158,7 +1160,7 @@ const rawSeasonData = {
       Apr: "7-3",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Phoenix Suns",
       Overall: "53-29",
       Home: "32-9",
@@ -1182,7 +1184,7 @@ const rawSeasonData = {
       Apr: "8-1",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "San Antonio Spurs",
       Overall: "53-29",
       Home: "31-10",
@@ -1206,7 +1208,7 @@ const rawSeasonData = {
       Apr: "7-2",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Milwaukee Bucks",
       Overall: "51-31",
       Home: "31-10",
@@ -1230,7 +1232,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "New Jersey Nets",
       Overall: "49-33",
       Home: "30-11",
@@ -1254,7 +1256,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Seattle SuperSonics",
       Overall: "48-34",
       Home: "29-12",
@@ -1278,7 +1280,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Portland Trail Blazers",
       Overall: "46-36",
       Home: "31-10",
@@ -1302,7 +1304,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Denver Nuggets",
       Overall: "45-37",
       Home: "29-12",
@@ -1326,7 +1328,7 @@ const rawSeasonData = {
       Apr: "6-2",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Kansas City Kings",
       Overall: "45-37",
       Home: "30-11",
@@ -1350,7 +1352,7 @@ const rawSeasonData = {
       Apr: "8-2",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "New York Knicks",
       Overall: "44-38",
       Home: "26-15",
@@ -1374,7 +1376,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Atlanta Hawks",
       Overall: "43-39",
       Home: "26-15",
@@ -1398,7 +1400,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Washington Bullets",
       Overall: "42-40",
       Home: "27-14",
@@ -1422,7 +1424,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Dallas Mavericks",
       Overall: "38-44",
       Home: "23-18",
@@ -1446,7 +1448,7 @@ const rawSeasonData = {
       Apr: "2-6",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Detroit Pistons",
       Overall: "37-45",
       Home: "23-18",
@@ -1470,7 +1472,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Golden State Warriors",
       Overall: "30-52",
       Home: "21-20",
@@ -1494,7 +1496,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Utah Jazz",
       Overall: "30-52",
       Home: "21-20",
@@ -1518,7 +1520,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Chicago Bulls",
       Overall: "28-54",
       Home: "18-23",
@@ -1542,7 +1544,7 @@ const rawSeasonData = {
       Apr: "2-8",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "San Diego Clippers",
       Overall: "25-57",
       Home: "18-23",
@@ -1566,7 +1568,7 @@ const rawSeasonData = {
       Apr: "0-9",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Cleveland Cavaliers",
       Overall: "23-59",
       Home: "15-26",
@@ -1590,7 +1592,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Indiana Pacers",
       Overall: "20-62",
       Home: "14-27",
@@ -1614,7 +1616,7 @@ const rawSeasonData = {
       Apr: "1-8",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Houston Rockets",
       Overall: "14-68",
       Home: "9-32",
@@ -1640,7 +1642,7 @@ const rawSeasonData = {
   ],
   1984: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Boston Celtics",
       Overall: "62-20",
       Home: "33-8",
@@ -1664,7 +1666,7 @@ const rawSeasonData = {
       Apr: "6-1",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Los Angeles Lakers",
       Overall: "54-28",
       Home: "28-13",
@@ -1688,7 +1690,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Philadelphia 76ers",
       Overall: "52-30",
       Home: "32-9",
@@ -1712,7 +1714,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Milwaukee Bucks",
       Overall: "50-32",
       Home: "30-11",
@@ -1736,7 +1738,7 @@ const rawSeasonData = {
       Apr: "6-1",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Detroit Pistons",
       Overall: "49-33",
       Home: "30-11",
@@ -1760,7 +1762,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Portland Trail Blazers",
       Overall: "48-34",
       Home: "33-8",
@@ -1784,7 +1786,7 @@ const rawSeasonData = {
       Apr: "2-6",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "New York Knicks",
       Overall: "47-35",
       Home: "29-12",
@@ -1808,7 +1810,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "New Jersey Nets",
       Overall: "45-37",
       Home: "29-12",
@@ -1832,7 +1834,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Utah Jazz",
       Overall: "45-37",
       Home: "31-10",
@@ -1856,7 +1858,7 @@ const rawSeasonData = {
       Apr: "3-3",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Dallas Mavericks",
       Overall: "43-39",
       Home: "31-10",
@@ -1880,7 +1882,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Seattle SuperSonics",
       Overall: "42-40",
       Home: "32-9",
@@ -1904,7 +1906,7 @@ const rawSeasonData = {
       Apr: "4-2",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Phoenix Suns",
       Overall: "41-41",
       Home: "31-10",
@@ -1928,7 +1930,7 @@ const rawSeasonData = {
       Apr: "6-0",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Atlanta Hawks",
       Overall: "40-42",
       Home: "31-10",
@@ -1952,7 +1954,7 @@ const rawSeasonData = {
       Apr: "5-1",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Denver Nuggets",
       Overall: "38-44",
       Home: "27-14",
@@ -1976,7 +1978,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Kansas City Kings",
       Overall: "38-44",
       Home: "26-15",
@@ -2000,7 +2002,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Golden State Warriors",
       Overall: "37-45",
       Home: "27-14",
@@ -2024,7 +2026,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "San Antonio Spurs",
       Overall: "37-45",
       Home: "28-13",
@@ -2048,7 +2050,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Washington Bullets",
       Overall: "35-47",
       Home: "25-16",
@@ -2072,7 +2074,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "San Diego Clippers",
       Overall: "30-52",
       Home: "25-16",
@@ -2096,7 +2098,7 @@ const rawSeasonData = {
       Apr: "2-5",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Houston Rockets",
       Overall: "29-53",
       Home: "21-20",
@@ -2120,7 +2122,7 @@ const rawSeasonData = {
       Apr: "1-7",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Cleveland Cavaliers",
       Overall: "28-54",
       Home: "23-18",
@@ -2144,7 +2146,7 @@ const rawSeasonData = {
       Apr: "2-6",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Chicago Bulls",
       Overall: "27-55",
       Home: "18-23",
@@ -2168,7 +2170,7 @@ const rawSeasonData = {
       Apr: "1-8",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Indiana Pacers",
       Overall: "26-56",
       Home: "20-21",
@@ -2194,7 +2196,7 @@ const rawSeasonData = {
   ],
   1985: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Boston Celtics",
       Overall: "63-19",
       Home: "35-6",
@@ -2218,7 +2220,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Los Angeles Lakers",
       Overall: "62-20",
       Home: "36-5",
@@ -2242,7 +2244,7 @@ const rawSeasonData = {
       Apr: "7-1",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Milwaukee Bucks",
       Overall: "59-23",
       Home: "36-5",
@@ -2266,7 +2268,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Philadelphia 76ers",
       Overall: "58-24",
       Home: "34-7",
@@ -2290,7 +2292,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Denver Nuggets",
       Overall: "52-30",
       Home: "34-7",
@@ -2314,7 +2316,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Houston Rockets",
       Overall: "48-34",
       Home: "29-12",
@@ -2338,7 +2340,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Detroit Pistons",
       Overall: "46-36",
       Home: "26-15",
@@ -2362,7 +2364,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Dallas Mavericks",
       Overall: "44-38",
       Home: "24-17",
@@ -2386,7 +2388,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "New Jersey Nets",
       Overall: "42-40",
       Home: "27-14",
@@ -2410,7 +2412,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Portland Trail Blazers",
       Overall: "42-40",
       Home: "30-11",
@@ -2434,7 +2436,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "San Antonio Spurs",
       Overall: "41-41",
       Home: "30-11",
@@ -2458,7 +2460,7 @@ const rawSeasonData = {
       Apr: "3-3",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Utah Jazz",
       Overall: "41-41",
       Home: "26-15",
@@ -2482,7 +2484,7 @@ const rawSeasonData = {
       Apr: "4-2",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Washington Bullets",
       Overall: "40-42",
       Home: "28-13",
@@ -2506,7 +2508,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Chicago Bulls",
       Overall: "38-44",
       Home: "26-15",
@@ -2530,7 +2532,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Cleveland Cavaliers",
       Overall: "36-46",
       Home: "20-21",
@@ -2554,7 +2556,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Phoenix Suns",
       Overall: "36-46",
       Home: "26-15",
@@ -2578,7 +2580,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Atlanta Hawks",
       Overall: "34-48",
       Home: "19-22",
@@ -2602,7 +2604,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Kansas City Kings",
       Overall: "31-51",
       Home: "23-18",
@@ -2626,7 +2628,7 @@ const rawSeasonData = {
       Apr: "1-6",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Los Angeles Clippers",
       Overall: "31-51",
       Home: "20-21",
@@ -2650,7 +2652,7 @@ const rawSeasonData = {
       Apr: "4-2",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Seattle SuperSonics",
       Overall: "31-51",
       Home: "20-21",
@@ -2674,7 +2676,7 @@ const rawSeasonData = {
       Apr: "1-7",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "New York Knicks",
       Overall: "24-58",
       Home: "19-22",
@@ -2698,7 +2700,7 @@ const rawSeasonData = {
       Apr: "0-7",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Golden State Warriors",
       Overall: "22-60",
       Home: "17-24",
@@ -2722,7 +2724,7 @@ const rawSeasonData = {
       Apr: "2-5",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Indiana Pacers",
       Overall: "22-60",
       Home: "16-25",
@@ -2748,7 +2750,7 @@ const rawSeasonData = {
   ],
   1986: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Boston Celtics",
       Overall: "67-15",
       Home: "40-1",
@@ -2772,7 +2774,7 @@ const rawSeasonData = {
       Apr: "6-2",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Los Angeles Lakers",
       Overall: "62-20",
       Home: "35-6",
@@ -2796,7 +2798,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Milwaukee Bucks",
       Overall: "57-25",
       Home: "33-8",
@@ -2820,7 +2822,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Philadelphia 76ers",
       Overall: "54-28",
       Home: "31-10",
@@ -2844,7 +2846,7 @@ const rawSeasonData = {
       Apr: "5-1",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Houston Rockets",
       Overall: "51-31",
       Home: "36-5",
@@ -2868,7 +2870,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Atlanta Hawks",
       Overall: "50-32",
       Home: "34-7",
@@ -2892,7 +2894,7 @@ const rawSeasonData = {
       Apr: "4-2",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Denver Nuggets",
       Overall: "47-35",
       Home: "34-7",
@@ -2916,7 +2918,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Detroit Pistons",
       Overall: "46-36",
       Home: "31-10",
@@ -2940,7 +2942,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Dallas Mavericks",
       Overall: "44-38",
       Home: "26-15",
@@ -2964,7 +2966,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Utah Jazz",
       Overall: "42-40",
       Home: "27-14",
@@ -2988,7 +2990,7 @@ const rawSeasonData = {
       Apr: "3-3",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Portland Trail Blazers",
       Overall: "40-42",
       Home: "27-14",
@@ -3012,7 +3014,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "New Jersey Nets",
       Overall: "39-43",
       Home: "26-15",
@@ -3036,7 +3038,7 @@ const rawSeasonData = {
       Apr: "3-3",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Washington Bullets",
       Overall: "39-43",
       Home: "26-15",
@@ -3060,7 +3062,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Sacramento Kings",
       Overall: "37-45",
       Home: "25-16",
@@ -3084,7 +3086,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "San Antonio Spurs",
       Overall: "35-47",
       Home: "21-20",
@@ -3108,7 +3110,7 @@ const rawSeasonData = {
       Apr: "2-3",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Los Angeles Clippers",
       Overall: "32-50",
       Home: "22-19",
@@ -3132,7 +3134,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Phoenix Suns",
       Overall: "32-50",
       Home: "23-18",
@@ -3156,7 +3158,7 @@ const rawSeasonData = {
       Apr: "3-6",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Seattle SuperSonics",
       Overall: "31-51",
       Home: "24-17",
@@ -3180,7 +3182,7 @@ const rawSeasonData = {
       Apr: "2-4",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Chicago Bulls",
       Overall: "30-52",
       Home: "22-19",
@@ -3204,7 +3206,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Golden State Warriors",
       Overall: "30-52",
       Home: "24-17",
@@ -3228,7 +3230,7 @@ const rawSeasonData = {
       Apr: "2-4",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Cleveland Cavaliers",
       Overall: "29-53",
       Home: "16-25",
@@ -3252,7 +3254,7 @@ const rawSeasonData = {
       Apr: "1-7",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Indiana Pacers",
       Overall: "26-56",
       Home: "19-22",
@@ -3276,7 +3278,7 @@ const rawSeasonData = {
       Apr: "1-6",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "New York Knicks",
       Overall: "23-59",
       Home: "15-26",
@@ -3302,7 +3304,7 @@ const rawSeasonData = {
   ],
   1987: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Los Angeles Lakers",
       Overall: "65-17",
       Home: "37-4",
@@ -3326,7 +3328,7 @@ const rawSeasonData = {
       Apr: "8-2",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Boston Celtics",
       Overall: "59-23",
       Home: "39-2",
@@ -3350,7 +3352,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Atlanta Hawks",
       Overall: "57-25",
       Home: "35-6",
@@ -3374,7 +3376,7 @@ const rawSeasonData = {
       Apr: "9-2",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Dallas Mavericks",
       Overall: "55-27",
       Home: "35-6",
@@ -3398,7 +3400,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Detroit Pistons",
       Overall: "52-30",
       Home: "32-9",
@@ -3422,7 +3424,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Milwaukee Bucks",
       Overall: "50-32",
       Home: "32-9",
@@ -3446,7 +3448,7 @@ const rawSeasonData = {
       Apr: "7-2",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Portland Trail Blazers",
       Overall: "49-33",
       Home: "34-7",
@@ -3470,7 +3472,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Philadelphia 76ers",
       Overall: "45-37",
       Home: "28-13",
@@ -3494,7 +3496,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Utah Jazz",
       Overall: "44-38",
       Home: "31-10",
@@ -3518,7 +3520,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Golden State Warriors",
       Overall: "42-40",
       Home: "25-16",
@@ -3542,7 +3544,7 @@ const rawSeasonData = {
       Apr: "5-6",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Houston Rockets",
       Overall: "42-40",
       Home: "25-16",
@@ -3566,7 +3568,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Washington Bullets",
       Overall: "42-40",
       Home: "27-14",
@@ -3590,7 +3592,7 @@ const rawSeasonData = {
       Apr: "6-5",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Indiana Pacers",
       Overall: "41-41",
       Home: "28-13",
@@ -3614,7 +3616,7 @@ const rawSeasonData = {
       Apr: "5-6",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Chicago Bulls",
       Overall: "40-42",
       Home: "29-12",
@@ -3638,7 +3640,7 @@ const rawSeasonData = {
       Apr: "3-6",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Seattle SuperSonics",
       Overall: "39-43",
       Home: "25-16",
@@ -3662,7 +3664,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Denver Nuggets",
       Overall: "37-45",
       Home: "27-14",
@@ -3686,7 +3688,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Phoenix Suns",
       Overall: "36-46",
       Home: "26-15",
@@ -3710,7 +3712,7 @@ const rawSeasonData = {
       Apr: "10-1",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Cleveland Cavaliers",
       Overall: "31-51",
       Home: "25-16",
@@ -3734,7 +3736,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Sacramento Kings",
       Overall: "29-53",
       Home: "20-21",
@@ -3758,7 +3760,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "San Antonio Spurs",
       Overall: "28-54",
       Home: "21-20",
@@ -3782,7 +3784,7 @@ const rawSeasonData = {
       Apr: "2-8",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "New Jersey Nets",
       Overall: "24-58",
       Home: "19-22",
@@ -3806,7 +3808,7 @@ const rawSeasonData = {
       Apr: "3-8",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "New York Knicks",
       Overall: "24-58",
       Home: "18-23",
@@ -3830,7 +3832,7 @@ const rawSeasonData = {
       Apr: "2-8",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Los Angeles Clippers",
       Overall: "12-70",
       Home: "9-32",
@@ -3856,7 +3858,7 @@ const rawSeasonData = {
   ],
   1988: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Los Angeles Lakers",
       Overall: "62-20",
       Home: "36-5",
@@ -3879,7 +3881,7 @@ const rawSeasonData = {
       Apr: "9-4",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Boston Celtics",
       Overall: "57-25",
       Home: "36-5",
@@ -3902,7 +3904,7 @@ const rawSeasonData = {
       Apr: "7-4",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Denver Nuggets",
       Overall: "54-28",
       Home: "35-6",
@@ -3925,7 +3927,7 @@ const rawSeasonData = {
       Apr: "9-2",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Detroit Pistons",
       Overall: "54-28",
       Home: "34-7",
@@ -3948,7 +3950,7 @@ const rawSeasonData = {
       Apr: "8-5",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Dallas Mavericks",
       Overall: "53-29",
       Home: "33-8",
@@ -3971,7 +3973,7 @@ const rawSeasonData = {
       Apr: "7-6",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Portland Trail Blazers",
       Overall: "53-29",
       Home: "33-8",
@@ -3994,7 +3996,7 @@ const rawSeasonData = {
       Apr: "10-4",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Atlanta Hawks",
       Overall: "50-32",
       Home: "30-11",
@@ -4017,7 +4019,7 @@ const rawSeasonData = {
       Apr: "7-6",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Chicago Bulls",
       Overall: "50-32",
       Home: "30-11",
@@ -4040,7 +4042,7 @@ const rawSeasonData = {
       Apr: "9-3",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Utah Jazz",
       Overall: "47-35",
       Home: "33-8",
@@ -4063,7 +4065,7 @@ const rawSeasonData = {
       Apr: "8-4",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Houston Rockets",
       Overall: "46-36",
       Home: "31-10",
@@ -4086,7 +4088,7 @@ const rawSeasonData = {
       Apr: "5-8",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Seattle SuperSonics",
       Overall: "44-38",
       Home: "32-9",
@@ -4109,7 +4111,7 @@ const rawSeasonData = {
       Apr: "7-5",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Cleveland Cavaliers",
       Overall: "42-40",
       Home: "31-10",
@@ -4132,7 +4134,7 @@ const rawSeasonData = {
       Apr: "9-2",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Milwaukee Bucks",
       Overall: "42-40",
       Home: "30-11",
@@ -4155,7 +4157,7 @@ const rawSeasonData = {
       Apr: "4-9",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "New York Knicks",
       Overall: "38-44",
       Home: "29-12",
@@ -4178,7 +4180,7 @@ const rawSeasonData = {
       Apr: "7-4",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Washington Bullets",
       Overall: "38-44",
       Home: "25-16",
@@ -4201,7 +4203,7 @@ const rawSeasonData = {
       Apr: "8-5",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Indiana Pacers",
       Overall: "38-44",
       Home: "25-16",
@@ -4224,7 +4226,7 @@ const rawSeasonData = {
       Apr: "5-8",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Philadelphia 76ers",
       Overall: "36-46",
       Home: "27-14",
@@ -4247,7 +4249,7 @@ const rawSeasonData = {
       Apr: "4-8",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "San Antonio Spurs",
       Overall: "31-51",
       Home: "23-18",
@@ -4270,7 +4272,7 @@ const rawSeasonData = {
       Apr: "5-8",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Phoenix Suns",
       Overall: "28-54",
       Home: "22-19",
@@ -4293,7 +4295,7 @@ const rawSeasonData = {
       Apr: "5-8",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Sacramento Kings",
       Overall: "24-58",
       Home: "19-22",
@@ -4316,7 +4318,7 @@ const rawSeasonData = {
       Apr: "4-8",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Golden State Warriors",
       Overall: "20-62",
       Home: "16-25",
@@ -4339,7 +4341,7 @@ const rawSeasonData = {
       Apr: "3-10",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "New Jersey Nets",
       Overall: "19-63",
       Home: "16-25",
@@ -4362,7 +4364,7 @@ const rawSeasonData = {
       Apr: "1-11",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Los Angeles Clippers",
       Overall: "17-65",
       Home: "14-27",
@@ -4387,7 +4389,7 @@ const rawSeasonData = {
   ],
   1989: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Detroit Pistons",
       Overall: "63-19",
       Home: "37-4",
@@ -4410,7 +4412,7 @@ const rawSeasonData = {
       Apr: "11-2",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Cleveland Cavaliers",
       Overall: "57-25",
       Home: "37-4",
@@ -4433,7 +4435,7 @@ const rawSeasonData = {
       Apr: "6-5",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Los Angeles Lakers",
       Overall: "57-25",
       Home: "35-6",
@@ -4456,7 +4458,7 @@ const rawSeasonData = {
       Apr: "9-4",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Phoenix Suns",
       Overall: "55-27",
       Home: "35-6",
@@ -4479,7 +4481,7 @@ const rawSeasonData = {
       Apr: "9-1",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Atlanta Hawks",
       Overall: "52-30",
       Home: "33-8",
@@ -4502,7 +4504,7 @@ const rawSeasonData = {
       Apr: "10-2",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "New York Knicks",
       Overall: "52-30",
       Home: "35-6",
@@ -4525,7 +4527,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Utah Jazz",
       Overall: "51-31",
       Home: "34-7",
@@ -4548,7 +4550,7 @@ const rawSeasonData = {
       Apr: "7-5",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Milwaukee Bucks",
       Overall: "49-33",
       Home: "31-10",
@@ -4571,7 +4573,7 @@ const rawSeasonData = {
       Apr: "5-8",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Chicago Bulls",
       Overall: "47-35",
       Home: "30-11",
@@ -4594,7 +4596,7 @@ const rawSeasonData = {
       Apr: "4-8",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Seattle SuperSonics",
       Overall: "47-35",
       Home: "31-10",
@@ -4617,7 +4619,7 @@ const rawSeasonData = {
       Apr: "8-3",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Philadelphia 76ers",
       Overall: "46-36",
       Home: "30-11",
@@ -4640,7 +4642,7 @@ const rawSeasonData = {
       Apr: "7-5",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Houston Rockets",
       Overall: "45-37",
       Home: "31-10",
@@ -4663,7 +4665,7 @@ const rawSeasonData = {
       Apr: "6-6",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Denver Nuggets",
       Overall: "44-38",
       Home: "35-6",
@@ -4686,7 +4688,7 @@ const rawSeasonData = {
       Apr: "6-6",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Golden State Warriors",
       Overall: "43-39",
       Home: "29-12",
@@ -4709,7 +4711,7 @@ const rawSeasonData = {
       Apr: "3-8",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Boston Celtics",
       Overall: "42-40",
       Home: "32-9",
@@ -4732,7 +4734,7 @@ const rawSeasonData = {
       Apr: "5-7",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Washington Bullets",
       Overall: "40-42",
       Home: "30-11",
@@ -4755,7 +4757,7 @@ const rawSeasonData = {
       Apr: "7-5",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Portland Trail Blazers",
       Overall: "39-43",
       Home: "28-13",
@@ -4778,7 +4780,7 @@ const rawSeasonData = {
       Apr: "7-5",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Dallas Mavericks",
       Overall: "38-44",
       Home: "24-17",
@@ -4801,7 +4803,7 @@ const rawSeasonData = {
       Apr: "6-5",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Indiana Pacers",
       Overall: "28-54",
       Home: "20-21",
@@ -4824,7 +4826,7 @@ const rawSeasonData = {
       Apr: "6-6",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Sacramento Kings",
       Overall: "27-55",
       Home: "21-20",
@@ -4847,7 +4849,7 @@ const rawSeasonData = {
       Apr: "6-6",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "New Jersey Nets",
       Overall: "26-56",
       Home: "17-24",
@@ -4870,7 +4872,7 @@ const rawSeasonData = {
       Apr: "2-8",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Los Angeles Clippers",
       Overall: "21-61",
       Home: "17-24",
@@ -4893,7 +4895,7 @@ const rawSeasonData = {
       Apr: "4-8",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "San Antonio Spurs",
       Overall: "21-61",
       Home: "18-23",
@@ -4916,7 +4918,7 @@ const rawSeasonData = {
       Apr: "2-9",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Charlotte Hornets",
       Overall: "20-62",
       Home: "12-29",
@@ -4939,7 +4941,7 @@ const rawSeasonData = {
       Apr: "3-9",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Miami Heat",
       Overall: "15-67",
       Home: "12-29",
@@ -4964,7 +4966,7 @@ const rawSeasonData = {
   ],
   1990: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Los Angeles Lakers",
       Overall: "63-19",
       Home: "37-4",
@@ -4987,7 +4989,7 @@ const rawSeasonData = {
       Apr: "10-2",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Detroit Pistons",
       Overall: "59-23",
       Home: "35-6",
@@ -5010,7 +5012,7 @@ const rawSeasonData = {
       Apr: "7-4",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Portland Trail Blazers",
       Overall: "59-23",
       Home: "35-6",
@@ -5033,7 +5035,7 @@ const rawSeasonData = {
       Apr: "8-2",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "San Antonio Spurs",
       Overall: "56-26",
       Home: "34-7",
@@ -5056,7 +5058,7 @@ const rawSeasonData = {
       Apr: "8-3",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Chicago Bulls",
       Overall: "55-27",
       Home: "36-5",
@@ -5079,7 +5081,7 @@ const rawSeasonData = {
       Apr: "8-4",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Utah Jazz",
       Overall: "55-27",
       Home: "36-5",
@@ -5102,7 +5104,7 @@ const rawSeasonData = {
       Apr: "5-7",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Phoenix Suns",
       Overall: "54-28",
       Home: "32-9",
@@ -5125,7 +5127,7 @@ const rawSeasonData = {
       Apr: "6-5",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Philadelphia 76ers",
       Overall: "53-29",
       Home: "34-7",
@@ -5148,7 +5150,7 @@ const rawSeasonData = {
       Apr: "7-3",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Boston Celtics",
       Overall: "52-30",
       Home: "30-11",
@@ -5171,7 +5173,7 @@ const rawSeasonData = {
       Apr: "10-2",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Dallas Mavericks",
       Overall: "47-35",
       Home: "30-11",
@@ -5194,7 +5196,7 @@ const rawSeasonData = {
       Apr: "7-5",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "New York Knicks",
       Overall: "45-37",
       Home: "29-12",
@@ -5217,7 +5219,7 @@ const rawSeasonData = {
       Apr: "5-6",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Milwaukee Bucks",
       Overall: "44-38",
       Home: "27-14",
@@ -5240,7 +5242,7 @@ const rawSeasonData = {
       Apr: "7-4",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Denver Nuggets",
       Overall: "43-39",
       Home: "28-13",
@@ -5263,7 +5265,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Cleveland Cavaliers",
       Overall: "42-40",
       Home: "27-14",
@@ -5286,7 +5288,7 @@ const rawSeasonData = {
       Apr: "9-3",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Indiana Pacers",
       Overall: "42-40",
       Home: "28-13",
@@ -5309,7 +5311,7 @@ const rawSeasonData = {
       Apr: "6-6",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Houston Rockets",
       Overall: "41-41",
       Home: "31-10",
@@ -5332,7 +5334,7 @@ const rawSeasonData = {
       Apr: "6-5",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Atlanta Hawks",
       Overall: "41-41",
       Home: "25-16",
@@ -5355,7 +5357,7 @@ const rawSeasonData = {
       Apr: "7-4",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Seattle SuperSonics",
       Overall: "41-41",
       Home: "30-11",
@@ -5378,7 +5380,7 @@ const rawSeasonData = {
       Apr: "6-6",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Golden State Warriors",
       Overall: "37-45",
       Home: "27-14",
@@ -5401,7 +5403,7 @@ const rawSeasonData = {
       Apr: "5-7",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Washington Bullets",
       Overall: "31-51",
       Home: "20-21",
@@ -5424,7 +5426,7 @@ const rawSeasonData = {
       Apr: "4-7",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Los Angeles Clippers",
       Overall: "30-52",
       Home: "20-21",
@@ -5447,7 +5449,7 @@ const rawSeasonData = {
       Apr: "3-7",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Sacramento Kings",
       Overall: "23-59",
       Home: "16-25",
@@ -5470,7 +5472,7 @@ const rawSeasonData = {
       Apr: "1-9",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Minnesota Timberwolves",
       Overall: "22-60",
       Home: "17-24",
@@ -5493,7 +5495,7 @@ const rawSeasonData = {
       Apr: "2-8",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Charlotte Hornets",
       Overall: "19-63",
       Home: "13-28",
@@ -5516,7 +5518,7 @@ const rawSeasonData = {
       Apr: "4-7",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Miami Heat",
       Overall: "18-64",
       Home: "11-30",
@@ -5539,7 +5541,7 @@ const rawSeasonData = {
       Apr: "1-9",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Orlando Magic",
       Overall: "18-64",
       Home: "12-29",
@@ -5562,7 +5564,7 @@ const rawSeasonData = {
       Apr: "1-11",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "New Jersey Nets",
       Overall: "17-65",
       Home: "13-28",
@@ -5587,7 +5589,7 @@ const rawSeasonData = {
   ],
   1991: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Portland Trail Blazers",
       Overall: "63-19",
       Home: "36-5",
@@ -5610,7 +5612,7 @@ const rawSeasonData = {
       Apr: "10-1",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Chicago Bulls",
       Overall: "61-21",
       Home: "35-6",
@@ -5633,7 +5635,7 @@ const rawSeasonData = {
       Apr: "8-3",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Los Angeles Lakers",
       Overall: "58-24",
       Home: "33-8",
@@ -5656,7 +5658,7 @@ const rawSeasonData = {
       Apr: "7-3",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Boston Celtics",
       Overall: "56-26",
       Home: "35-6",
@@ -5679,7 +5681,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Phoenix Suns",
       Overall: "55-27",
       Home: "32-9",
@@ -5702,7 +5704,7 @@ const rawSeasonData = {
       Apr: "6-5",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "San Antonio Spurs",
       Overall: "55-27",
       Home: "33-8",
@@ -5725,7 +5727,7 @@ const rawSeasonData = {
       Apr: "8-4",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Utah Jazz",
       Overall: "54-28",
       Home: "36-5",
@@ -5748,7 +5750,7 @@ const rawSeasonData = {
       Apr: "8-4",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Houston Rockets",
       Overall: "52-30",
       Home: "31-10",
@@ -5771,7 +5773,7 @@ const rawSeasonData = {
       Apr: "6-5",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Detroit Pistons",
       Overall: "50-32",
       Home: "32-9",
@@ -5794,7 +5796,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Milwaukee Bucks",
       Overall: "48-34",
       Home: "33-8",
@@ -5817,7 +5819,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Golden State Warriors",
       Overall: "44-38",
       Home: "30-11",
@@ -5840,7 +5842,7 @@ const rawSeasonData = {
       Apr: "7-3",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Philadelphia 76ers",
       Overall: "44-38",
       Home: "29-12",
@@ -5863,7 +5865,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Atlanta Hawks",
       Overall: "43-39",
       Home: "29-12",
@@ -5886,7 +5888,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Indiana Pacers",
       Overall: "41-41",
       Home: "29-12",
@@ -5909,7 +5911,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Seattle SuperSonics",
       Overall: "41-41",
       Home: "28-13",
@@ -5932,7 +5934,7 @@ const rawSeasonData = {
       Apr: "7-4",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "New York Knicks",
       Overall: "39-43",
       Home: "21-20",
@@ -5955,7 +5957,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Cleveland Cavaliers",
       Overall: "33-49",
       Home: "23-18",
@@ -5978,7 +5980,7 @@ const rawSeasonData = {
       Apr: "8-3",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Los Angeles Clippers",
       Overall: "31-51",
       Home: "23-18",
@@ -6001,7 +6003,7 @@ const rawSeasonData = {
       Apr: "3-7",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Orlando Magic",
       Overall: "31-51",
       Home: "24-17",
@@ -6024,7 +6026,7 @@ const rawSeasonData = {
       Apr: "5-7",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Washington Bullets",
       Overall: "30-52",
       Home: "21-20",
@@ -6047,7 +6049,7 @@ const rawSeasonData = {
       Apr: "4-7",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Minnesota Timberwolves",
       Overall: "29-53",
       Home: "21-20",
@@ -6070,7 +6072,7 @@ const rawSeasonData = {
       Apr: "7-5",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Dallas Mavericks",
       Overall: "28-54",
       Home: "20-21",
@@ -6093,7 +6095,7 @@ const rawSeasonData = {
       Apr: "3-9",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Charlotte Hornets",
       Overall: "26-56",
       Home: "17-24",
@@ -6116,7 +6118,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "New Jersey Nets",
       Overall: "26-56",
       Home: "20-21",
@@ -6139,7 +6141,7 @@ const rawSeasonData = {
       Apr: "3-7",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Sacramento Kings",
       Overall: "25-57",
       Home: "24-17",
@@ -6162,7 +6164,7 @@ const rawSeasonData = {
       Apr: "6-6",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Miami Heat",
       Overall: "24-58",
       Home: "18-23",
@@ -6185,7 +6187,7 @@ const rawSeasonData = {
       Apr: "2-8",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Denver Nuggets",
       Overall: "20-62",
       Home: "17-24",
@@ -6210,7 +6212,7 @@ const rawSeasonData = {
   ],
   1992: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Chicago Bulls",
       Overall: "67-15",
       Home: "36-5",
@@ -6233,7 +6235,7 @@ const rawSeasonData = {
       Apr: "8-2",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Cleveland Cavaliers",
       Overall: "57-25",
       Home: "35-6",
@@ -6256,7 +6258,7 @@ const rawSeasonData = {
       Apr: "8-3",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Portland Trail Blazers",
       Overall: "57-25",
       Home: "33-8",
@@ -6279,7 +6281,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Golden State Warriors",
       Overall: "55-27",
       Home: "31-10",
@@ -6302,7 +6304,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Utah Jazz",
       Overall: "55-27",
       Home: "37-4",
@@ -6325,7 +6327,7 @@ const rawSeasonData = {
       Apr: "8-2",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Phoenix Suns",
       Overall: "53-29",
       Home: "36-5",
@@ -6348,7 +6350,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Boston Celtics",
       Overall: "51-31",
       Home: "34-7",
@@ -6371,7 +6373,7 @@ const rawSeasonData = {
       Apr: "9-1",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "New York Knicks",
       Overall: "51-31",
       Home: "30-11",
@@ -6394,7 +6396,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Detroit Pistons",
       Overall: "48-34",
       Home: "25-16",
@@ -6417,7 +6419,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "San Antonio Spurs",
       Overall: "47-35",
       Home: "31-10",
@@ -6440,7 +6442,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Seattle SuperSonics",
       Overall: "47-35",
       Home: "28-13",
@@ -6463,7 +6465,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Los Angeles Clippers",
       Overall: "45-37",
       Home: "29-12",
@@ -6486,7 +6488,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Los Angeles Lakers",
       Overall: "43-39",
       Home: "24-17",
@@ -6509,7 +6511,7 @@ const rawSeasonData = {
       Apr: "4-7",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Houston Rockets",
       Overall: "42-40",
       Home: "28-13",
@@ -6532,7 +6534,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Indiana Pacers",
       Overall: "40-42",
       Home: "26-15",
@@ -6555,7 +6557,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "New Jersey Nets",
       Overall: "40-42",
       Home: "25-16",
@@ -6578,7 +6580,7 @@ const rawSeasonData = {
       Apr: "8-3",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Miami Heat",
       Overall: "38-44",
       Home: "28-13",
@@ -6601,7 +6603,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Atlanta Hawks",
       Overall: "38-44",
       Home: "23-18",
@@ -6624,7 +6626,7 @@ const rawSeasonData = {
       Apr: "3-7",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Philadelphia 76ers",
       Overall: "35-47",
       Home: "23-18",
@@ -6647,7 +6649,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Charlotte Hornets",
       Overall: "31-51",
       Home: "22-19",
@@ -6670,7 +6672,7 @@ const rawSeasonData = {
       Apr: "2-9",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Milwaukee Bucks",
       Overall: "31-51",
       Home: "25-16",
@@ -6693,7 +6695,7 @@ const rawSeasonData = {
       Apr: "1-9",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Sacramento Kings",
       Overall: "29-53",
       Home: "21-20",
@@ -6716,7 +6718,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Washington Bullets",
       Overall: "25-57",
       Home: "14-27",
@@ -6739,7 +6741,7 @@ const rawSeasonData = {
       Apr: "2-8",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Denver Nuggets",
       Overall: "24-58",
       Home: "18-23",
@@ -6762,7 +6764,7 @@ const rawSeasonData = {
       Apr: "1-8",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Dallas Mavericks",
       Overall: "22-60",
       Home: "15-26",
@@ -6785,7 +6787,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Orlando Magic",
       Overall: "21-61",
       Home: "13-28",
@@ -6808,7 +6810,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Minnesota Timberwolves",
       Overall: "15-67",
       Home: "9-32",
@@ -6833,7 +6835,7 @@ const rawSeasonData = {
   ],
   1993: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Phoenix Suns",
       Overall: "62-20",
       Home: "35-6",
@@ -6856,7 +6858,7 @@ const rawSeasonData = {
       Apr: "9-5",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "New York Knicks",
       Overall: "60-22",
       Home: "37-4",
@@ -6879,7 +6881,7 @@ const rawSeasonData = {
       Apr: "12-2",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Chicago Bulls",
       Overall: "57-25",
       Home: "31-10",
@@ -6902,7 +6904,7 @@ const rawSeasonData = {
       Apr: "9-4",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Houston Rockets",
       Overall: "55-27",
       Home: "31-10",
@@ -6925,7 +6927,7 @@ const rawSeasonData = {
       Apr: "11-2",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Seattle SuperSonics",
       Overall: "55-27",
       Home: "33-8",
@@ -6948,7 +6950,7 @@ const rawSeasonData = {
       Apr: "7-4",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Cleveland Cavaliers",
       Overall: "54-28",
       Home: "35-6",
@@ -6971,7 +6973,7 @@ const rawSeasonData = {
       Apr: "11-3",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Portland Trail Blazers",
       Overall: "51-31",
       Home: "30-11",
@@ -6994,7 +6996,7 @@ const rawSeasonData = {
       Apr: "10-4",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "San Antonio Spurs",
       Overall: "49-33",
       Home: "31-10",
@@ -7017,7 +7019,7 @@ const rawSeasonData = {
       Apr: "6-7",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Boston Celtics",
       Overall: "48-34",
       Home: "28-13",
@@ -7040,7 +7042,7 @@ const rawSeasonData = {
       Apr: "6-6",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Utah Jazz",
       Overall: "47-35",
       Home: "28-13",
@@ -7063,7 +7065,7 @@ const rawSeasonData = {
       Apr: "6-5",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Charlotte Hornets",
       Overall: "44-38",
       Home: "22-19",
@@ -7086,7 +7088,7 @@ const rawSeasonData = {
       Apr: "9-3",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Atlanta Hawks",
       Overall: "43-39",
       Home: "25-16",
@@ -7109,7 +7111,7 @@ const rawSeasonData = {
       Apr: "5-7",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "New Jersey Nets",
       Overall: "43-39",
       Home: "26-15",
@@ -7132,7 +7134,7 @@ const rawSeasonData = {
       Apr: "2-10",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Indiana Pacers",
       Overall: "41-41",
       Home: "27-14",
@@ -7155,7 +7157,7 @@ const rawSeasonData = {
       Apr: "7-6",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Los Angeles Clippers",
       Overall: "41-41",
       Home: "27-14",
@@ -7178,7 +7180,7 @@ const rawSeasonData = {
       Apr: "7-5",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Orlando Magic",
       Overall: "41-41",
       Home: "27-14",
@@ -7201,7 +7203,7 @@ const rawSeasonData = {
       Apr: "8-7",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Detroit Pistons",
       Overall: "40-42",
       Home: "28-13",
@@ -7224,7 +7226,7 @@ const rawSeasonData = {
       Apr: "8-5",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Los Angeles Lakers",
       Overall: "39-43",
       Home: "20-21",
@@ -7247,7 +7249,7 @@ const rawSeasonData = {
       Apr: "5-8",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Denver Nuggets",
       Overall: "36-46",
       Home: "28-13",
@@ -7270,7 +7272,7 @@ const rawSeasonData = {
       Apr: "7-5",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Miami Heat",
       Overall: "36-46",
       Home: "26-15",
@@ -7293,7 +7295,7 @@ const rawSeasonData = {
       Apr: "5-9",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Golden State Warriors",
       Overall: "34-48",
       Home: "19-22",
@@ -7316,7 +7318,7 @@ const rawSeasonData = {
       Apr: "6-7",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Milwaukee Bucks",
       Overall: "28-54",
       Home: "18-23",
@@ -7339,7 +7341,7 @@ const rawSeasonData = {
       Apr: "2-11",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Philadelphia 76ers",
       Overall: "26-56",
       Home: "15-26",
@@ -7362,7 +7364,7 @@ const rawSeasonData = {
       Apr: "5-8",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Sacramento Kings",
       Overall: "25-57",
       Home: "16-25",
@@ -7385,7 +7387,7 @@ const rawSeasonData = {
       Apr: "4-9",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Washington Bullets",
       Overall: "22-60",
       Home: "15-26",
@@ -7408,7 +7410,7 @@ const rawSeasonData = {
       Apr: "2-11",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Minnesota Timberwolves",
       Overall: "19-63",
       Home: "11-30",
@@ -7431,7 +7433,7 @@ const rawSeasonData = {
       Apr: "1-12",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Dallas Mavericks",
       Overall: "11-71",
       Home: "7-34",
@@ -7456,7 +7458,7 @@ const rawSeasonData = {
   ],
   1994: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Seattle SuperSonics",
       Overall: "63-19",
       Home: "37-4",
@@ -7479,7 +7481,7 @@ const rawSeasonData = {
       Apr: "10-2",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Houston Rockets",
       Overall: "58-24",
       Home: "35-6",
@@ -7502,7 +7504,7 @@ const rawSeasonData = {
       Apr: "8-5",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Atlanta Hawks",
       Overall: "57-25",
       Home: "36-5",
@@ -7525,7 +7527,7 @@ const rawSeasonData = {
       Apr: "7-5",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "New York Knicks",
       Overall: "57-25",
       Home: "32-9",
@@ -7548,7 +7550,7 @@ const rawSeasonData = {
       Apr: "7-6",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Phoenix Suns",
       Overall: "56-26",
       Home: "36-5",
@@ -7571,7 +7573,7 @@ const rawSeasonData = {
       Apr: "10-3",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Chicago Bulls",
       Overall: "55-27",
       Home: "31-10",
@@ -7594,7 +7596,7 @@ const rawSeasonData = {
       Apr: "9-3",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "San Antonio Spurs",
       Overall: "55-27",
       Home: "32-9",
@@ -7617,7 +7619,7 @@ const rawSeasonData = {
       Apr: "4-7",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Utah Jazz",
       Overall: "53-29",
       Home: "33-8",
@@ -7640,7 +7642,7 @@ const rawSeasonData = {
       Apr: "9-2",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Golden State Warriors",
       Overall: "50-32",
       Home: "29-12",
@@ -7663,7 +7665,7 @@ const rawSeasonData = {
       Apr: "10-3",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Orlando Magic",
       Overall: "50-32",
       Home: "31-10",
@@ -7686,7 +7688,7 @@ const rawSeasonData = {
       Apr: "9-4",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Cleveland Cavaliers",
       Overall: "47-35",
       Home: "31-10",
@@ -7709,7 +7711,7 @@ const rawSeasonData = {
       Apr: "7-4",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Indiana Pacers",
       Overall: "47-35",
       Home: "29-12",
@@ -7732,7 +7734,7 @@ const rawSeasonData = {
       Apr: "10-3",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Portland Trail Blazers",
       Overall: "47-35",
       Home: "30-11",
@@ -7755,7 +7757,7 @@ const rawSeasonData = {
       Apr: "6-5",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "New Jersey Nets",
       Overall: "45-37",
       Home: "29-12",
@@ -7778,7 +7780,7 @@ const rawSeasonData = {
       Apr: "8-5",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Denver Nuggets",
       Overall: "42-40",
       Home: "28-13",
@@ -7801,7 +7803,7 @@ const rawSeasonData = {
       Apr: "7-7",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Miami Heat",
       Overall: "42-40",
       Home: "22-19",
@@ -7824,7 +7826,7 @@ const rawSeasonData = {
       Apr: "5-7",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Charlotte Hornets",
       Overall: "41-41",
       Home: "28-13",
@@ -7847,7 +7849,7 @@ const rawSeasonData = {
       Apr: "10-4",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Los Angeles Lakers",
       Overall: "33-49",
       Home: "21-20",
@@ -7870,7 +7872,7 @@ const rawSeasonData = {
       Apr: "3-10",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Boston Celtics",
       Overall: "32-50",
       Home: "18-23",
@@ -7893,7 +7895,7 @@ const rawSeasonData = {
       Apr: "7-7",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Sacramento Kings",
       Overall: "28-54",
       Home: "20-21",
@@ -7916,7 +7918,7 @@ const rawSeasonData = {
       Apr: "5-7",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Los Angeles Clippers",
       Overall: "27-55",
       Home: "17-24",
@@ -7939,7 +7941,7 @@ const rawSeasonData = {
       Apr: "2-10",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Philadelphia 76ers",
       Overall: "25-57",
       Home: "15-26",
@@ -7962,7 +7964,7 @@ const rawSeasonData = {
       Apr: "4-8",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Washington Bullets",
       Overall: "24-58",
       Home: "17-24",
@@ -7985,7 +7987,7 @@ const rawSeasonData = {
       Apr: "5-8",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Detroit Pistons",
       Overall: "20-62",
       Home: "10-31",
@@ -8008,7 +8010,7 @@ const rawSeasonData = {
       Apr: "0-13",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Milwaukee Bucks",
       Overall: "20-62",
       Home: "11-30",
@@ -8031,7 +8033,7 @@ const rawSeasonData = {
       Apr: "1-11",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Minnesota Timberwolves",
       Overall: "20-62",
       Home: "13-28",
@@ -8054,7 +8056,7 @@ const rawSeasonData = {
       Apr: "1-12",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Dallas Mavericks",
       Overall: "13-69",
       Home: "6-35",
@@ -8079,7 +8081,7 @@ const rawSeasonData = {
   ],
   1995: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "San Antonio Spurs",
       Overall: "62-20",
       Home: "33-8",
@@ -8102,7 +8104,7 @@ const rawSeasonData = {
       Apr: "11-2",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Utah Jazz",
       Overall: "60-22",
       Home: "33-8",
@@ -8125,7 +8127,7 @@ const rawSeasonData = {
       Apr: "8-2",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Phoenix Suns",
       Overall: "59-23",
       Home: "32-9",
@@ -8148,7 +8150,7 @@ const rawSeasonData = {
       Apr: "8-3",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Orlando Magic",
       Overall: "57-25",
       Home: "39-2",
@@ -8171,7 +8173,7 @@ const rawSeasonData = {
       Apr: "4-7",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Seattle SuperSonics",
       Overall: "57-25",
       Home: "32-9",
@@ -8194,7 +8196,7 @@ const rawSeasonData = {
       Apr: "7-5",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "New York Knicks",
       Overall: "55-27",
       Home: "29-12",
@@ -8217,7 +8219,7 @@ const rawSeasonData = {
       Apr: "9-3",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Indiana Pacers",
       Overall: "52-30",
       Home: "33-8",
@@ -8240,7 +8242,7 @@ const rawSeasonData = {
       Apr: "7-4",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Charlotte Hornets",
       Overall: "50-32",
       Home: "29-12",
@@ -8263,7 +8265,7 @@ const rawSeasonData = {
       Apr: "8-4",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Los Angeles Lakers",
       Overall: "48-34",
       Home: "29-12",
@@ -8286,7 +8288,7 @@ const rawSeasonData = {
       Apr: "4-8",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Chicago Bulls",
       Overall: "47-35",
       Home: "28-13",
@@ -8309,7 +8311,7 @@ const rawSeasonData = {
       Apr: "9-2",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Houston Rockets",
       Overall: "47-35",
       Home: "25-16",
@@ -8332,7 +8334,7 @@ const rawSeasonData = {
       Apr: "5-7",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Portland Trail Blazers",
       Overall: "44-38",
       Home: "26-15",
@@ -8355,7 +8357,7 @@ const rawSeasonData = {
       Apr: "7-5",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Cleveland Cavaliers",
       Overall: "43-39",
       Home: "26-15",
@@ -8378,7 +8380,7 @@ const rawSeasonData = {
       Apr: "4-8",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Atlanta Hawks",
       Overall: "42-40",
       Home: "24-17",
@@ -8401,7 +8403,7 @@ const rawSeasonData = {
       Apr: "7-4",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Denver Nuggets",
       Overall: "41-41",
       Home: "23-18",
@@ -8424,7 +8426,7 @@ const rawSeasonData = {
       Apr: "7-5",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Sacramento Kings",
       Overall: "39-43",
       Home: "27-14",
@@ -8447,7 +8449,7 @@ const rawSeasonData = {
       Apr: "5-6",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Dallas Mavericks",
       Overall: "36-46",
       Home: "19-22",
@@ -8470,7 +8472,7 @@ const rawSeasonData = {
       Apr: "5-8",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Boston Celtics",
       Overall: "35-47",
       Home: "20-21",
@@ -8493,7 +8495,7 @@ const rawSeasonData = {
       Apr: "7-4",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Milwaukee Bucks",
       Overall: "34-48",
       Home: "22-19",
@@ -8516,7 +8518,7 @@ const rawSeasonData = {
       Apr: "7-4",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Miami Heat",
       Overall: "32-50",
       Home: "22-19",
@@ -8539,7 +8541,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "New Jersey Nets",
       Overall: "30-52",
       Home: "20-21",
@@ -8562,7 +8564,7 @@ const rawSeasonData = {
       Apr: "3-8",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Detroit Pistons",
       Overall: "28-54",
       Home: "22-19",
@@ -8585,7 +8587,7 @@ const rawSeasonData = {
       Apr: "3-9",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Golden State Warriors",
       Overall: "26-56",
       Home: "15-26",
@@ -8608,7 +8610,7 @@ const rawSeasonData = {
       Apr: "4-8",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Philadelphia 76ers",
       Overall: "24-58",
       Home: "14-27",
@@ -8631,7 +8633,7 @@ const rawSeasonData = {
       Apr: "4-8",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Minnesota Timberwolves",
       Overall: "21-61",
       Home: "13-28",
@@ -8654,7 +8656,7 @@ const rawSeasonData = {
       Apr: "2-9",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Washington Bullets",
       Overall: "21-61",
       Home: "13-28",
@@ -8677,7 +8679,7 @@ const rawSeasonData = {
       Apr: "3-9",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Los Angeles Clippers",
       Overall: "17-65",
       Home: "13-28",
@@ -8702,7 +8704,7 @@ const rawSeasonData = {
   ],
   1996: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Chicago Bulls",
       Overall: "72-10",
       Home: "39-2",
@@ -8725,7 +8727,7 @@ const rawSeasonData = {
       Apr: "10-2",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Seattle SuperSonics",
       Overall: "64-18",
       Home: "38-3",
@@ -8748,7 +8750,7 @@ const rawSeasonData = {
       Apr: "8-3",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Orlando Magic",
       Overall: "60-22",
       Home: "37-4",
@@ -8771,7 +8773,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "San Antonio Spurs",
       Overall: "59-23",
       Home: "33-8",
@@ -8794,7 +8796,7 @@ const rawSeasonData = {
       Apr: "6-5",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Utah Jazz",
       Overall: "55-27",
       Home: "34-7",
@@ -8817,7 +8819,7 @@ const rawSeasonData = {
       Apr: "5-6",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Los Angeles Lakers",
       Overall: "53-29",
       Home: "30-11",
@@ -8840,7 +8842,7 @@ const rawSeasonData = {
       Apr: "8-4",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Indiana Pacers",
       Overall: "52-30",
       Home: "32-9",
@@ -8863,7 +8865,7 @@ const rawSeasonData = {
       Apr: "8-2",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Houston Rockets",
       Overall: "48-34",
       Home: "27-14",
@@ -8886,7 +8888,7 @@ const rawSeasonData = {
       Apr: "6-5",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Cleveland Cavaliers",
       Overall: "47-35",
       Home: "26-15",
@@ -8909,7 +8911,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "New York Knicks",
       Overall: "47-35",
       Home: "26-15",
@@ -8932,7 +8934,7 @@ const rawSeasonData = {
       Apr: "6-6",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Atlanta Hawks",
       Overall: "46-36",
       Home: "26-15",
@@ -8955,7 +8957,7 @@ const rawSeasonData = {
       Apr: "6-5",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Detroit Pistons",
       Overall: "46-36",
       Home: "30-11",
@@ -8978,7 +8980,7 @@ const rawSeasonData = {
       Apr: "7-5",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Portland Trail Blazers",
       Overall: "44-38",
       Home: "26-15",
@@ -9001,7 +9003,7 @@ const rawSeasonData = {
       Apr: "8-3",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Miami Heat",
       Overall: "42-40",
       Home: "26-15",
@@ -9024,7 +9026,7 @@ const rawSeasonData = {
       Apr: "5-6",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Phoenix Suns",
       Overall: "41-41",
       Home: "25-16",
@@ -9047,7 +9049,7 @@ const rawSeasonData = {
       Apr: "5-6",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Charlotte Hornets",
       Overall: "41-41",
       Home: "25-16",
@@ -9070,7 +9072,7 @@ const rawSeasonData = {
       Apr: "5-6",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Sacramento Kings",
       Overall: "39-43",
       Home: "26-15",
@@ -9093,7 +9095,7 @@ const rawSeasonData = {
       Apr: "7-5",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Washington Bullets",
       Overall: "39-43",
       Home: "25-16",
@@ -9116,7 +9118,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Golden State Warriors",
       Overall: "36-46",
       Home: "23-18",
@@ -9139,7 +9141,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Denver Nuggets",
       Overall: "35-47",
       Home: "24-17",
@@ -9162,7 +9164,7 @@ const rawSeasonData = {
       Apr: "5-6",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Boston Celtics",
       Overall: "33-49",
       Home: "18-23",
@@ -9185,7 +9187,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "New Jersey Nets",
       Overall: "30-52",
       Home: "20-21",
@@ -9208,7 +9210,7 @@ const rawSeasonData = {
       Apr: "2-9",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Los Angeles Clippers",
       Overall: "29-53",
       Home: "19-22",
@@ -9231,7 +9233,7 @@ const rawSeasonData = {
       Apr: "2-8",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Dallas Mavericks",
       Overall: "26-56",
       Home: "16-25",
@@ -9254,7 +9256,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Minnesota Timberwolves",
       Overall: "26-56",
       Home: "17-24",
@@ -9277,7 +9279,7 @@ const rawSeasonData = {
       Apr: "2-9",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Milwaukee Bucks",
       Overall: "25-57",
       Home: "14-27",
@@ -9300,7 +9302,7 @@ const rawSeasonData = {
       Apr: "4-7",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Toronto Raptors",
       Overall: "21-61",
       Home: "15-26",
@@ -9323,7 +9325,7 @@ const rawSeasonData = {
       Apr: "3-8",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Philadelphia 76ers",
       Overall: "18-64",
       Home: "11-30",
@@ -9346,7 +9348,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Vancouver Grizzlies",
       Overall: "15-67",
       Home: "10-31",
@@ -9371,7 +9373,7 @@ const rawSeasonData = {
   ],
   1997: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Chicago Bulls",
       Overall: "69-13",
       Home: "39-2",
@@ -9394,7 +9396,7 @@ const rawSeasonData = {
       Apr: "7-4",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Utah Jazz",
       Overall: "64-18",
       Home: "38-3",
@@ -9417,7 +9419,7 @@ const rawSeasonData = {
       Apr: "10-1",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Miami Heat",
       Overall: "61-21",
       Home: "29-12",
@@ -9440,7 +9442,7 @@ const rawSeasonData = {
       Apr: "8-3",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Houston Rockets",
       Overall: "57-25",
       Home: "30-11",
@@ -9463,7 +9465,7 @@ const rawSeasonData = {
       Apr: "9-2",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "New York Knicks",
       Overall: "57-25",
       Home: "31-10",
@@ -9486,7 +9488,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Seattle SuperSonics",
       Overall: "57-25",
       Home: "31-10",
@@ -9509,7 +9511,7 @@ const rawSeasonData = {
       Apr: "7-3",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Atlanta Hawks",
       Overall: "56-26",
       Home: "36-5",
@@ -9532,7 +9534,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Los Angeles Lakers",
       Overall: "56-26",
       Home: "31-10",
@@ -9555,7 +9557,7 @@ const rawSeasonData = {
       Apr: "8-3",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Charlotte Hornets",
       Overall: "54-28",
       Home: "30-11",
@@ -9578,7 +9580,7 @@ const rawSeasonData = {
       Apr: "9-2",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Detroit Pistons",
       Overall: "54-28",
       Home: "30-11",
@@ -9601,7 +9603,7 @@ const rawSeasonData = {
       Apr: "5-6",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Portland Trail Blazers",
       Overall: "49-33",
       Home: "29-12",
@@ -9624,7 +9626,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Orlando Magic",
       Overall: "45-37",
       Home: "26-15",
@@ -9647,7 +9649,7 @@ const rawSeasonData = {
       Apr: "5-6",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Washington Bullets",
       Overall: "44-38",
       Home: "25-16",
@@ -9670,7 +9672,7 @@ const rawSeasonData = {
       Apr: "8-3",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Cleveland Cavaliers",
       Overall: "42-40",
       Home: "25-16",
@@ -9693,7 +9695,7 @@ const rawSeasonData = {
       Apr: "5-6",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Minnesota Timberwolves",
       Overall: "40-42",
       Home: "25-16",
@@ -9716,7 +9718,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Phoenix Suns",
       Overall: "40-42",
       Home: "25-16",
@@ -9739,7 +9741,7 @@ const rawSeasonData = {
       Apr: "7-3",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Indiana Pacers",
       Overall: "39-43",
       Home: "21-20",
@@ -9762,7 +9764,7 @@ const rawSeasonData = {
       Apr: "4-7",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Los Angeles Clippers",
       Overall: "36-46",
       Home: "21-20",
@@ -9785,7 +9787,7 @@ const rawSeasonData = {
       Apr: "5-6",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Sacramento Kings",
       Overall: "34-48",
       Home: "22-19",
@@ -9808,7 +9810,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Milwaukee Bucks",
       Overall: "33-49",
       Home: "20-21",
@@ -9831,7 +9833,7 @@ const rawSeasonData = {
       Apr: "5-6",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Golden State Warriors",
       Overall: "30-52",
       Home: "18-23",
@@ -9854,7 +9856,7 @@ const rawSeasonData = {
       Apr: "5-6",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Toronto Raptors",
       Overall: "30-52",
       Home: "18-23",
@@ -9877,7 +9879,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "New Jersey Nets",
       Overall: "26-56",
       Home: "16-25",
@@ -9900,7 +9902,7 @@ const rawSeasonData = {
       Apr: "3-8",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Dallas Mavericks",
       Overall: "24-58",
       Home: "14-27",
@@ -9923,7 +9925,7 @@ const rawSeasonData = {
       Apr: "2-9",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Philadelphia 76ers",
       Overall: "22-60",
       Home: "11-30",
@@ -9946,7 +9948,7 @@ const rawSeasonData = {
       Apr: "2-10",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Denver Nuggets",
       Overall: "21-61",
       Home: "12-29",
@@ -9969,7 +9971,7 @@ const rawSeasonData = {
       Apr: "1-10",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "San Antonio Spurs",
       Overall: "20-62",
       Home: "12-29",
@@ -9992,7 +9994,7 @@ const rawSeasonData = {
       Apr: "2-9",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Boston Celtics",
       Overall: "15-67",
       Home: "11-30",
@@ -10015,7 +10017,7 @@ const rawSeasonData = {
       Apr: "2-8",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Vancouver Grizzlies",
       Overall: "14-68",
       Home: "8-33",
@@ -10040,7 +10042,7 @@ const rawSeasonData = {
   ],
   1998: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Chicago Bulls",
       Overall: "62-20",
       Home: "37-4",
@@ -10064,7 +10066,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Utah Jazz",
       Overall: "62-20",
       Home: "36-5",
@@ -10088,7 +10090,7 @@ const rawSeasonData = {
       Apr: "9-2",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Los Angeles Lakers",
       Overall: "61-21",
       Home: "33-8",
@@ -10112,7 +10114,7 @@ const rawSeasonData = {
       Apr: "9-1",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Seattle SuperSonics",
       Overall: "61-21",
       Home: "35-6",
@@ -10136,7 +10138,7 @@ const rawSeasonData = {
       Apr: "7-3",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Indiana Pacers",
       Overall: "58-24",
       Home: "32-9",
@@ -10160,7 +10162,7 @@ const rawSeasonData = {
       Apr: "8-2",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Phoenix Suns",
       Overall: "56-26",
       Home: "30-11",
@@ -10184,7 +10186,7 @@ const rawSeasonData = {
       Apr: "8-1",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "San Antonio Spurs",
       Overall: "56-26",
       Home: "31-10",
@@ -10208,7 +10210,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Miami Heat",
       Overall: "55-27",
       Home: "30-11",
@@ -10232,7 +10234,7 @@ const rawSeasonData = {
       Apr: "3-6",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Charlotte Hornets",
       Overall: "51-31",
       Home: "32-9",
@@ -10256,7 +10258,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Atlanta Hawks",
       Overall: "50-32",
       Home: "29-12",
@@ -10280,7 +10282,7 @@ const rawSeasonData = {
       Apr: "8-3",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Cleveland Cavaliers",
       Overall: "47-35",
       Home: "27-14",
@@ -10304,7 +10306,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Portland Trail Blazers",
       Overall: "46-36",
       Home: "26-15",
@@ -10328,7 +10330,7 @@ const rawSeasonData = {
       Apr: "6-5",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Minnesota Timberwolves",
       Overall: "45-37",
       Home: "26-15",
@@ -10352,7 +10354,7 @@ const rawSeasonData = {
       Apr: "7-3",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "New Jersey Nets",
       Overall: "43-39",
       Home: "26-15",
@@ -10376,7 +10378,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "New York Knicks",
       Overall: "43-39",
       Home: "28-13",
@@ -10400,7 +10402,7 @@ const rawSeasonData = {
       Apr: "3-6",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Washington Wizards",
       Overall: "42-40",
       Home: "24-17",
@@ -10424,7 +10426,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Houston Rockets",
       Overall: "41-41",
       Home: "24-17",
@@ -10448,7 +10450,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Orlando Magic",
       Overall: "41-41",
       Home: "24-17",
@@ -10472,7 +10474,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Detroit Pistons",
       Overall: "37-45",
       Home: "25-16",
@@ -10496,7 +10498,7 @@ const rawSeasonData = {
       Apr: "3-6",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Boston Celtics",
       Overall: "36-46",
       Home: "24-17",
@@ -10520,7 +10522,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Milwaukee Bucks",
       Overall: "36-46",
       Home: "21-20",
@@ -10544,7 +10546,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Philadelphia 76ers",
       Overall: "31-51",
       Home: "19-22",
@@ -10568,7 +10570,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Sacramento Kings",
       Overall: "27-55",
       Home: "21-20",
@@ -10592,7 +10594,7 @@ const rawSeasonData = {
       Apr: "1-8",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Dallas Mavericks",
       Overall: "20-62",
       Home: "13-28",
@@ -10616,7 +10618,7 @@ const rawSeasonData = {
       Apr: "1-8",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Golden State Warriors",
       Overall: "19-63",
       Home: "12-29",
@@ -10640,7 +10642,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Vancouver Grizzlies",
       Overall: "19-63",
       Home: "14-27",
@@ -10664,7 +10666,7 @@ const rawSeasonData = {
       Apr: "3-7",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Los Angeles Clippers",
       Overall: "17-65",
       Home: "11-30",
@@ -10688,7 +10690,7 @@ const rawSeasonData = {
       Apr: "1-9",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Toronto Raptors",
       Overall: "16-66",
       Home: "9-32",
@@ -10712,7 +10714,7 @@ const rawSeasonData = {
       Apr: "1-10",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Denver Nuggets",
       Overall: "11-71",
       Home: "9-32",
@@ -10738,7 +10740,7 @@ const rawSeasonData = {
   ],
   1999: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "San Antonio Spurs",
       Overall: "37-13",
       Home: "21-4",
@@ -10757,7 +10759,7 @@ const rawSeasonData = {
       May: "4-0",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Utah Jazz",
       Overall: "37-13",
       Home: "22-3",
@@ -10776,7 +10778,7 @@ const rawSeasonData = {
       May: "1-1",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Portland Trail Blazers",
       Overall: "35-15",
       Home: "22-3",
@@ -10795,7 +10797,7 @@ const rawSeasonData = {
       May: "1-3",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Indiana Pacers",
       Overall: "33-17",
       Home: "18-7",
@@ -10814,7 +10816,7 @@ const rawSeasonData = {
       May: "2-0",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Miami Heat",
       Overall: "33-17",
       Home: "18-7",
@@ -10833,7 +10835,7 @@ const rawSeasonData = {
       May: "2-2",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Orlando Magic",
       Overall: "33-17",
       Home: "21-4",
@@ -10852,7 +10854,7 @@ const rawSeasonData = {
       May: "1-0",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Atlanta Hawks",
       Overall: "31-19",
       Home: "16-9",
@@ -10871,7 +10873,7 @@ const rawSeasonData = {
       May: "2-1",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Houston Rockets",
       Overall: "31-19",
       Home: "19-6",
@@ -10890,7 +10892,7 @@ const rawSeasonData = {
       May: "3-0",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Los Angeles Lakers",
       Overall: "31-19",
       Home: "18-7",
@@ -10909,7 +10911,7 @@ const rawSeasonData = {
       May: "3-0",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Detroit Pistons",
       Overall: "29-21",
       Home: "17-8",
@@ -10928,7 +10930,7 @@ const rawSeasonData = {
       May: "2-1",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Milwaukee Bucks",
       Overall: "28-22",
       Home: "17-8",
@@ -10947,7 +10949,7 @@ const rawSeasonData = {
       May: "2-1",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Philadelphia 76ers",
       Overall: "28-22",
       Home: "17-8",
@@ -10966,7 +10968,7 @@ const rawSeasonData = {
       May: "2-2",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "New York Knicks",
       Overall: "27-23",
       Home: "19-6",
@@ -10985,7 +10987,7 @@ const rawSeasonData = {
       May: "2-1",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Phoenix Suns",
       Overall: "27-23",
       Home: "15-10",
@@ -11004,7 +11006,7 @@ const rawSeasonData = {
       May: "2-1",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Sacramento Kings",
       Overall: "27-23",
       Home: "16-9",
@@ -11023,7 +11025,7 @@ const rawSeasonData = {
       May: "3-0",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Charlotte Hornets",
       Overall: "26-24",
       Home: "16-9",
@@ -11042,7 +11044,7 @@ const rawSeasonData = {
       May: "2-1",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Minnesota Timberwolves",
       Overall: "25-25",
       Home: "18-7",
@@ -11061,7 +11063,7 @@ const rawSeasonData = {
       May: "1-2",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Seattle SuperSonics",
       Overall: "25-25",
       Home: "17-8",
@@ -11080,7 +11082,7 @@ const rawSeasonData = {
       May: "2-1",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Toronto Raptors",
       Overall: "23-27",
       Home: "14-11",
@@ -11099,7 +11101,7 @@ const rawSeasonData = {
       May: "1-2",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Cleveland Cavaliers",
       Overall: "22-28",
       Home: "15-10",
@@ -11118,7 +11120,7 @@ const rawSeasonData = {
       May: "0-3",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Golden State Warriors",
       Overall: "21-29",
       Home: "13-12",
@@ -11137,7 +11139,7 @@ const rawSeasonData = {
       May: "1-2",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Boston Celtics",
       Overall: "19-31",
       Home: "10-15",
@@ -11156,7 +11158,7 @@ const rawSeasonData = {
       May: "0-3",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Dallas Mavericks",
       Overall: "19-31",
       Home: "15-10",
@@ -11175,7 +11177,7 @@ const rawSeasonData = {
       May: "1-2",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Washington Wizards",
       Overall: "18-32",
       Home: "13-12",
@@ -11194,7 +11196,7 @@ const rawSeasonData = {
       May: "1-2",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "New Jersey Nets",
       Overall: "16-34",
       Home: "12-13",
@@ -11213,7 +11215,7 @@ const rawSeasonData = {
       May: "2-1",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Denver Nuggets",
       Overall: "14-36",
       Home: "12-13",
@@ -11232,7 +11234,7 @@ const rawSeasonData = {
       May: "0-3",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Chicago Bulls",
       Overall: "13-37",
       Home: "8-17",
@@ -11251,7 +11253,7 @@ const rawSeasonData = {
       May: "1-2",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Los Angeles Clippers",
       Overall: "9-41",
       Home: "6-19",
@@ -11270,7 +11272,7 @@ const rawSeasonData = {
       May: "0-4",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Vancouver Grizzlies",
       Overall: "8-42",
       Home: "7-18",
@@ -11291,7 +11293,7 @@ const rawSeasonData = {
   ],
   2000: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Los Angeles Lakers",
       Overall: "67-15",
       Home: "36-5",
@@ -11314,7 +11316,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Portland Trail Blazers",
       Overall: "59-23",
       Home: "30-11",
@@ -11337,7 +11339,7 @@ const rawSeasonData = {
       Apr: "7-4",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Indiana Pacers",
       Overall: "56-26",
       Home: "36-5",
@@ -11360,7 +11362,7 @@ const rawSeasonData = {
       Apr: "8-2",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Utah Jazz",
       Overall: "55-27",
       Home: "31-10",
@@ -11383,7 +11385,7 @@ const rawSeasonData = {
       Apr: "6-5",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Phoenix Suns",
       Overall: "53-29",
       Home: "32-9",
@@ -11406,7 +11408,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "San Antonio Spurs",
       Overall: "53-29",
       Home: "31-10",
@@ -11429,7 +11431,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Miami Heat",
       Overall: "52-30",
       Home: "33-8",
@@ -11452,7 +11454,7 @@ const rawSeasonData = {
       Apr: "7-4",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Minnesota Timberwolves",
       Overall: "50-32",
       Home: "26-15",
@@ -11475,7 +11477,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "New York Knicks",
       Overall: "50-32",
       Home: "33-8",
@@ -11498,7 +11500,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Charlotte Hornets",
       Overall: "49-33",
       Home: "30-11",
@@ -11521,7 +11523,7 @@ const rawSeasonData = {
       Apr: "9-2",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Philadelphia 76ers",
       Overall: "49-33",
       Home: "29-12",
@@ -11544,7 +11546,7 @@ const rawSeasonData = {
       Apr: "7-3",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Seattle SuperSonics",
       Overall: "45-37",
       Home: "24-17",
@@ -11567,7 +11569,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Toronto Raptors",
       Overall: "45-37",
       Home: "26-15",
@@ -11590,7 +11592,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Sacramento Kings",
       Overall: "44-38",
       Home: "30-11",
@@ -11613,7 +11615,7 @@ const rawSeasonData = {
       Apr: "3-8",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Detroit Pistons",
       Overall: "42-40",
       Home: "27-14",
@@ -11636,7 +11638,7 @@ const rawSeasonData = {
       Apr: "6-5",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Milwaukee Bucks",
       Overall: "42-40",
       Home: "23-18",
@@ -11659,7 +11661,7 @@ const rawSeasonData = {
       Apr: "8-3",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Orlando Magic",
       Overall: "41-41",
       Home: "26-15",
@@ -11682,7 +11684,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Dallas Mavericks",
       Overall: "40-42",
       Home: "22-19",
@@ -11705,7 +11707,7 @@ const rawSeasonData = {
       Apr: "9-1",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Boston Celtics",
       Overall: "35-47",
       Home: "26-15",
@@ -11728,7 +11730,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Denver Nuggets",
       Overall: "35-47",
       Home: "25-16",
@@ -11751,7 +11753,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Houston Rockets",
       Overall: "34-48",
       Home: "22-19",
@@ -11774,7 +11776,7 @@ const rawSeasonData = {
       Apr: "7-3",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Cleveland Cavaliers",
       Overall: "32-50",
       Home: "22-19",
@@ -11797,7 +11799,7 @@ const rawSeasonData = {
       Apr: "4-7",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "New Jersey Nets",
       Overall: "31-51",
       Home: "22-19",
@@ -11820,7 +11822,7 @@ const rawSeasonData = {
       Apr: "0-10",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Washington Wizards",
       Overall: "29-53",
       Home: "17-24",
@@ -11843,7 +11845,7 @@ const rawSeasonData = {
       Apr: "3-6",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Atlanta Hawks",
       Overall: "28-54",
       Home: "21-20",
@@ -11866,7 +11868,7 @@ const rawSeasonData = {
       Apr: "2-9",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Vancouver Grizzlies",
       Overall: "22-60",
       Home: "12-29",
@@ -11889,7 +11891,7 @@ const rawSeasonData = {
       Apr: "3-8",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Golden State Warriors",
       Overall: "19-63",
       Home: "12-29",
@@ -11912,7 +11914,7 @@ const rawSeasonData = {
       Apr: "2-7",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Chicago Bulls",
       Overall: "17-65",
       Home: "12-29",
@@ -11935,7 +11937,7 @@ const rawSeasonData = {
       Apr: "3-8",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Los Angeles Clippers",
       Overall: "15-67",
       Home: "10-31",
@@ -11960,7 +11962,7 @@ const rawSeasonData = {
   ],
   2001: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "San Antonio Spurs",
       Overall: "58-24",
       Home: "33-8",
@@ -11984,7 +11986,7 @@ const rawSeasonData = {
       Apr: "7-2",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Los Angeles Lakers",
       Overall: "56-26",
       Home: "31-10",
@@ -12008,7 +12010,7 @@ const rawSeasonData = {
       Apr: "8-1",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Philadelphia 76ers",
       Overall: "56-26",
       Home: "29-12",
@@ -12032,7 +12034,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Sacramento Kings",
       Overall: "55-27",
       Home: "33-8",
@@ -12056,7 +12058,7 @@ const rawSeasonData = {
       Apr: "6-5",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Dallas Mavericks",
       Overall: "53-29",
       Home: "28-13",
@@ -12080,7 +12082,7 @@ const rawSeasonData = {
       Apr: "7-3",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Utah Jazz",
       Overall: "53-29",
       Home: "28-13",
@@ -12104,7 +12106,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Milwaukee Bucks",
       Overall: "52-30",
       Home: "31-10",
@@ -12128,7 +12130,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Phoenix Suns",
       Overall: "51-31",
       Home: "31-10",
@@ -12152,7 +12154,7 @@ const rawSeasonData = {
       Apr: "7-4",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Miami Heat",
       Overall: "50-32",
       Home: "29-12",
@@ -12176,7 +12178,7 @@ const rawSeasonData = {
       Apr: "7-3",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Portland Trail Blazers",
       Overall: "50-32",
       Home: "28-13",
@@ -12200,7 +12202,7 @@ const rawSeasonData = {
       Apr: "3-7",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "New York Knicks",
       Overall: "48-34",
       Home: "30-11",
@@ -12224,7 +12226,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Minnesota Timberwolves",
       Overall: "47-35",
       Home: "30-11",
@@ -12248,7 +12250,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Toronto Raptors",
       Overall: "47-35",
       Home: "27-14",
@@ -12272,7 +12274,7 @@ const rawSeasonData = {
       Apr: "7-3",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Charlotte Hornets",
       Overall: "46-36",
       Home: "28-13",
@@ -12296,7 +12298,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Houston Rockets",
       Overall: "45-37",
       Home: "24-17",
@@ -12320,7 +12322,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Seattle SuperSonics",
       Overall: "44-38",
       Home: "26-15",
@@ -12344,7 +12346,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Orlando Magic",
       Overall: "43-39",
       Home: "26-15",
@@ -12368,7 +12370,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Indiana Pacers",
       Overall: "41-41",
       Home: "26-15",
@@ -12392,7 +12394,7 @@ const rawSeasonData = {
       Apr: "8-2",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Denver Nuggets",
       Overall: "40-42",
       Home: "29-12",
@@ -12416,7 +12418,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Boston Celtics",
       Overall: "36-46",
       Home: "20-21",
@@ -12440,7 +12442,7 @@ const rawSeasonData = {
       Apr: "3-7",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Detroit Pistons",
       Overall: "32-50",
       Home: "18-23",
@@ -12464,7 +12466,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Los Angeles Clippers",
       Overall: "31-51",
       Home: "22-19",
@@ -12488,7 +12490,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Cleveland Cavaliers",
       Overall: "30-52",
       Home: "20-21",
@@ -12512,7 +12514,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "New Jersey Nets",
       Overall: "26-56",
       Home: "18-23",
@@ -12536,7 +12538,7 @@ const rawSeasonData = {
       Apr: "1-6",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Atlanta Hawks",
       Overall: "25-57",
       Home: "18-23",
@@ -12560,7 +12562,7 @@ const rawSeasonData = {
       Apr: "2-6",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Vancouver Grizzlies",
       Overall: "23-59",
       Home: "15-26",
@@ -12584,7 +12586,7 @@ const rawSeasonData = {
       Apr: "2-7",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Washington Wizards",
       Overall: "19-63",
       Home: "12-29",
@@ -12608,7 +12610,7 @@ const rawSeasonData = {
       Apr: "1-8",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Golden State Warriors",
       Overall: "17-65",
       Home: "11-30",
@@ -12632,7 +12634,7 @@ const rawSeasonData = {
       Apr: "0-10",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Chicago Bulls",
       Overall: "15-67",
       Home: "10-31",
@@ -12658,7 +12660,7 @@ const rawSeasonData = {
   ],
   2002: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Sacramento Kings",
       Overall: "61-21",
       Home: "36-5",
@@ -12682,7 +12684,7 @@ const rawSeasonData = {
       Apr: "8-2",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Los Angeles Lakers",
       Overall: "58-24",
       Home: "34-7",
@@ -12706,7 +12708,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "San Antonio Spurs",
       Overall: "58-24",
       Home: "32-9",
@@ -12730,7 +12732,7 @@ const rawSeasonData = {
       Apr: "9-0",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Dallas Mavericks",
       Overall: "57-25",
       Home: "30-11",
@@ -12754,7 +12756,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "New Jersey Nets",
       Overall: "52-30",
       Home: "33-8",
@@ -12778,7 +12780,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Detroit Pistons",
       Overall: "50-32",
       Home: "26-15",
@@ -12802,7 +12804,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Minnesota Timberwolves",
       Overall: "50-32",
       Home: "29-12",
@@ -12826,7 +12828,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Boston Celtics",
       Overall: "49-33",
       Home: "27-14",
@@ -12850,7 +12852,7 @@ const rawSeasonData = {
       Apr: "7-1",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Portland Trail Blazers",
       Overall: "49-33",
       Home: "30-11",
@@ -12874,7 +12876,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Seattle SuperSonics",
       Overall: "45-37",
       Home: "26-15",
@@ -12898,7 +12900,7 @@ const rawSeasonData = {
       Apr: "2-6",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Charlotte Hornets",
       Overall: "44-38",
       Home: "21-20",
@@ -12922,7 +12924,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Orlando Magic",
       Overall: "44-38",
       Home: "27-14",
@@ -12946,7 +12948,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Utah Jazz",
       Overall: "44-38",
       Home: "25-16",
@@ -12970,7 +12972,7 @@ const rawSeasonData = {
       Apr: "3-6",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Philadelphia 76ers",
       Overall: "43-39",
       Home: "22-19",
@@ -12994,7 +12996,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Indiana Pacers",
       Overall: "42-40",
       Home: "25-16",
@@ -13018,7 +13020,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Toronto Raptors",
       Overall: "42-40",
       Home: "24-17",
@@ -13042,7 +13044,7 @@ const rawSeasonData = {
       Apr: "7-2",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Milwaukee Bucks",
       Overall: "41-41",
       Home: "25-16",
@@ -13066,7 +13068,7 @@ const rawSeasonData = {
       Apr: "3-7",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Los Angeles Clippers",
       Overall: "39-43",
       Home: "25-16",
@@ -13090,7 +13092,7 @@ const rawSeasonData = {
       Apr: "2-6",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Washington Wizards",
       Overall: "37-45",
       Home: "22-19",
@@ -13114,7 +13116,7 @@ const rawSeasonData = {
       Apr: "3-6",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Miami Heat",
       Overall: "36-46",
       Home: "18-23",
@@ -13138,7 +13140,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Phoenix Suns",
       Overall: "36-46",
       Home: "23-18",
@@ -13162,7 +13164,7 @@ const rawSeasonData = {
       Apr: "2-7",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Atlanta Hawks",
       Overall: "33-49",
       Home: "23-18",
@@ -13186,7 +13188,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "New York Knicks",
       Overall: "30-52",
       Home: "19-22",
@@ -13210,7 +13212,7 @@ const rawSeasonData = {
       Apr: "3-7",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Cleveland Cavaliers",
       Overall: "29-53",
       Home: "20-21",
@@ -13234,7 +13236,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Houston Rockets",
       Overall: "28-54",
       Home: "18-23",
@@ -13258,7 +13260,7 @@ const rawSeasonData = {
       Apr: "2-8",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Denver Nuggets",
       Overall: "27-55",
       Home: "20-21",
@@ -13282,7 +13284,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Memphis Grizzlies",
       Overall: "23-59",
       Home: "15-26",
@@ -13306,7 +13308,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Chicago Bulls",
       Overall: "21-61",
       Home: "14-27",
@@ -13330,7 +13332,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Golden State Warriors",
       Overall: "21-61",
       Home: "14-27",
@@ -13356,7 +13358,7 @@ const rawSeasonData = {
   ],
   2003: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Dallas Mavericks",
       Overall: "60-22",
       Home: "33-8",
@@ -13380,7 +13382,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "San Antonio Spurs",
       Overall: "60-22",
       Home: "33-8",
@@ -13404,7 +13406,7 @@ const rawSeasonData = {
       Apr: "7-2",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Sacramento Kings",
       Overall: "59-23",
       Home: "35-6",
@@ -13428,7 +13430,7 @@ const rawSeasonData = {
       Apr: "7-1",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Minnesota Timberwolves",
       Overall: "51-31",
       Home: "33-8",
@@ -13452,7 +13454,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Detroit Pistons",
       Overall: "50-32",
       Home: "30-11",
@@ -13476,7 +13478,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Los Angeles Lakers",
       Overall: "50-32",
       Home: "31-10",
@@ -13500,7 +13502,7 @@ const rawSeasonData = {
       Apr: "7-1",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Portland Trail Blazers",
       Overall: "50-32",
       Home: "27-14",
@@ -13524,7 +13526,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "New Jersey Nets",
       Overall: "49-33",
       Home: "33-8",
@@ -13548,7 +13550,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Indiana Pacers",
       Overall: "48-34",
       Home: "32-9",
@@ -13572,7 +13574,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Philadelphia 76ers",
       Overall: "48-34",
       Home: "25-16",
@@ -13596,7 +13598,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "New Orleans Hornets",
       Overall: "47-35",
       Home: "29-12",
@@ -13620,7 +13622,7 @@ const rawSeasonData = {
       Apr: "6-2",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Utah Jazz",
       Overall: "47-35",
       Home: "29-12",
@@ -13644,7 +13646,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Boston Celtics",
       Overall: "44-38",
       Home: "25-16",
@@ -13668,7 +13670,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Phoenix Suns",
       Overall: "44-38",
       Home: "30-11",
@@ -13692,7 +13694,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Houston Rockets",
       Overall: "43-39",
       Home: "28-13",
@@ -13716,7 +13718,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Milwaukee Bucks",
       Overall: "42-40",
       Home: "25-16",
@@ -13740,7 +13742,7 @@ const rawSeasonData = {
       Apr: "6-1",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Orlando Magic",
       Overall: "42-40",
       Home: "26-15",
@@ -13764,7 +13766,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Seattle SuperSonics",
       Overall: "40-42",
       Home: "25-16",
@@ -13788,7 +13790,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Golden State Warriors",
       Overall: "38-44",
       Home: "24-17",
@@ -13812,7 +13814,7 @@ const rawSeasonData = {
       Apr: "2-6",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "New York Knicks",
       Overall: "37-45",
       Home: "24-17",
@@ -13836,7 +13838,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Washington Wizards",
       Overall: "37-45",
       Home: "23-18",
@@ -13860,7 +13862,7 @@ const rawSeasonData = {
       Apr: "3-6",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Atlanta Hawks",
       Overall: "35-47",
       Home: "26-15",
@@ -13884,7 +13886,7 @@ const rawSeasonData = {
       Apr: "6-2",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Chicago Bulls",
       Overall: "30-52",
       Home: "27-14",
@@ -13908,7 +13910,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Memphis Grizzlies",
       Overall: "28-54",
       Home: "20-21",
@@ -13932,7 +13934,7 @@ const rawSeasonData = {
       Apr: "2-6",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Los Angeles Clippers",
       Overall: "27-55",
       Home: "16-25",
@@ -13956,7 +13958,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Miami Heat",
       Overall: "25-57",
       Home: "16-25",
@@ -13980,7 +13982,7 @@ const rawSeasonData = {
       Apr: "2-5",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Toronto Raptors",
       Overall: "24-58",
       Home: "15-26",
@@ -14004,7 +14006,7 @@ const rawSeasonData = {
       Apr: "1-9",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Cleveland Cavaliers",
       Overall: "17-65",
       Home: "14-27",
@@ -14028,7 +14030,7 @@ const rawSeasonData = {
       Apr: "3-6",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Denver Nuggets",
       Overall: "17-65",
       Home: "13-28",
@@ -14054,7 +14056,7 @@ const rawSeasonData = {
   ],
   2004: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Indiana Pacers",
       Overall: "61-21",
       Home: "34-7",
@@ -14078,7 +14080,7 @@ const rawSeasonData = {
       Apr: "6-1",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Minnesota Timberwolves",
       Overall: "58-24",
       Home: "31-10",
@@ -14102,7 +14104,7 @@ const rawSeasonData = {
       Apr: "6-0",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "San Antonio Spurs",
       Overall: "57-25",
       Home: "33-8",
@@ -14126,7 +14128,7 @@ const rawSeasonData = {
       Apr: "7-0",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Los Angeles Lakers",
       Overall: "56-26",
       Home: "34-7",
@@ -14150,7 +14152,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Sacramento Kings",
       Overall: "55-27",
       Home: "34-7",
@@ -14174,7 +14176,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Detroit Pistons",
       Overall: "54-28",
       Home: "31-10",
@@ -14198,7 +14200,7 @@ const rawSeasonData = {
       Apr: "6-1",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Dallas Mavericks",
       Overall: "52-30",
       Home: "36-5",
@@ -14222,7 +14224,7 @@ const rawSeasonData = {
       Apr: "6-2",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Memphis Grizzlies",
       Overall: "50-32",
       Home: "31-10",
@@ -14246,7 +14248,7 @@ const rawSeasonData = {
       Apr: "2-6",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "New Jersey Nets",
       Overall: "47-35",
       Home: "28-13",
@@ -14270,7 +14272,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Houston Rockets",
       Overall: "45-37",
       Home: "27-14",
@@ -14294,7 +14296,7 @@ const rawSeasonData = {
       Apr: "3-6",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Denver Nuggets",
       Overall: "43-39",
       Home: "29-12",
@@ -14318,7 +14320,7 @@ const rawSeasonData = {
       Apr: "4-2",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Miami Heat",
       Overall: "42-40",
       Home: "29-12",
@@ -14342,7 +14344,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Utah Jazz",
       Overall: "42-40",
       Home: "28-13",
@@ -14366,7 +14368,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Milwaukee Bucks",
       Overall: "41-41",
       Home: "27-14",
@@ -14390,7 +14392,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "New Orleans Hornets",
       Overall: "41-41",
       Home: "25-16",
@@ -14414,7 +14416,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Portland Trail Blazers",
       Overall: "41-41",
       Home: "25-16",
@@ -14438,7 +14440,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "New York Knicks",
       Overall: "39-43",
       Home: "23-18",
@@ -14462,7 +14464,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Golden State Warriors",
       Overall: "37-45",
       Home: "27-14",
@@ -14486,7 +14488,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Seattle SuperSonics",
       Overall: "37-45",
       Home: "21-20",
@@ -14510,7 +14512,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Boston Celtics",
       Overall: "36-46",
       Home: "19-22",
@@ -14534,7 +14536,7 @@ const rawSeasonData = {
       Apr: "2-5",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Cleveland Cavaliers",
       Overall: "35-47",
       Home: "23-18",
@@ -14558,7 +14560,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Philadelphia 76ers",
       Overall: "33-49",
       Home: "21-20",
@@ -14582,7 +14584,7 @@ const rawSeasonData = {
       Apr: "1-6",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Toronto Raptors",
       Overall: "33-49",
       Home: "18-23",
@@ -14606,7 +14608,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Phoenix Suns",
       Overall: "29-53",
       Home: "18-23",
@@ -14630,7 +14632,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Atlanta Hawks",
       Overall: "28-54",
       Home: "18-23",
@@ -14654,7 +14656,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Los Angeles Clippers",
       Overall: "28-54",
       Home: "18-23",
@@ -14678,7 +14680,7 @@ const rawSeasonData = {
       Apr: "1-5",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Washington Wizards",
       Overall: "25-57",
       Home: "17-24",
@@ -14702,7 +14704,7 @@ const rawSeasonData = {
       Apr: "2-5",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Chicago Bulls",
       Overall: "23-59",
       Home: "14-27",
@@ -14726,7 +14728,7 @@ const rawSeasonData = {
       Apr: "2-5",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Orlando Magic",
       Overall: "21-61",
       Home: "11-30",
@@ -14752,7 +14754,7 @@ const rawSeasonData = {
   ],
   2005: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Phoenix Suns",
       Overall: "62-20",
       Home: "31-10",
@@ -14777,7 +14779,7 @@ const rawSeasonData = {
       Apr: "8-3",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Miami Heat",
       Overall: "59-23",
       Home: "35-6",
@@ -14802,7 +14804,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "San Antonio Spurs",
       Overall: "59-23",
       Home: "38-3",
@@ -14827,7 +14829,7 @@ const rawSeasonData = {
       Apr: "6-5",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Dallas Mavericks",
       Overall: "58-24",
       Home: "29-12",
@@ -14852,7 +14854,7 @@ const rawSeasonData = {
       Apr: "10-1",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Detroit Pistons",
       Overall: "54-28",
       Home: "32-9",
@@ -14877,7 +14879,7 @@ const rawSeasonData = {
       Apr: "10-1",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Seattle SuperSonics",
       Overall: "52-30",
       Home: "26-15",
@@ -14902,7 +14904,7 @@ const rawSeasonData = {
       Apr: "3-8",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Houston Rockets",
       Overall: "51-31",
       Home: "26-15",
@@ -14927,7 +14929,7 @@ const rawSeasonData = {
       Apr: "7-3",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Sacramento Kings",
       Overall: "50-32",
       Home: "30-11",
@@ -14952,7 +14954,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Denver Nuggets",
       Overall: "49-33",
       Home: "31-10",
@@ -14977,7 +14979,7 @@ const rawSeasonData = {
       Apr: "10-2",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Chicago Bulls",
       Overall: "47-35",
       Home: "27-14",
@@ -15002,7 +15004,7 @@ const rawSeasonData = {
       Apr: "7-4",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Boston Celtics",
       Overall: "45-37",
       Home: "27-14",
@@ -15027,7 +15029,7 @@ const rawSeasonData = {
       Apr: "7-4",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Memphis Grizzlies",
       Overall: "45-37",
       Home: "26-15",
@@ -15052,7 +15054,7 @@ const rawSeasonData = {
       Apr: "6-6",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Washington Wizards",
       Overall: "45-37",
       Home: "29-12",
@@ -15077,7 +15079,7 @@ const rawSeasonData = {
       Apr: "5-7",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Indiana Pacers",
       Overall: "44-38",
       Home: "25-16",
@@ -15102,7 +15104,7 @@ const rawSeasonData = {
       Apr: "7-4",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Minnesota Timberwolves",
       Overall: "44-38",
       Home: "24-17",
@@ -15127,7 +15129,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Philadelphia 76ers",
       Overall: "43-39",
       Home: "25-16",
@@ -15152,7 +15154,7 @@ const rawSeasonData = {
       Apr: "8-3",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "New Jersey Nets",
       Overall: "42-40",
       Home: "24-17",
@@ -15177,7 +15179,7 @@ const rawSeasonData = {
       Apr: "8-2",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Cleveland Cavaliers",
       Overall: "42-40",
       Home: "29-12",
@@ -15202,7 +15204,7 @@ const rawSeasonData = {
       Apr: "5-7",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Los Angeles Clippers",
       Overall: "37-45",
       Home: "27-14",
@@ -15227,7 +15229,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Orlando Magic",
       Overall: "36-46",
       Home: "24-17",
@@ -15252,7 +15254,7 @@ const rawSeasonData = {
       Apr: "2-9",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Golden State Warriors",
       Overall: "34-48",
       Home: "20-21",
@@ -15277,7 +15279,7 @@ const rawSeasonData = {
       Apr: "8-3",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Los Angeles Lakers",
       Overall: "34-48",
       Home: "22-19",
@@ -15302,7 +15304,7 @@ const rawSeasonData = {
       Apr: "1-10",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "New York Knicks",
       Overall: "33-49",
       Home: "22-19",
@@ -15327,7 +15329,7 @@ const rawSeasonData = {
       Apr: "4-8",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Toronto Raptors",
       Overall: "33-49",
       Home: "22-19",
@@ -15352,7 +15354,7 @@ const rawSeasonData = {
       Apr: "4-7",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Milwaukee Bucks",
       Overall: "30-52",
       Home: "23-18",
@@ -15377,7 +15379,7 @@ const rawSeasonData = {
       Apr: "3-8",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Portland Trail Blazers",
       Overall: "27-55",
       Home: "18-23",
@@ -15402,7 +15404,7 @@ const rawSeasonData = {
       Apr: "3-9",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Utah Jazz",
       Overall: "26-56",
       Home: "18-23",
@@ -15427,7 +15429,7 @@ const rawSeasonData = {
       Apr: "4-7",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Charlotte Bobcats",
       Overall: "18-64",
       Home: "14-27",
@@ -15452,7 +15454,7 @@ const rawSeasonData = {
       Apr: "3-9",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "New Orleans Hornets",
       Overall: "18-64",
       Home: "11-30",
@@ -15477,7 +15479,7 @@ const rawSeasonData = {
       Apr: "2-10",
     },
     {
-      Rk: 30,
+      Rk: "30",
       Team: "Atlanta Hawks",
       Overall: "13-69",
       Home: "9-32",
@@ -15504,7 +15506,7 @@ const rawSeasonData = {
   ],
   2006: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Detroit Pistons",
       Overall: "64-18",
       Home: "37-4",
@@ -15529,7 +15531,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "San Antonio Spurs",
       Overall: "63-19",
       Home: "34-7",
@@ -15554,7 +15556,7 @@ const rawSeasonData = {
       Apr: "7-3",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Dallas Mavericks",
       Overall: "60-22",
       Home: "34-7",
@@ -15579,7 +15581,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Phoenix Suns",
       Overall: "54-28",
       Home: "31-10",
@@ -15604,7 +15606,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Miami Heat",
       Overall: "52-30",
       Home: "31-10",
@@ -15629,7 +15631,7 @@ const rawSeasonData = {
       Apr: "4-7",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Cleveland Cavaliers",
       Overall: "50-32",
       Home: "31-10",
@@ -15654,7 +15656,7 @@ const rawSeasonData = {
       Apr: "8-3",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Memphis Grizzlies",
       Overall: "49-33",
       Home: "30-11",
@@ -15679,7 +15681,7 @@ const rawSeasonData = {
       Apr: "8-1",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "New Jersey Nets",
       Overall: "49-33",
       Home: "29-12",
@@ -15704,7 +15706,7 @@ const rawSeasonData = {
       Apr: "6-5",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Los Angeles Clippers",
       Overall: "47-35",
       Home: "27-14",
@@ -15729,7 +15731,7 @@ const rawSeasonData = {
       Apr: "5-6",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Los Angeles Lakers",
       Overall: "45-37",
       Home: "27-14",
@@ -15754,7 +15756,7 @@ const rawSeasonData = {
       Apr: "6-2",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Denver Nuggets",
       Overall: "44-38",
       Home: "26-15",
@@ -15779,7 +15781,7 @@ const rawSeasonData = {
       Apr: "3-6",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Sacramento Kings",
       Overall: "44-38",
       Home: "27-14",
@@ -15804,7 +15806,7 @@ const rawSeasonData = {
       Apr: "7-2",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Washington Wizards",
       Overall: "42-40",
       Home: "27-14",
@@ -15829,7 +15831,7 @@ const rawSeasonData = {
       Apr: "5-6",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Chicago Bulls",
       Overall: "41-41",
       Home: "21-20",
@@ -15854,7 +15856,7 @@ const rawSeasonData = {
       Apr: "9-1",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Indiana Pacers",
       Overall: "41-41",
       Home: "27-14",
@@ -15879,7 +15881,7 @@ const rawSeasonData = {
       Apr: "6-5",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Utah Jazz",
       Overall: "41-41",
       Home: "22-19",
@@ -15904,7 +15906,7 @@ const rawSeasonData = {
       Apr: "7-3",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Milwaukee Bucks",
       Overall: "40-42",
       Home: "25-16",
@@ -15929,7 +15931,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "New Orleans/Oklahoma City Hornets",
       Overall: "38-44",
       Home: "24-17",
@@ -15954,7 +15956,7 @@ const rawSeasonData = {
       Apr: "4-7",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Philadelphia 76ers",
       Overall: "38-44",
       Home: "23-18",
@@ -15979,7 +15981,7 @@ const rawSeasonData = {
       Apr: "5-6",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Orlando Magic",
       Overall: "36-46",
       Home: "26-15",
@@ -16004,7 +16006,7 @@ const rawSeasonData = {
       Apr: "7-2",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Seattle SuperSonics",
       Overall: "35-47",
       Home: "22-19",
@@ -16029,7 +16031,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Golden State Warriors",
       Overall: "34-48",
       Home: "21-20",
@@ -16054,7 +16056,7 @@ const rawSeasonData = {
       Apr: "4-7",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Houston Rockets",
       Overall: "34-48",
       Home: "15-26",
@@ -16079,7 +16081,7 @@ const rawSeasonData = {
       Apr: "2-8",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Boston Celtics",
       Overall: "33-49",
       Home: "21-20",
@@ -16104,7 +16106,7 @@ const rawSeasonData = {
       Apr: "3-7",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Minnesota Timberwolves",
       Overall: "33-49",
       Home: "24-17",
@@ -16129,7 +16131,7 @@ const rawSeasonData = {
       Apr: "3-7",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Toronto Raptors",
       Overall: "27-55",
       Home: "15-26",
@@ -16154,7 +16156,7 @@ const rawSeasonData = {
       Apr: "1-9",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Atlanta Hawks",
       Overall: "26-56",
       Home: "18-23",
@@ -16179,7 +16181,7 @@ const rawSeasonData = {
       Apr: "4-7",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Charlotte Bobcats",
       Overall: "26-56",
       Home: "17-24",
@@ -16204,7 +16206,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "New York Knicks",
       Overall: "23-59",
       Home: "15-26",
@@ -16229,7 +16231,7 @@ const rawSeasonData = {
       Apr: "4-7",
     },
     {
-      Rk: 30,
+      Rk: "30",
       Team: "Portland Trail Blazers",
       Overall: "21-61",
       Home: "15-26",
@@ -16256,7 +16258,7 @@ const rawSeasonData = {
   ],
   2007: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Dallas Mavericks",
       Overall: "67-15",
       Home: "36-5",
@@ -16282,7 +16284,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Phoenix Suns",
       Overall: "61-21",
       Home: "33-8",
@@ -16308,7 +16310,7 @@ const rawSeasonData = {
       Apr: "7-3",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "San Antonio Spurs",
       Overall: "58-24",
       Home: "31-10",
@@ -16334,7 +16336,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Detroit Pistons",
       Overall: "53-29",
       Home: "26-15",
@@ -16360,7 +16362,7 @@ const rawSeasonData = {
       Apr: "7-3",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Houston Rockets",
       Overall: "52-30",
       Home: "28-13",
@@ -16386,7 +16388,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Utah Jazz",
       Overall: "51-31",
       Home: "31-10",
@@ -16412,7 +16414,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Cleveland Cavaliers",
       Overall: "50-32",
       Home: "30-11",
@@ -16438,7 +16440,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Chicago Bulls",
       Overall: "49-33",
       Home: "31-10",
@@ -16464,7 +16466,7 @@ const rawSeasonData = {
       Apr: "6-2",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Toronto Raptors",
       Overall: "47-35",
       Home: "30-11",
@@ -16490,7 +16492,7 @@ const rawSeasonData = {
       Apr: "7-3",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Denver Nuggets",
       Overall: "45-37",
       Home: "23-18",
@@ -16516,7 +16518,7 @@ const rawSeasonData = {
       Apr: "10-1",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Miami Heat",
       Overall: "44-38",
       Home: "27-14",
@@ -16542,7 +16544,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Golden State Warriors",
       Overall: "42-40",
       Home: "30-11",
@@ -16568,7 +16570,7 @@ const rawSeasonData = {
       Apr: "8-1",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Los Angeles Lakers",
       Overall: "42-40",
       Home: "25-16",
@@ -16594,7 +16596,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "New Jersey Nets",
       Overall: "41-41",
       Home: "24-17",
@@ -16620,7 +16622,7 @@ const rawSeasonData = {
       Apr: "7-2",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Washington Wizards",
       Overall: "41-41",
       Home: "26-15",
@@ -16646,7 +16648,7 @@ const rawSeasonData = {
       Apr: "3-8",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Orlando Magic",
       Overall: "40-42",
       Home: "25-16",
@@ -16672,7 +16674,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Los Angeles Clippers",
       Overall: "40-42",
       Home: "25-16",
@@ -16698,7 +16700,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "New Orleans/Oklahoma City Hornets",
       Overall: "39-43",
       Home: "24-17",
@@ -16724,7 +16726,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Indiana Pacers",
       Overall: "35-47",
       Home: "22-19",
@@ -16750,7 +16752,7 @@ const rawSeasonData = {
       Apr: "4-6",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Philadelphia 76ers",
       Overall: "35-47",
       Home: "21-20",
@@ -16776,7 +16778,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Charlotte Bobcats",
       Overall: "33-49",
       Home: "20-21",
@@ -16802,7 +16804,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "New York Knicks",
       Overall: "33-49",
       Home: "19-22",
@@ -16828,7 +16830,7 @@ const rawSeasonData = {
       Apr: "2-7",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Sacramento Kings",
       Overall: "33-49",
       Home: "20-21",
@@ -16854,7 +16856,7 @@ const rawSeasonData = {
       Apr: "3-8",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Minnesota Timberwolves",
       Overall: "32-50",
       Home: "20-21",
@@ -16880,7 +16882,7 @@ const rawSeasonData = {
       Apr: "2-8",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Portland Trail Blazers",
       Overall: "32-50",
       Home: "18-23",
@@ -16906,7 +16908,7 @@ const rawSeasonData = {
       Apr: "3-6",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Seattle SuperSonics",
       Overall: "31-51",
       Home: "20-21",
@@ -16932,7 +16934,7 @@ const rawSeasonData = {
       Apr: "1-9",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Atlanta Hawks",
       Overall: "30-52",
       Home: "18-23",
@@ -16958,7 +16960,7 @@ const rawSeasonData = {
       Apr: "3-6",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Milwaukee Bucks",
       Overall: "28-54",
       Home: "18-23",
@@ -16984,7 +16986,7 @@ const rawSeasonData = {
       Apr: "3-8",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Boston Celtics",
       Overall: "24-58",
       Home: "12-29",
@@ -17010,7 +17012,7 @@ const rawSeasonData = {
       Apr: "2-8",
     },
     {
-      Rk: 30,
+      Rk: "30",
       Team: "Memphis Grizzlies",
       Overall: "22-60",
       Home: "14-27",
@@ -17038,7 +17040,7 @@ const rawSeasonData = {
   ],
   2008: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Boston Celtics",
       Overall: "66-16",
       Home: "35-6",
@@ -17064,7 +17066,7 @@ const rawSeasonData = {
       Apr: "8-1",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Detroit Pistons",
       Overall: "59-23",
       Home: "34-7",
@@ -17090,7 +17092,7 @@ const rawSeasonData = {
       Apr: "7-2",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Los Angeles Lakers",
       Overall: "57-25",
       Home: "30-11",
@@ -17116,7 +17118,7 @@ const rawSeasonData = {
       Apr: "7-1",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "New Orleans Hornets",
       Overall: "56-26",
       Home: "30-11",
@@ -17142,7 +17144,7 @@ const rawSeasonData = {
       Apr: "6-4",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "San Antonio Spurs",
       Overall: "56-26",
       Home: "34-7",
@@ -17168,7 +17170,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Houston Rockets",
       Overall: "55-27",
       Home: "31-10",
@@ -17194,7 +17196,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Phoenix Suns",
       Overall: "55-27",
       Home: "30-11",
@@ -17220,7 +17222,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Utah Jazz",
       Overall: "54-28",
       Home: "37-4",
@@ -17246,7 +17248,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Orlando Magic",
       Overall: "52-30",
       Home: "25-16",
@@ -17272,7 +17274,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Dallas Mavericks",
       Overall: "51-31",
       Home: "34-7",
@@ -17298,7 +17300,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Denver Nuggets",
       Overall: "50-32",
       Home: "33-8",
@@ -17324,7 +17326,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Golden State Warriors",
       Overall: "48-34",
       Home: "27-14",
@@ -17350,7 +17352,7 @@ const rawSeasonData = {
       Apr: "3-6",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Cleveland Cavaliers",
       Overall: "45-37",
       Home: "27-14",
@@ -17376,7 +17378,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Washington Wizards",
       Overall: "43-39",
       Home: "25-16",
@@ -17402,7 +17404,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Toronto Raptors",
       Overall: "41-41",
       Home: "25-16",
@@ -17428,7 +17430,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Portland Trail Blazers",
       Overall: "41-41",
       Home: "28-13",
@@ -17454,7 +17456,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Philadelphia 76ers",
       Overall: "40-42",
       Home: "22-19",
@@ -17480,7 +17482,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Sacramento Kings",
       Overall: "38-44",
       Home: "26-15",
@@ -17506,7 +17508,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Atlanta Hawks",
       Overall: "37-45",
       Home: "25-16",
@@ -17532,7 +17534,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Indiana Pacers",
       Overall: "36-46",
       Home: "21-20",
@@ -17558,7 +17560,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "New Jersey Nets",
       Overall: "34-48",
       Home: "21-20",
@@ -17584,7 +17586,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Chicago Bulls",
       Overall: "33-49",
       Home: "20-21",
@@ -17610,7 +17612,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Charlotte Bobcats",
       Overall: "32-50",
       Home: "21-20",
@@ -17636,7 +17638,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Milwaukee Bucks",
       Overall: "26-56",
       Home: "19-22",
@@ -17662,7 +17664,7 @@ const rawSeasonData = {
       Apr: "2-8",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Los Angeles Clippers",
       Overall: "23-59",
       Home: "13-28",
@@ -17688,7 +17690,7 @@ const rawSeasonData = {
       Apr: "1-7",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "New York Knicks",
       Overall: "23-59",
       Home: "15-26",
@@ -17714,7 +17716,7 @@ const rawSeasonData = {
       Apr: "3-6",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Memphis Grizzlies",
       Overall: "22-60",
       Home: "14-27",
@@ -17740,7 +17742,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Minnesota Timberwolves",
       Overall: "22-60",
       Home: "15-26",
@@ -17766,7 +17768,7 @@ const rawSeasonData = {
       Apr: "3-7",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Seattle SuperSonics",
       Overall: "20-62",
       Home: "13-28",
@@ -17792,7 +17794,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 30,
+      Rk: "30",
       Team: "Miami Heat",
       Overall: "15-67",
       Home: "9-32",
@@ -17820,7 +17822,7 @@ const rawSeasonData = {
   ],
   2009: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Cleveland Cavaliers",
       Overall: "66-16",
       Home: "39-2",
@@ -17846,7 +17848,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Los Angeles Lakers",
       Overall: "65-17",
       Home: "36-5",
@@ -17872,7 +17874,7 @@ const rawSeasonData = {
       Apr: "7-1",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Boston Celtics",
       Overall: "62-20",
       Home: "35-6",
@@ -17898,7 +17900,7 @@ const rawSeasonData = {
       Apr: "6-1",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Orlando Magic",
       Overall: "59-23",
       Home: "32-9",
@@ -17924,7 +17926,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Denver Nuggets",
       Overall: "54-28",
       Home: "33-8",
@@ -17950,7 +17952,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Portland Trail Blazers",
       Overall: "54-28",
       Home: "34-7",
@@ -17976,7 +17978,7 @@ const rawSeasonData = {
       Apr: "7-1",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "San Antonio Spurs",
       Overall: "54-28",
       Home: "28-13",
@@ -18002,7 +18004,7 @@ const rawSeasonData = {
       Apr: "6-2",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Houston Rockets",
       Overall: "53-29",
       Home: "33-8",
@@ -18028,7 +18030,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Dallas Mavericks",
       Overall: "50-32",
       Home: "32-9",
@@ -18054,7 +18056,7 @@ const rawSeasonData = {
       Apr: "6-2",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "New Orleans Hornets",
       Overall: "49-33",
       Home: "28-13",
@@ -18080,7 +18082,7 @@ const rawSeasonData = {
       Apr: "3-6",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Utah Jazz",
       Overall: "48-34",
       Home: "33-8",
@@ -18106,7 +18108,7 @@ const rawSeasonData = {
       Apr: "2-6",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Atlanta Hawks",
       Overall: "47-35",
       Home: "31-10",
@@ -18132,7 +18134,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Phoenix Suns",
       Overall: "46-36",
       Home: "28-13",
@@ -18158,7 +18160,7 @@ const rawSeasonData = {
       Apr: "6-2",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Miami Heat",
       Overall: "43-39",
       Home: "28-13",
@@ -18184,7 +18186,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Chicago Bulls",
       Overall: "41-41",
       Home: "28-13",
@@ -18210,7 +18212,7 @@ const rawSeasonData = {
       Apr: "5-1",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Philadelphia 76ers",
       Overall: "41-41",
       Home: "24-17",
@@ -18236,7 +18238,7 @@ const rawSeasonData = {
       Apr: "3-6",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Detroit Pistons",
       Overall: "39-43",
       Home: "21-20",
@@ -18262,7 +18264,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Indiana Pacers",
       Overall: "36-46",
       Home: "25-16",
@@ -18288,7 +18290,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Charlotte Bobcats",
       Overall: "35-47",
       Home: "23-18",
@@ -18314,7 +18316,7 @@ const rawSeasonData = {
       Apr: "1-7",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Milwaukee Bucks",
       Overall: "34-48",
       Home: "22-19",
@@ -18340,7 +18342,7 @@ const rawSeasonData = {
       Apr: "2-5",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "New Jersey Nets",
       Overall: "34-48",
       Home: "19-22",
@@ -18366,7 +18368,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Toronto Raptors",
       Overall: "33-49",
       Home: "18-23",
@@ -18392,7 +18394,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "New York Knicks",
       Overall: "32-50",
       Home: "20-21",
@@ -18418,7 +18420,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Golden State Warriors",
       Overall: "29-53",
       Home: "21-20",
@@ -18444,7 +18446,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Memphis Grizzlies",
       Overall: "24-58",
       Home: "16-25",
@@ -18470,7 +18472,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Minnesota Timberwolves",
       Overall: "24-58",
       Home: "11-30",
@@ -18496,7 +18498,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Oklahoma City Thunder",
       Overall: "23-59",
       Home: "15-26",
@@ -18522,7 +18524,7 @@ const rawSeasonData = {
       Apr: "2-6",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Los Angeles Clippers",
       Overall: "19-63",
       Home: "11-30",
@@ -18548,7 +18550,7 @@ const rawSeasonData = {
       Apr: "1-7",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Washington Wizards",
       Overall: "19-63",
       Home: "13-28",
@@ -18574,7 +18576,7 @@ const rawSeasonData = {
       Apr: "2-5",
     },
     {
-      Rk: 30,
+      Rk: "30",
       Team: "Sacramento Kings",
       Overall: "17-65",
       Home: "11-30",
@@ -18602,7 +18604,7 @@ const rawSeasonData = {
   ],
   2010: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Cleveland Cavaliers",
       Overall: "61-21",
       Home: "35-6",
@@ -18628,7 +18630,7 @@ const rawSeasonData = {
       Apr: "2-5",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Orlando Magic",
       Overall: "59-23",
       Home: "34-7",
@@ -18654,7 +18656,7 @@ const rawSeasonData = {
       Apr: "7-1",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Los Angeles Lakers",
       Overall: "57-25",
       Home: "34-7",
@@ -18680,7 +18682,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Dallas Mavericks",
       Overall: "55-27",
       Home: "28-13",
@@ -18706,7 +18708,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Phoenix Suns",
       Overall: "54-28",
       Home: "32-9",
@@ -18732,7 +18734,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Atlanta Hawks",
       Overall: "53-29",
       Home: "34-7",
@@ -18758,7 +18760,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Denver Nuggets",
       Overall: "53-29",
       Home: "34-7",
@@ -18784,7 +18786,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Utah Jazz",
       Overall: "53-29",
       Home: "32-9",
@@ -18810,7 +18812,7 @@ const rawSeasonData = {
       Apr: "3-3",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Boston Celtics",
       Overall: "50-32",
       Home: "24-17",
@@ -18836,7 +18838,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Oklahoma City Thunder",
       Overall: "50-32",
       Home: "27-14",
@@ -18862,7 +18864,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Portland Trail Blazers",
       Overall: "50-32",
       Home: "26-15",
@@ -18888,7 +18890,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "San Antonio Spurs",
       Overall: "50-32",
       Home: "29-12",
@@ -18914,7 +18916,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Miami Heat",
       Overall: "47-35",
       Home: "24-17",
@@ -18940,7 +18942,7 @@ const rawSeasonData = {
       Apr: "6-1",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Milwaukee Bucks",
       Overall: "46-36",
       Home: "28-13",
@@ -18966,7 +18968,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Charlotte Bobcats",
       Overall: "44-38",
       Home: "31-10",
@@ -18992,7 +18994,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Houston Rockets",
       Overall: "42-40",
       Home: "23-18",
@@ -19018,7 +19020,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Chicago Bulls",
       Overall: "41-41",
       Home: "24-17",
@@ -19044,7 +19046,7 @@ const rawSeasonData = {
       Apr: "6-2",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Memphis Grizzlies",
       Overall: "40-42",
       Home: "23-18",
@@ -19070,7 +19072,7 @@ const rawSeasonData = {
       Apr: "2-6",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Toronto Raptors",
       Overall: "40-42",
       Home: "25-16",
@@ -19096,7 +19098,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "New Orleans Hornets",
       Overall: "37-45",
       Home: "24-17",
@@ -19122,7 +19124,7 @@ const rawSeasonData = {
       Apr: "2-4",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Indiana Pacers",
       Overall: "32-50",
       Home: "23-18",
@@ -19148,7 +19150,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Los Angeles Clippers",
       Overall: "29-53",
       Home: "21-20",
@@ -19174,7 +19176,7 @@ const rawSeasonData = {
       Apr: "2-5",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "New York Knicks",
       Overall: "29-53",
       Home: "18-23",
@@ -19200,7 +19202,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Detroit Pistons",
       Overall: "27-55",
       Home: "17-24",
@@ -19226,7 +19228,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Philadelphia 76ers",
       Overall: "27-55",
       Home: "12-29",
@@ -19252,7 +19254,7 @@ const rawSeasonData = {
       Apr: "1-6",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Golden State Warriors",
       Overall: "26-56",
       Home: "18-23",
@@ -19278,7 +19280,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Washington Wizards",
       Overall: "26-56",
       Home: "15-26",
@@ -19304,7 +19306,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Sacramento Kings",
       Overall: "25-57",
       Home: "18-23",
@@ -19330,7 +19332,7 @@ const rawSeasonData = {
       Apr: "1-5",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Minnesota Timberwolves",
       Overall: "15-67",
       Home: "10-31",
@@ -19356,7 +19358,7 @@ const rawSeasonData = {
       Apr: "0-7",
     },
     {
-      Rk: 30,
+      Rk: "30",
       Team: "New Jersey Nets",
       Overall: "12-70",
       Home: "8-33",
@@ -19384,7 +19386,7 @@ const rawSeasonData = {
   ],
   2011: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Chicago Bulls",
       Overall: "62-20",
       Home: "36-5",
@@ -19410,7 +19412,7 @@ const rawSeasonData = {
       Apr: "8-0",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "San Antonio Spurs",
       Overall: "61-21",
       Home: "36-5",
@@ -19436,7 +19438,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Miami Heat",
       Overall: "58-24",
       Home: "30-11",
@@ -19462,7 +19464,7 @@ const rawSeasonData = {
       Apr: "6-1",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Dallas Mavericks",
       Overall: "57-25",
       Home: "29-12",
@@ -19488,7 +19490,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Los Angeles Lakers",
       Overall: "57-25",
       Home: "30-11",
@@ -19514,7 +19516,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Boston Celtics",
       Overall: "56-26",
       Home: "33-8",
@@ -19540,7 +19542,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Oklahoma City Thunder",
       Overall: "55-27",
       Home: "30-11",
@@ -19566,7 +19568,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Orlando Magic",
       Overall: "52-30",
       Home: "29-12",
@@ -19592,7 +19594,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Denver Nuggets",
       Overall: "50-32",
       Home: "33-8",
@@ -19618,7 +19620,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Portland Trail Blazers",
       Overall: "48-34",
       Home: "30-11",
@@ -19644,7 +19646,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Memphis Grizzlies",
       Overall: "46-36",
       Home: "30-11",
@@ -19670,7 +19672,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "New Orleans Hornets",
       Overall: "46-36",
       Home: "28-13",
@@ -19696,7 +19698,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Atlanta Hawks",
       Overall: "44-38",
       Home: "24-17",
@@ -19722,7 +19724,7 @@ const rawSeasonData = {
       Apr: "1-6",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Houston Rockets",
       Overall: "43-39",
       Home: "25-16",
@@ -19748,7 +19750,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "New York Knicks",
       Overall: "42-40",
       Home: "23-18",
@@ -19774,7 +19776,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Philadelphia 76ers",
       Overall: "41-41",
       Home: "26-15",
@@ -19800,7 +19802,7 @@ const rawSeasonData = {
       Apr: "2-5",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Phoenix Suns",
       Overall: "40-42",
       Home: "23-18",
@@ -19826,7 +19828,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Utah Jazz",
       Overall: "39-43",
       Home: "21-20",
@@ -19852,7 +19854,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Indiana Pacers",
       Overall: "37-45",
       Home: "24-17",
@@ -19878,7 +19880,7 @@ const rawSeasonData = {
       Apr: "3-3",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Golden State Warriors",
       Overall: "36-46",
       Home: "26-15",
@@ -19904,7 +19906,7 @@ const rawSeasonData = {
       Apr: "4-2",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Milwaukee Bucks",
       Overall: "35-47",
       Home: "22-19",
@@ -19930,7 +19932,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Charlotte Bobcats",
       Overall: "34-48",
       Home: "21-20",
@@ -19956,7 +19958,7 @@ const rawSeasonData = {
       Apr: "2-6",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Los Angeles Clippers",
       Overall: "32-50",
       Home: "23-18",
@@ -19982,7 +19984,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Detroit Pistons",
       Overall: "30-52",
       Home: "21-20",
@@ -20008,7 +20010,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "New Jersey Nets",
       Overall: "24-58",
       Home: "19-22",
@@ -20034,7 +20036,7 @@ const rawSeasonData = {
       Apr: "1-7",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Sacramento Kings",
       Overall: "24-58",
       Home: "11-30",
@@ -20060,7 +20062,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Washington Wizards",
       Overall: "23-59",
       Home: "20-21",
@@ -20086,7 +20088,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Toronto Raptors",
       Overall: "22-60",
       Home: "16-25",
@@ -20112,7 +20114,7 @@ const rawSeasonData = {
       Apr: "2-6",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Cleveland Cavaliers",
       Overall: "19-63",
       Home: "12-29",
@@ -20138,7 +20140,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 30,
+      Rk: "30",
       Team: "Minnesota Timberwolves",
       Overall: "17-65",
       Home: "12-29",
@@ -20166,7 +20168,7 @@ const rawSeasonData = {
   ],
   2012: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Chicago Bulls",
       Overall: "50-16",
       Home: "26-7",
@@ -20190,7 +20192,7 @@ const rawSeasonData = {
       Apr: "8-5",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "San Antonio Spurs",
       Overall: "50-16",
       Home: "28-5",
@@ -20214,7 +20216,7 @@ const rawSeasonData = {
       Apr: "14-2",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Oklahoma City Thunder",
       Overall: "47-19",
       Home: "26-7",
@@ -20238,7 +20240,7 @@ const rawSeasonData = {
       Apr: "8-7",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Miami Heat",
       Overall: "46-20",
       Home: "28-5",
@@ -20262,7 +20264,7 @@ const rawSeasonData = {
       Apr: "9-7",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Indiana Pacers",
       Overall: "42-24",
       Home: "23-10",
@@ -20286,7 +20288,7 @@ const rawSeasonData = {
       Apr: "12-3",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Los Angeles Lakers",
       Overall: "41-25",
       Home: "26-7",
@@ -20310,7 +20312,7 @@ const rawSeasonData = {
       Apr: "9-5",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Memphis Grizzlies",
       Overall: "41-25",
       Home: "26-7",
@@ -20334,7 +20336,7 @@ const rawSeasonData = {
       Apr: "13-3",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Atlanta Hawks",
       Overall: "40-26",
       Home: "23-10",
@@ -20358,7 +20360,7 @@ const rawSeasonData = {
       Apr: "9-3",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Los Angeles Clippers",
       Overall: "40-26",
       Home: "24-9",
@@ -20382,7 +20384,7 @@ const rawSeasonData = {
       Apr: "9-5",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Boston Celtics",
       Overall: "39-27",
       Home: "24-9",
@@ -20406,7 +20408,7 @@ const rawSeasonData = {
       Apr: "10-5",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Denver Nuggets",
       Overall: "38-28",
       Home: "20-13",
@@ -20430,7 +20432,7 @@ const rawSeasonData = {
       Apr: "10-4",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Orlando Magic",
       Overall: "37-29",
       Home: "21-12",
@@ -20454,7 +20456,7 @@ const rawSeasonData = {
       Apr: "5-9",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Dallas Mavericks",
       Overall: "36-30",
       Home: "23-10",
@@ -20478,7 +20480,7 @@ const rawSeasonData = {
       Apr: "6-7",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "New York Knicks",
       Overall: "36-30",
       Home: "22-11",
@@ -20502,7 +20504,7 @@ const rawSeasonData = {
       Apr: "9-4",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Utah Jazz",
       Overall: "36-30",
       Home: "25-8",
@@ -20526,7 +20528,7 @@ const rawSeasonData = {
       Apr: "9-4",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Philadelphia 76ers",
       Overall: "35-31",
       Home: "19-14",
@@ -20550,7 +20552,7 @@ const rawSeasonData = {
       Apr: "6-8",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Houston Rockets",
       Overall: "34-32",
       Home: "22-11",
@@ -20574,7 +20576,7 @@ const rawSeasonData = {
       Apr: "6-8",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Phoenix Suns",
       Overall: "33-33",
       Home: "19-14",
@@ -20598,7 +20600,7 @@ const rawSeasonData = {
       Apr: "8-7",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Milwaukee Bucks",
       Overall: "31-35",
       Home: "17-16",
@@ -20622,7 +20624,7 @@ const rawSeasonData = {
       Apr: "7-7",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Portland Trail Blazers",
       Overall: "28-38",
       Home: "20-13",
@@ -20646,7 +20648,7 @@ const rawSeasonData = {
       Apr: "4-10",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Minnesota Timberwolves",
       Overall: "26-40",
       Home: "13-20",
@@ -20670,7 +20672,7 @@ const rawSeasonData = {
       Apr: "1-12",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Detroit Pistons",
       Overall: "25-41",
       Home: "18-15",
@@ -20694,7 +20696,7 @@ const rawSeasonData = {
       Apr: "6-8",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Golden State Warriors",
       Overall: "23-43",
       Home: "12-21",
@@ -20718,7 +20720,7 @@ const rawSeasonData = {
       Apr: "3-13",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Toronto Raptors",
       Overall: "23-43",
       Home: "13-20",
@@ -20742,7 +20744,7 @@ const rawSeasonData = {
       Apr: "6-8",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "New Jersey Nets",
       Overall: "22-44",
       Home: "9-24",
@@ -20766,7 +20768,7 @@ const rawSeasonData = {
       Apr: "3-9",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Sacramento Kings",
       Overall: "22-44",
       Home: "16-17",
@@ -20790,7 +20792,7 @@ const rawSeasonData = {
       Apr: "4-10",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Cleveland Cavaliers",
       Overall: "21-45",
       Home: "11-22",
@@ -20814,7 +20816,7 @@ const rawSeasonData = {
       Apr: "4-12",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "New Orleans Hornets",
       Overall: "21-45",
       Home: "11-22",
@@ -20838,7 +20840,7 @@ const rawSeasonData = {
       Apr: "8-6",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Washington Wizards",
       Overall: "20-46",
       Home: "11-22",
@@ -20862,7 +20864,7 @@ const rawSeasonData = {
       Apr: "8-7",
     },
     {
-      Rk: 30,
+      Rk: "30",
       Team: "Charlotte Bobcats",
       Overall: "7-59",
       Home: "4-29",
@@ -20888,7 +20890,7 @@ const rawSeasonData = {
   ],
   2013: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Miami Heat",
       Overall: "66-16",
       Home: "37-4",
@@ -20914,7 +20916,7 @@ const rawSeasonData = {
       Apr: "8-1",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Oklahoma City Thunder",
       Overall: "60-22",
       Home: "34-7",
@@ -20940,7 +20942,7 @@ const rawSeasonData = {
       Apr: "6-2",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "San Antonio Spurs",
       Overall: "58-24",
       Home: "35-6",
@@ -20966,7 +20968,7 @@ const rawSeasonData = {
       Apr: "3-6",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Denver Nuggets",
       Overall: "57-25",
       Home: "38-3",
@@ -20992,7 +20994,7 @@ const rawSeasonData = {
       Apr: "7-1",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Los Angeles Clippers",
       Overall: "56-26",
       Home: "32-9",
@@ -21018,7 +21020,7 @@ const rawSeasonData = {
       Apr: "7-1",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Memphis Grizzlies",
       Overall: "56-26",
       Home: "32-9",
@@ -21044,7 +21046,7 @@ const rawSeasonData = {
       Apr: "7-2",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "New York Knicks",
       Overall: "54-28",
       Home: "31-10",
@@ -21070,7 +21072,7 @@ const rawSeasonData = {
       Apr: "8-2",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Brooklyn Nets",
       Overall: "49-33",
       Home: "26-15",
@@ -21096,7 +21098,7 @@ const rawSeasonData = {
       Apr: "7-2",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Indiana Pacers",
       Overall: "49-32",
       Home: "30-11",
@@ -21122,7 +21124,7 @@ const rawSeasonData = {
       Apr: "2-5",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Golden State Warriors",
       Overall: "47-35",
       Home: "28-13",
@@ -21148,7 +21150,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Chicago Bulls",
       Overall: "45-37",
       Home: "24-17",
@@ -21174,7 +21176,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Houston Rockets",
       Overall: "45-37",
       Home: "29-12",
@@ -21200,7 +21202,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Los Angeles Lakers",
       Overall: "45-37",
       Home: "29-12",
@@ -21226,7 +21228,7 @@ const rawSeasonData = {
       Apr: "7-1",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Atlanta Hawks",
       Overall: "44-38",
       Home: "25-16",
@@ -21252,7 +21254,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Utah Jazz",
       Overall: "43-39",
       Home: "30-11",
@@ -21278,7 +21280,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Boston Celtics",
       Overall: "41-40",
       Home: "27-13",
@@ -21304,7 +21306,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Dallas Mavericks",
       Overall: "41-41",
       Home: "24-17",
@@ -21330,7 +21332,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Milwaukee Bucks",
       Overall: "38-44",
       Home: "21-20",
@@ -21356,7 +21358,7 @@ const rawSeasonData = {
       Apr: "3-7",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Philadelphia 76ers",
       Overall: "34-48",
       Home: "23-18",
@@ -21382,7 +21384,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Toronto Raptors",
       Overall: "34-48",
       Home: "21-20",
@@ -21408,7 +21410,7 @@ const rawSeasonData = {
       Apr: "7-2",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Portland Trail Blazers",
       Overall: "33-49",
       Home: "22-19",
@@ -21434,7 +21436,7 @@ const rawSeasonData = {
       Apr: "0-9",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Minnesota Timberwolves",
       Overall: "31-51",
       Home: "20-21",
@@ -21460,7 +21462,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Detroit Pistons",
       Overall: "29-53",
       Home: "18-23",
@@ -21486,7 +21488,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Washington Wizards",
       Overall: "29-53",
       Home: "22-19",
@@ -21512,7 +21514,7 @@ const rawSeasonData = {
       Apr: "2-7",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Sacramento Kings",
       Overall: "28-54",
       Home: "20-21",
@@ -21538,7 +21540,7 @@ const rawSeasonData = {
       Apr: "1-7",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "New Orleans Hornets",
       Overall: "27-55",
       Home: "16-25",
@@ -21564,7 +21566,7 @@ const rawSeasonData = {
       Apr: "1-7",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Phoenix Suns",
       Overall: "25-57",
       Home: "17-24",
@@ -21590,7 +21592,7 @@ const rawSeasonData = {
       Apr: "2-6",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Cleveland Cavaliers",
       Overall: "24-58",
       Home: "14-27",
@@ -21616,7 +21618,7 @@ const rawSeasonData = {
       Apr: "2-8",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Charlotte Bobcats",
       Overall: "21-61",
       Home: "15-26",
@@ -21642,7 +21644,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 30,
+      Rk: "30",
       Team: "Orlando Magic",
       Overall: "20-62",
       Home: "12-29",
@@ -21670,7 +21672,7 @@ const rawSeasonData = {
   ],
   2014: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "San Antonio Spurs",
       Overall: "62-20",
       Home: "32-9",
@@ -21696,7 +21698,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Oklahoma City Thunder",
       Overall: "59-23",
       Home: "34-7",
@@ -21722,7 +21724,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Los Angeles Clippers",
       Overall: "57-25",
       Home: "34-7",
@@ -21748,7 +21750,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Indiana Pacers",
       Overall: "56-26",
       Home: "35-6",
@@ -21774,7 +21776,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Houston Rockets",
       Overall: "54-28",
       Home: "33-8",
@@ -21800,7 +21802,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Miami Heat",
       Overall: "54-28",
       Home: "32-9",
@@ -21826,7 +21828,7 @@ const rawSeasonData = {
       Apr: "3-6",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Portland Trail Blazers",
       Overall: "54-28",
       Home: "31-10",
@@ -21852,7 +21854,7 @@ const rawSeasonData = {
       Apr: "6-1",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Golden State Warriors",
       Overall: "51-31",
       Home: "27-14",
@@ -21878,7 +21880,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Memphis Grizzlies",
       Overall: "50-32",
       Home: "27-14",
@@ -21904,7 +21906,7 @@ const rawSeasonData = {
       Apr: "6-2",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Dallas Mavericks",
       Overall: "49-33",
       Home: "26-15",
@@ -21930,7 +21932,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Chicago Bulls",
       Overall: "48-34",
       Home: "27-14",
@@ -21956,7 +21958,7 @@ const rawSeasonData = {
       Apr: "6-2",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Toronto Raptors",
       Overall: "48-34",
       Home: "26-15",
@@ -21982,7 +21984,7 @@ const rawSeasonData = {
       Apr: "6-2",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Phoenix Suns",
       Overall: "48-34",
       Home: "26-15",
@@ -22008,7 +22010,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Brooklyn Nets",
       Overall: "44-38",
       Home: "28-13",
@@ -22034,7 +22036,7 @@ const rawSeasonData = {
       Apr: "5-5",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Washington Wizards",
       Overall: "44-38",
       Home: "22-19",
@@ -22060,7 +22062,7 @@ const rawSeasonData = {
       Apr: "6-2",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Charlotte Bobcats",
       Overall: "43-39",
       Home: "25-16",
@@ -22086,7 +22088,7 @@ const rawSeasonData = {
       Apr: "7-1",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Minnesota Timberwolves",
       Overall: "40-42",
       Home: "24-17",
@@ -22112,7 +22114,7 @@ const rawSeasonData = {
       Apr: "4-5",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Atlanta Hawks",
       Overall: "38-44",
       Home: "24-17",
@@ -22138,7 +22140,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "New York Knicks",
       Overall: "37-45",
       Home: "19-22",
@@ -22164,7 +22166,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Denver Nuggets",
       Overall: "36-46",
       Home: "22-19",
@@ -22190,7 +22192,7 @@ const rawSeasonData = {
       Apr: "4-4",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "New Orleans Pelicans",
       Overall: "34-48",
       Home: "22-19",
@@ -22216,7 +22218,7 @@ const rawSeasonData = {
       Apr: "2-6",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Cleveland Cavaliers",
       Overall: "33-49",
       Home: "19-22",
@@ -22242,7 +22244,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Detroit Pistons",
       Overall: "29-53",
       Home: "17-24",
@@ -22268,7 +22270,7 @@ const rawSeasonData = {
       Apr: "2-6",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Sacramento Kings",
       Overall: "28-54",
       Home: "17-24",
@@ -22294,7 +22296,7 @@ const rawSeasonData = {
       Apr: "2-6",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Los Angeles Lakers",
       Overall: "27-55",
       Home: "14-27",
@@ -22320,7 +22322,7 @@ const rawSeasonData = {
       Apr: "2-7",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Boston Celtics",
       Overall: "25-57",
       Home: "16-25",
@@ -22346,7 +22348,7 @@ const rawSeasonData = {
       Apr: "2-6",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Utah Jazz",
       Overall: "25-57",
       Home: "16-25",
@@ -22372,7 +22374,7 @@ const rawSeasonData = {
       Apr: "2-5",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Orlando Magic",
       Overall: "23-59",
       Home: "19-22",
@@ -22398,7 +22400,7 @@ const rawSeasonData = {
       Apr: "2-6",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Philadelphia 76ers",
       Overall: "19-63",
       Home: "10-31",
@@ -22424,7 +22426,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 30,
+      Rk: "30",
       Team: "Milwaukee Bucks",
       Overall: "15-67",
       Home: "10-31",
@@ -22452,7 +22454,7 @@ const rawSeasonData = {
   ],
   2015: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Golden State Warriors",
       Overall: "67-15",
       Home: "39-2",
@@ -22478,7 +22480,7 @@ const rawSeasonData = {
       Apr: "6-2",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Atlanta Hawks",
       Overall: "60-22",
       Home: "35-6",
@@ -22504,7 +22506,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Houston Rockets",
       Overall: "56-26",
       Home: "30-11",
@@ -22530,7 +22532,7 @@ const rawSeasonData = {
       Apr: "6-2",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Los Angeles Clippers",
       Overall: "56-26",
       Home: "30-11",
@@ -22556,7 +22558,7 @@ const rawSeasonData = {
       Apr: "7-0",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Memphis Grizzlies",
       Overall: "55-27",
       Home: "31-10",
@@ -22582,7 +22584,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "San Antonio Spurs",
       Overall: "55-27",
       Home: "33-8",
@@ -22608,7 +22610,7 @@ const rawSeasonData = {
       Apr: "7-1",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Cleveland Cavaliers",
       Overall: "53-29",
       Home: "31-10",
@@ -22634,7 +22636,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Portland Trail Blazers",
       Overall: "51-31",
       Home: "32-9",
@@ -22660,7 +22662,7 @@ const rawSeasonData = {
       Apr: "3-6",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Chicago Bulls",
       Overall: "50-32",
       Home: "27-14",
@@ -22686,7 +22688,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Dallas Mavericks",
       Overall: "50-32",
       Home: "27-14",
@@ -22712,7 +22714,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Toronto Raptors",
       Overall: "49-33",
       Home: "27-14",
@@ -22738,7 +22740,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Washington Wizards",
       Overall: "46-36",
       Home: "29-12",
@@ -22764,7 +22766,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "New Orleans Pelicans",
       Overall: "45-37",
       Home: "28-13",
@@ -22790,7 +22792,7 @@ const rawSeasonData = {
       Apr: "6-3",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Oklahoma City Thunder",
       Overall: "45-37",
       Home: "29-12",
@@ -22816,7 +22818,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Milwaukee Bucks",
       Overall: "41-41",
       Home: "23-18",
@@ -22842,7 +22844,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Boston Celtics",
       Overall: "40-42",
       Home: "21-20",
@@ -22868,7 +22870,7 @@ const rawSeasonData = {
       Apr: "7-1",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Phoenix Suns",
       Overall: "39-43",
       Home: "22-19",
@@ -22894,7 +22896,7 @@ const rawSeasonData = {
       Apr: "1-6",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Brooklyn Nets",
       Overall: "38-44",
       Home: "19-22",
@@ -22920,7 +22922,7 @@ const rawSeasonData = {
       Apr: "5-4",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Indiana Pacers",
       Overall: "38-44",
       Home: "23-18",
@@ -22946,7 +22948,7 @@ const rawSeasonData = {
       Apr: "6-2",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Utah Jazz",
       Overall: "38-44",
       Home: "21-20",
@@ -22972,7 +22974,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Miami Heat",
       Overall: "37-45",
       Home: "20-21",
@@ -22998,7 +23000,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Charlotte Hornets",
       Overall: "33-49",
       Home: "19-22",
@@ -23024,7 +23026,7 @@ const rawSeasonData = {
       Apr: "2-7",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Detroit Pistons",
       Overall: "32-50",
       Home: "18-23",
@@ -23050,7 +23052,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Denver Nuggets",
       Overall: "30-52",
       Home: "19-22",
@@ -23076,7 +23078,7 @@ const rawSeasonData = {
       Apr: "2-6",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Sacramento Kings",
       Overall: "29-53",
       Home: "18-23",
@@ -23102,7 +23104,7 @@ const rawSeasonData = {
       Apr: "3-6",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Orlando Magic",
       Overall: "25-57",
       Home: "13-28",
@@ -23128,7 +23130,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Los Angeles Lakers",
       Overall: "21-61",
       Home: "12-29",
@@ -23154,7 +23156,7 @@ const rawSeasonData = {
       Apr: "1-8",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Philadelphia 76ers",
       Overall: "18-64",
       Home: "12-29",
@@ -23180,7 +23182,7 @@ const rawSeasonData = {
       Apr: "0-7",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "New York Knicks",
       Overall: "17-65",
       Home: "10-31",
@@ -23206,7 +23208,7 @@ const rawSeasonData = {
       Apr: "3-5",
     },
     {
-      Rk: 30,
+      Rk: "30",
       Team: "Minnesota Timberwolves",
       Overall: "16-66",
       Home: "9-32",
@@ -23234,7 +23236,7 @@ const rawSeasonData = {
   ],
   2016: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Golden State Warriors",
       Overall: "73-9",
       Home: "39-2",
@@ -23260,7 +23262,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "San Antonio Spurs",
       Overall: "67-15",
       Home: "40-1",
@@ -23286,7 +23288,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Cleveland Cavaliers",
       Overall: "57-25",
       Home: "33-8",
@@ -23312,7 +23314,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Toronto Raptors",
       Overall: "56-26",
       Home: "32-9",
@@ -23338,7 +23340,7 @@ const rawSeasonData = {
       Apr: "6-2",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Oklahoma City Thunder",
       Overall: "55-27",
       Home: "32-9",
@@ -23364,7 +23366,7 @@ const rawSeasonData = {
       Apr: "2-4",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Los Angeles Clippers",
       Overall: "53-29",
       Home: "29-12",
@@ -23390,7 +23392,7 @@ const rawSeasonData = {
       Apr: "6-1",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Atlanta Hawks",
       Overall: "48-34",
       Home: "27-14",
@@ -23416,7 +23418,7 @@ const rawSeasonData = {
       Apr: "3-3",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Boston Celtics",
       Overall: "48-34",
       Home: "28-13",
@@ -23442,7 +23444,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Charlotte Hornets",
       Overall: "48-34",
       Home: "30-11",
@@ -23468,7 +23470,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Miami Heat",
       Overall: "48-34",
       Home: "28-13",
@@ -23494,7 +23496,7 @@ const rawSeasonData = {
       Apr: "5-3",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Indiana Pacers",
       Overall: "45-37",
       Home: "26-15",
@@ -23520,7 +23522,7 @@ const rawSeasonData = {
       Apr: "6-1",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Detroit Pistons",
       Overall: "44-38",
       Home: "26-15",
@@ -23546,7 +23548,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Portland Trail Blazers",
       Overall: "44-38",
       Home: "28-13",
@@ -23572,7 +23574,7 @@ const rawSeasonData = {
       Apr: "4-2",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Dallas Mavericks",
       Overall: "42-40",
       Home: "23-18",
@@ -23598,7 +23600,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Memphis Grizzlies",
       Overall: "42-40",
       Home: "26-15",
@@ -23624,7 +23626,7 @@ const rawSeasonData = {
       Apr: "1-6",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Chicago Bulls",
       Overall: "42-40",
       Home: "26-15",
@@ -23650,7 +23652,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Houston Rockets",
       Overall: "41-41",
       Home: "23-18",
@@ -23676,7 +23678,7 @@ const rawSeasonData = {
       Apr: "4-2",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Washington Wizards",
       Overall: "41-41",
       Home: "22-19",
@@ -23702,7 +23704,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Utah Jazz",
       Overall: "40-42",
       Home: "24-17",
@@ -23728,7 +23730,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Orlando Magic",
       Overall: "35-47",
       Home: "23-18",
@@ -23754,7 +23756,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Denver Nuggets",
       Overall: "33-49",
       Home: "18-23",
@@ -23780,7 +23782,7 @@ const rawSeasonData = {
       Apr: "1-4",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Milwaukee Bucks",
       Overall: "33-49",
       Home: "23-18",
@@ -23806,7 +23808,7 @@ const rawSeasonData = {
       Apr: "2-5",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Sacramento Kings",
       Overall: "33-49",
       Home: "18-23",
@@ -23832,7 +23834,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "New York Knicks",
       Overall: "32-50",
       Home: "18-23",
@@ -23858,7 +23860,7 @@ const rawSeasonData = {
       Apr: "2-4",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "New Orleans Pelicans",
       Overall: "30-52",
       Home: "21-20",
@@ -23884,7 +23886,7 @@ const rawSeasonData = {
       Apr: "2-5",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Minnesota Timberwolves",
       Overall: "29-53",
       Home: "14-27",
@@ -23910,7 +23912,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Phoenix Suns",
       Overall: "23-59",
       Home: "14-27",
@@ -23936,7 +23938,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Brooklyn Nets",
       Overall: "21-61",
       Home: "14-27",
@@ -23962,7 +23964,7 @@ const rawSeasonData = {
       Apr: "0-7",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Los Angeles Lakers",
       Overall: "17-65",
       Home: "12-29",
@@ -23988,7 +23990,7 @@ const rawSeasonData = {
       Apr: "1-6",
     },
     {
-      Rk: 30,
+      Rk: "30",
       Team: "Philadelphia 76ers",
       Overall: "10-72",
       Home: "7-34",
@@ -24016,7 +24018,7 @@ const rawSeasonData = {
   ],
   2017: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Golden State Warriors",
       Overall: "67-15",
       Home: "36-5",
@@ -24042,7 +24044,7 @@ const rawSeasonData = {
       Apr: "5-1",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "San Antonio Spurs",
       Overall: "61-21",
       Home: "31-10",
@@ -24068,7 +24070,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Houston Rockets",
       Overall: "55-27",
       Home: "30-11",
@@ -24094,7 +24096,7 @@ const rawSeasonData = {
       Apr: "4-2",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Boston Celtics",
       Overall: "53-29",
       Home: "30-11",
@@ -24120,7 +24122,7 @@ const rawSeasonData = {
       Apr: "4-2",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Cleveland Cavaliers",
       Overall: "51-31",
       Home: "31-10",
@@ -24146,7 +24148,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Los Angeles Clippers",
       Overall: "51-31",
       Home: "29-12",
@@ -24172,7 +24174,7 @@ const rawSeasonData = {
       Apr: "5-0",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Toronto Raptors",
       Overall: "51-31",
       Home: "28-13",
@@ -24198,7 +24200,7 @@ const rawSeasonData = {
       Apr: "5-1",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Utah Jazz",
       Overall: "51-31",
       Home: "29-12",
@@ -24224,7 +24226,7 @@ const rawSeasonData = {
       Apr: "4-2",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Washington Wizards",
       Overall: "49-33",
       Home: "30-11",
@@ -24250,7 +24252,7 @@ const rawSeasonData = {
       Apr: "3-3",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Oklahoma City Thunder",
       Overall: "47-35",
       Home: "28-13",
@@ -24276,7 +24278,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Atlanta Hawks",
       Overall: "43-39",
       Home: "23-18",
@@ -24302,7 +24304,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Memphis Grizzlies",
       Overall: "43-39",
       Home: "24-17",
@@ -24328,7 +24330,7 @@ const rawSeasonData = {
       Apr: "1-5",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Indiana Pacers",
       Overall: "42-40",
       Home: "29-12",
@@ -24354,7 +24356,7 @@ const rawSeasonData = {
       Apr: "5-1",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Milwaukee Bucks",
       Overall: "42-40",
       Home: "23-18",
@@ -24380,7 +24382,7 @@ const rawSeasonData = {
       Apr: "2-4",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Chicago Bulls",
       Overall: "41-41",
       Home: "25-16",
@@ -24406,7 +24408,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Portland Trail Blazers",
       Overall: "41-41",
       Home: "25-16",
@@ -24432,7 +24434,7 @@ const rawSeasonData = {
       Apr: "4-3",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Miami Heat",
       Overall: "41-41",
       Home: "23-18",
@@ -24458,7 +24460,7 @@ const rawSeasonData = {
       Apr: "4-2",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Denver Nuggets",
       Overall: "40-42",
       Home: "22-19",
@@ -24484,7 +24486,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Detroit Pistons",
       Overall: "37-45",
       Home: "24-17",
@@ -24510,7 +24512,7 @@ const rawSeasonData = {
       Apr: "2-3",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Charlotte Hornets",
       Overall: "36-46",
       Home: "22-19",
@@ -24536,7 +24538,7 @@ const rawSeasonData = {
       Apr: "1-5",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "New Orleans Pelicans",
       Overall: "34-48",
       Home: "21-20",
@@ -24562,7 +24564,7 @@ const rawSeasonData = {
       Apr: "1-5",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Dallas Mavericks",
       Overall: "33-49",
       Home: "21-20",
@@ -24588,7 +24590,7 @@ const rawSeasonData = {
       Apr: "2-5",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Sacramento Kings",
       Overall: "32-50",
       Home: "17-24",
@@ -24614,7 +24616,7 @@ const rawSeasonData = {
       Apr: "3-3",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Minnesota Timberwolves",
       Overall: "31-51",
       Home: "20-21",
@@ -24640,7 +24642,7 @@ const rawSeasonData = {
       Apr: "1-7",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "New York Knicks",
       Overall: "31-51",
       Home: "19-22",
@@ -24666,7 +24668,7 @@ const rawSeasonData = {
       Apr: "2-4",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Orlando Magic",
       Overall: "29-53",
       Home: "16-25",
@@ -24692,7 +24694,7 @@ const rawSeasonData = {
       Apr: "2-4",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Philadelphia 76ers",
       Overall: "28-54",
       Home: "17-24",
@@ -24718,7 +24720,7 @@ const rawSeasonData = {
       Apr: "0-6",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Los Angeles Lakers",
       Overall: "26-56",
       Home: "17-24",
@@ -24744,7 +24746,7 @@ const rawSeasonData = {
       Apr: "5-2",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Phoenix Suns",
       Overall: "24-58",
       Home: "15-26",
@@ -24770,7 +24772,7 @@ const rawSeasonData = {
       Apr: "2-4",
     },
     {
-      Rk: 30,
+      Rk: "30",
       Team: "Brooklyn Nets",
       Overall: "20-62",
       Home: "13-28",
@@ -24798,7 +24800,7 @@ const rawSeasonData = {
   ],
   2018: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Houston Rockets",
       Overall: "65-17",
       Home: "34-7",
@@ -24824,7 +24826,7 @@ const rawSeasonData = {
       Apr: "3-3",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Toronto Raptors",
       Overall: "59-23",
       Home: "34-7",
@@ -24850,7 +24852,7 @@ const rawSeasonData = {
       Apr: "4-2",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Golden State Warriors",
       Overall: "58-24",
       Home: "29-12",
@@ -24876,7 +24878,7 @@ const rawSeasonData = {
       Apr: "3-3",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Boston Celtics",
       Overall: "55-27",
       Home: "27-14",
@@ -24902,7 +24904,7 @@ const rawSeasonData = {
       Apr: "2-4",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Philadelphia 76ers",
       Overall: "52-30",
       Home: "30-11",
@@ -24928,7 +24930,7 @@ const rawSeasonData = {
       Apr: "7-0",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Cleveland Cavaliers",
       Overall: "50-32",
       Home: "29-12",
@@ -24954,7 +24956,7 @@ const rawSeasonData = {
       Apr: "4-2",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Portland Trail Blazers",
       Overall: "49-33",
       Home: "28-13",
@@ -24980,7 +24982,7 @@ const rawSeasonData = {
       Apr: "2-4",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Indiana Pacers",
       Overall: "48-34",
       Home: "27-14",
@@ -25006,7 +25008,7 @@ const rawSeasonData = {
       Apr: "3-3",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "New Orleans Pelicans",
       Overall: "48-34",
       Home: "24-17",
@@ -25032,7 +25034,7 @@ const rawSeasonData = {
       Apr: "5-1",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Oklahoma City Thunder",
       Overall: "48-34",
       Home: "27-14",
@@ -25058,7 +25060,7 @@ const rawSeasonData = {
       Apr: "4-1",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Utah Jazz",
       Overall: "48-34",
       Home: "28-13",
@@ -25084,7 +25086,7 @@ const rawSeasonData = {
       Apr: "5-1",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Minnesota Timberwolves",
       Overall: "47-35",
       Home: "30-11",
@@ -25110,7 +25112,7 @@ const rawSeasonData = {
       Apr: "3-2",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "San Antonio Spurs",
       Overall: "47-35",
       Home: "33-8",
@@ -25136,7 +25138,7 @@ const rawSeasonData = {
       Apr: "3-3",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Denver Nuggets",
       Overall: "46-36",
       Home: "31-10",
@@ -25162,7 +25164,7 @@ const rawSeasonData = {
       Apr: "5-1",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Miami Heat",
       Overall: "44-38",
       Home: "26-15",
@@ -25188,7 +25190,7 @@ const rawSeasonData = {
       Apr: "3-2",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Milwaukee Bucks",
       Overall: "44-38",
       Home: "25-16",
@@ -25214,7 +25216,7 @@ const rawSeasonData = {
       Apr: "3-3",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Washington Wizards",
       Overall: "43-39",
       Home: "23-18",
@@ -25240,7 +25242,7 @@ const rawSeasonData = {
       Apr: "1-5",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Los Angeles Clippers",
       Overall: "42-40",
       Home: "22-19",
@@ -25266,7 +25268,7 @@ const rawSeasonData = {
       Apr: "1-5",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Detroit Pistons",
       Overall: "39-43",
       Home: "25-16",
@@ -25292,7 +25294,7 @@ const rawSeasonData = {
       Apr: "3-3",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Charlotte Hornets",
       Overall: "36-46",
       Home: "21-20",
@@ -25318,7 +25320,7 @@ const rawSeasonData = {
       Apr: "2-3",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Los Angeles Lakers",
       Overall: "35-47",
       Home: "20-21",
@@ -25344,7 +25346,7 @@ const rawSeasonData = {
       Apr: "2-5",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "New York Knicks",
       Overall: "29-53",
       Home: "19-22",
@@ -25370,7 +25372,7 @@ const rawSeasonData = {
       Apr: "2-3",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Brooklyn Nets",
       Overall: "28-54",
       Home: "15-26",
@@ -25396,7 +25398,7 @@ const rawSeasonData = {
       Apr: "3-3",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Chicago Bulls",
       Overall: "27-55",
       Home: "17-24",
@@ -25422,7 +25424,7 @@ const rawSeasonData = {
       Apr: "2-4",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Sacramento Kings",
       Overall: "27-55",
       Home: "14-27",
@@ -25448,7 +25450,7 @@ const rawSeasonData = {
       Apr: "3-2",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Orlando Magic",
       Overall: "25-57",
       Home: "17-24",
@@ -25474,7 +25476,7 @@ const rawSeasonData = {
       Apr: "3-4",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Atlanta Hawks",
       Overall: "24-58",
       Home: "16-25",
@@ -25500,7 +25502,7 @@ const rawSeasonData = {
       Apr: "3-3",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Dallas Mavericks",
       Overall: "24-58",
       Home: "15-26",
@@ -25526,7 +25528,7 @@ const rawSeasonData = {
       Apr: "1-5",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Memphis Grizzlies",
       Overall: "22-60",
       Home: "16-25",
@@ -25552,7 +25554,7 @@ const rawSeasonData = {
       Apr: "1-5",
     },
     {
-      Rk: 30,
+      Rk: "30",
       Team: "Phoenix Suns",
       Overall: "21-61",
       Home: "10-31",
@@ -25580,7 +25582,7 @@ const rawSeasonData = {
   ],
   2019: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Milwaukee Bucks",
       Overall: "60-22",
       Home: "33-8",
@@ -25606,7 +25608,7 @@ const rawSeasonData = {
       Apr: "3-2",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Toronto Raptors",
       Overall: "58-24",
       Home: "32-9",
@@ -25632,7 +25634,7 @@ const rawSeasonData = {
       Apr: "4-1",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Golden State Warriors",
       Overall: "57-25",
       Home: "30-11",
@@ -25658,7 +25660,7 @@ const rawSeasonData = {
       Apr: "5-1",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Denver Nuggets",
       Overall: "54-28",
       Home: "34-7",
@@ -25684,7 +25686,7 @@ const rawSeasonData = {
       Apr: "3-3",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Houston Rockets",
       Overall: "53-29",
       Home: "31-10",
@@ -25710,7 +25712,7 @@ const rawSeasonData = {
       Apr: "4-1",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Portland Trail Blazers",
       Overall: "53-29",
       Home: "32-9",
@@ -25736,7 +25738,7 @@ const rawSeasonData = {
       Apr: "5-1",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Philadelphia 76ers",
       Overall: "51-31",
       Home: "31-10",
@@ -25762,7 +25764,7 @@ const rawSeasonData = {
       Apr: "2-4",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Utah Jazz",
       Overall: "50-32",
       Home: "29-12",
@@ -25788,7 +25790,7 @@ const rawSeasonData = {
       Apr: "4-2",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Boston Celtics",
       Overall: "49-33",
       Home: "28-13",
@@ -25814,7 +25816,7 @@ const rawSeasonData = {
       Apr: "4-1",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Oklahoma City Thunder",
       Overall: "49-33",
       Home: "27-14",
@@ -25840,7 +25842,7 @@ const rawSeasonData = {
       Apr: "5-0",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Indiana Pacers",
       Overall: "48-34",
       Home: "29-12",
@@ -25866,7 +25868,7 @@ const rawSeasonData = {
       Apr: "3-2",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Los Angeles Clippers",
       Overall: "48-34",
       Home: "26-15",
@@ -25892,7 +25894,7 @@ const rawSeasonData = {
       Apr: "1-3",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "San Antonio Spurs",
       Overall: "48-34",
       Home: "32-9",
@@ -25918,7 +25920,7 @@ const rawSeasonData = {
       Apr: "4-1",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Brooklyn Nets",
       Overall: "42-40",
       Home: "23-18",
@@ -25944,7 +25946,7 @@ const rawSeasonData = {
       Apr: "3-2",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Orlando Magic",
       Overall: "42-40",
       Home: "25-16",
@@ -25970,7 +25972,7 @@ const rawSeasonData = {
       Apr: "4-1",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Detroit Pistons",
       Overall: "41-41",
       Home: "26-15",
@@ -25996,7 +25998,7 @@ const rawSeasonData = {
       Apr: "2-4",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Charlotte Hornets",
       Overall: "39-43",
       Home: "25-16",
@@ -26022,7 +26024,7 @@ const rawSeasonData = {
       Apr: "4-2",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Miami Heat",
       Overall: "39-43",
       Home: "19-22",
@@ -26048,7 +26050,7 @@ const rawSeasonData = {
       Apr: "1-5",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Sacramento Kings",
       Overall: "39-43",
       Home: "24-17",
@@ -26074,7 +26076,7 @@ const rawSeasonData = {
       Apr: "1-4",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Los Angeles Lakers",
       Overall: "37-45",
       Home: "22-19",
@@ -26100,7 +26102,7 @@ const rawSeasonData = {
       Apr: "2-3",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Minnesota Timberwolves",
       Overall: "36-46",
       Home: "25-16",
@@ -26126,7 +26128,7 @@ const rawSeasonData = {
       Apr: "2-4",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Dallas Mavericks",
       Overall: "33-49",
       Home: "24-17",
@@ -26152,7 +26154,7 @@ const rawSeasonData = {
       Apr: "3-3",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Memphis Grizzlies",
       Overall: "33-49",
       Home: "21-20",
@@ -26178,7 +26180,7 @@ const rawSeasonData = {
       Apr: "2-3",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "New Orleans Pelicans",
       Overall: "33-49",
       Home: "19-22",
@@ -26204,7 +26206,7 @@ const rawSeasonData = {
       Apr: "1-3",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Washington Wizards",
       Overall: "32-50",
       Home: "22-19",
@@ -26230,7 +26232,7 @@ const rawSeasonData = {
       Apr: "0-4",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Atlanta Hawks",
       Overall: "29-53",
       Home: "17-24",
@@ -26256,7 +26258,7 @@ const rawSeasonData = {
       Apr: "1-4",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Chicago Bulls",
       Overall: "22-60",
       Home: "9-32",
@@ -26282,7 +26284,7 @@ const rawSeasonData = {
       Apr: "1-4",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Cleveland Cavaliers",
       Overall: "19-63",
       Home: "13-28",
@@ -26308,7 +26310,7 @@ const rawSeasonData = {
       Apr: "0-5",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Phoenix Suns",
       Overall: "19-63",
       Home: "12-29",
@@ -26334,7 +26336,7 @@ const rawSeasonData = {
       Apr: "2-3",
     },
     {
-      Rk: 30,
+      Rk: "30",
       Team: "New York Knicks",
       Overall: "17-65",
       Home: "9-32",
@@ -26362,7 +26364,7 @@ const rawSeasonData = {
   ],
   2020: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Milwaukee Bucks",
       Overall: "56-17",
       Home: "30-5",
@@ -26389,7 +26391,7 @@ const rawSeasonData = {
       Aug: "2-5",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Toronto Raptors",
       Overall: "53-19",
       Home: "26-10",
@@ -26416,7 +26418,7 @@ const rawSeasonData = {
       Aug: "7-1",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Los Angeles Lakers",
       Overall: "52-19",
       Home: "25-10",
@@ -26443,7 +26445,7 @@ const rawSeasonData = {
       Aug: "2-5",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Los Angeles Clippers",
       Overall: "49-23",
       Home: "27-9",
@@ -26470,7 +26472,7 @@ const rawSeasonData = {
       Aug: "5-2",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Boston Celtics",
       Overall: "48-24",
       Home: "26-10",
@@ -26497,7 +26499,7 @@ const rawSeasonData = {
       Aug: "5-2",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Denver Nuggets",
       Overall: "46-27",
       Home: "26-11",
@@ -26524,7 +26526,7 @@ const rawSeasonData = {
       Aug: "3-5",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Indiana Pacers",
       Overall: "45-28",
       Home: "25-11",
@@ -26551,7 +26553,7 @@ const rawSeasonData = {
       Aug: "6-2",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Houston Rockets",
       Overall: "44-28",
       Home: "24-12",
@@ -26578,7 +26580,7 @@ const rawSeasonData = {
       Aug: "3-4",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Miami Heat",
       Overall: "44-29",
       Home: "29-7",
@@ -26605,7 +26607,7 @@ const rawSeasonData = {
       Aug: "3-5",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Oklahoma City Thunder",
       Overall: "44-28",
       Home: "23-14",
@@ -26632,7 +26634,7 @@ const rawSeasonData = {
       Aug: "4-4",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Utah Jazz",
       Overall: "44-28",
       Home: "23-12",
@@ -26659,7 +26661,7 @@ const rawSeasonData = {
       Aug: "2-5",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Dallas Mavericks",
       Overall: "43-32",
       Home: "20-18",
@@ -26686,7 +26688,7 @@ const rawSeasonData = {
       Aug: "3-4",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Philadelphia 76ers",
       Overall: "43-30",
       Home: "31-4",
@@ -26713,7 +26715,7 @@ const rawSeasonData = {
       Aug: "4-4",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Brooklyn Nets",
       Overall: "35-37",
       Home: "20-16",
@@ -26740,7 +26742,7 @@ const rawSeasonData = {
       Aug: "5-2",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Portland Trail Blazers",
       Overall: "35-39",
       Home: "21-15",
@@ -26767,7 +26769,7 @@ const rawSeasonData = {
       Aug: "5-2",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Memphis Grizzlies",
       Overall: "34-39",
       Home: "20-17",
@@ -26794,7 +26796,7 @@ const rawSeasonData = {
       Aug: "2-5",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Phoenix Suns",
       Overall: "34-39",
       Home: "17-22",
@@ -26821,7 +26823,7 @@ const rawSeasonData = {
       Aug: "7-0",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Orlando Magic",
       Overall: "33-40",
       Home: "18-17",
@@ -26848,7 +26850,7 @@ const rawSeasonData = {
       Aug: "2-5",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "San Antonio Spurs",
       Overall: "32-39",
       Home: "19-15",
@@ -26875,7 +26877,7 @@ const rawSeasonData = {
       Aug: "4-3",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Sacramento Kings",
       Overall: "31-41",
       Home: "16-19",
@@ -26902,7 +26904,7 @@ const rawSeasonData = {
       Aug: "3-4",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "New Orleans Pelicans",
       Overall: "30-42",
       Home: "15-21",
@@ -26929,7 +26931,7 @@ const rawSeasonData = {
       Aug: "2-5",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Washington Wizards",
       Overall: "25-47",
       Home: "16-20",
@@ -26956,7 +26958,7 @@ const rawSeasonData = {
       Aug: "1-6",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Charlotte Hornets",
       Overall: "23-42",
       Home: "10-21",
@@ -26983,7 +26985,7 @@ const rawSeasonData = {
       Aug: "",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Chicago Bulls",
       Overall: "22-43",
       Home: "14-20",
@@ -27010,7 +27012,7 @@ const rawSeasonData = {
       Aug: "",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "New York Knicks",
       Overall: "21-45",
       Home: "11-22",
@@ -27037,7 +27039,7 @@ const rawSeasonData = {
       Aug: "",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Atlanta Hawks",
       Overall: "20-47",
       Home: "14-20",
@@ -27064,7 +27066,7 @@ const rawSeasonData = {
       Aug: "",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Detroit Pistons",
       Overall: "20-46",
       Home: "11-22",
@@ -27091,7 +27093,7 @@ const rawSeasonData = {
       Aug: "",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Cleveland Cavaliers",
       Overall: "19-46",
       Home: "11-25",
@@ -27118,7 +27120,7 @@ const rawSeasonData = {
       Aug: "",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Minnesota Timberwolves",
       Overall: "19-45",
       Home: "8-24",
@@ -27145,7 +27147,7 @@ const rawSeasonData = {
       Aug: "",
     },
     {
-      Rk: 30,
+      Rk: "30",
       Team: "Golden State Warriors",
       Overall: "15-50",
       Home: "8-26",
@@ -27174,7 +27176,7 @@ const rawSeasonData = {
   ],
   2021: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Utah Jazz",
       Overall: "52-20",
       Home: "31-5",
@@ -27199,7 +27201,7 @@ const rawSeasonData = {
       May: "7-2",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Phoenix Suns",
       Overall: "51-21",
       Home: "27-9",
@@ -27224,7 +27226,7 @@ const rawSeasonData = {
       May: "6-3",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Philadelphia 76ers",
       Overall: "49-23",
       Home: "29-7",
@@ -27249,7 +27251,7 @@ const rawSeasonData = {
       May: "7-2",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Brooklyn Nets",
       Overall: "48-24",
       Home: "28-8",
@@ -27274,7 +27276,7 @@ const rawSeasonData = {
       May: "5-3",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Denver Nuggets",
       Overall: "47-25",
       Home: "25-11",
@@ -27299,7 +27301,7 @@ const rawSeasonData = {
       May: "5-4",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Los Angeles Clippers",
       Overall: "47-25",
       Home: "26-10",
@@ -27324,7 +27326,7 @@ const rawSeasonData = {
       May: "4-4",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Milwaukee Bucks",
       Overall: "46-26",
       Home: "26-10",
@@ -27349,7 +27351,7 @@ const rawSeasonData = {
       May: "7-2",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Dallas Mavericks",
       Overall: "42-30",
       Home: "21-15",
@@ -27374,7 +27376,7 @@ const rawSeasonData = {
       May: "7-3",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Los Angeles Lakers",
       Overall: "42-30",
       Home: "21-15",
@@ -27399,7 +27401,7 @@ const rawSeasonData = {
       May: "6-3",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Portland Trail Blazers",
       Overall: "42-30",
       Home: "20-16",
@@ -27424,7 +27426,7 @@ const rawSeasonData = {
       May: "7-2",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Atlanta Hawks",
       Overall: "41-31",
       Home: "25-11",
@@ -27449,7 +27451,7 @@ const rawSeasonData = {
       May: "7-1",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "New York Knicks",
       Overall: "41-31",
       Home: "25-11",
@@ -27474,7 +27476,7 @@ const rawSeasonData = {
       May: "6-3",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Miami Heat",
       Overall: "40-32",
       Home: "21-15",
@@ -27499,7 +27501,7 @@ const rawSeasonData = {
       May: "7-2",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Golden State Warriors",
       Overall: "39-33",
       Home: "25-11",
@@ -27524,7 +27526,7 @@ const rawSeasonData = {
       May: "8-1",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Memphis Grizzlies",
       Overall: "38-34",
       Home: "18-18",
@@ -27549,7 +27551,7 @@ const rawSeasonData = {
       May: "6-4",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Boston Celtics",
       Overall: "36-36",
       Home: "21-15",
@@ -27574,7 +27576,7 @@ const rawSeasonData = {
       May: "2-6",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Washington Wizards",
       Overall: "34-38",
       Home: "19-17",
@@ -27599,7 +27601,7 @@ const rawSeasonData = {
       May: "5-4",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Indiana Pacers",
       Overall: "34-38",
       Home: "13-23",
@@ -27624,7 +27626,7 @@ const rawSeasonData = {
       May: "5-5",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Charlotte Hornets",
       Overall: "33-39",
       Home: "18-18",
@@ -27649,7 +27651,7 @@ const rawSeasonData = {
       May: "3-7",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "San Antonio Spurs",
       Overall: "33-39",
       Home: "14-22",
@@ -27674,7 +27676,7 @@ const rawSeasonData = {
       May: "2-8",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Chicago Bulls",
       Overall: "31-41",
       Home: "15-21",
@@ -27699,7 +27701,7 @@ const rawSeasonData = {
       May: "5-4",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "New Orleans Pelicans",
       Overall: "31-41",
       Home: "18-18",
@@ -27724,7 +27726,7 @@ const rawSeasonData = {
       May: "3-6",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Sacramento Kings",
       Overall: "31-41",
       Home: "16-20",
@@ -27749,7 +27751,7 @@ const rawSeasonData = {
       May: "5-4",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Toronto Raptors",
       Overall: "27-45",
       Home: "16-20",
@@ -27774,7 +27776,7 @@ const rawSeasonData = {
       May: "1-8",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Minnesota Timberwolves",
       Overall: "23-49",
       Home: "13-23",
@@ -27799,7 +27801,7 @@ const rawSeasonData = {
       May: "3-5",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Cleveland Cavaliers",
       Overall: "22-50",
       Home: "13-23",
@@ -27824,7 +27826,7 @@ const rawSeasonData = {
       May: "1-8",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Oklahoma City Thunder",
       Overall: "22-50",
       Home: "10-26",
@@ -27849,7 +27851,7 @@ const rawSeasonData = {
       May: "1-8",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Orlando Magic",
       Overall: "21-51",
       Home: "11-25",
@@ -27874,7 +27876,7 @@ const rawSeasonData = {
       May: "2-7",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Detroit Pistons",
       Overall: "20-52",
       Home: "13-23",
@@ -27899,7 +27901,7 @@ const rawSeasonData = {
       May: "1-8",
     },
     {
-      Rk: 30,
+      Rk: "30",
       Team: "Houston Rockets",
       Overall: "17-55",
       Home: "9-27",
@@ -27926,7 +27928,7 @@ const rawSeasonData = {
   ],
   2022: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Phoenix Suns",
       Overall: "64-18",
       Home: "32-9",
@@ -27952,7 +27954,7 @@ const rawSeasonData = {
       Apr: "2-4",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Memphis Grizzlies",
       Overall: "56-26",
       Home: "30-11",
@@ -27978,7 +27980,7 @@ const rawSeasonData = {
       Apr: "2-3",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Golden State Warriors",
       Overall: "53-29",
       Home: "31-10",
@@ -28004,7 +28006,7 @@ const rawSeasonData = {
       Apr: "5-0",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Miami Heat",
       Overall: "53-29",
       Home: "29-12",
@@ -28030,7 +28032,7 @@ const rawSeasonData = {
       Apr: "4-1",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Dallas Mavericks",
       Overall: "52-30",
       Home: "29-12",
@@ -28056,7 +28058,7 @@ const rawSeasonData = {
       Apr: "4-1",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Boston Celtics",
       Overall: "51-31",
       Home: "28-13",
@@ -28082,7 +28084,7 @@ const rawSeasonData = {
       Apr: "4-1",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Milwaukee Bucks",
       Overall: "51-31",
       Home: "27-14",
@@ -28108,7 +28110,7 @@ const rawSeasonData = {
       Apr: "3-3",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "Philadelphia 76ers",
       Overall: "51-31",
       Home: "24-17",
@@ -28134,7 +28136,7 @@ const rawSeasonData = {
       Apr: "5-1",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Utah Jazz",
       Overall: "49-33",
       Home: "29-12",
@@ -28160,7 +28162,7 @@ const rawSeasonData = {
       Apr: "3-2",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Denver Nuggets",
       Overall: "48-34",
       Home: "23-18",
@@ -28186,7 +28188,7 @@ const rawSeasonData = {
       Apr: "2-3",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Toronto Raptors",
       Overall: "48-34",
       Home: "24-17",
@@ -28212,7 +28214,7 @@ const rawSeasonData = {
       Apr: "4-2",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Chicago Bulls",
       Overall: "46-36",
       Home: "27-14",
@@ -28238,7 +28240,7 @@ const rawSeasonData = {
       Apr: "1-4",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Minnesota Timberwolves",
       Overall: "46-36",
       Home: "26-15",
@@ -28264,7 +28266,7 @@ const rawSeasonData = {
       Apr: "3-2",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Brooklyn Nets",
       Overall: "44-38",
       Home: "20-21",
@@ -28290,7 +28292,7 @@ const rawSeasonData = {
       Apr: "4-1",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Cleveland Cavaliers",
       Overall: "44-38",
       Home: "25-16",
@@ -28316,7 +28318,7 @@ const rawSeasonData = {
       Apr: "2-3",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "Atlanta Hawks",
       Overall: "43-39",
       Home: "27-14",
@@ -28342,7 +28344,7 @@ const rawSeasonData = {
       Apr: "3-2",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Charlotte Hornets",
       Overall: "43-39",
       Home: "22-19",
@@ -28368,7 +28370,7 @@ const rawSeasonData = {
       Apr: "3-2",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Los Angeles Clippers",
       Overall: "42-40",
       Home: "25-16",
@@ -28394,7 +28396,7 @@ const rawSeasonData = {
       Apr: "5-0",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "New York Knicks",
       Overall: "37-45",
       Home: "17-24",
@@ -28420,7 +28422,7 @@ const rawSeasonData = {
       Apr: "3-2",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "New Orleans Pelicans",
       Overall: "36-46",
       Home: "19-22",
@@ -28446,7 +28448,7 @@ const rawSeasonData = {
       Apr: "3-3",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Washington Wizards",
       Overall: "35-47",
       Home: "21-20",
@@ -28472,7 +28474,7 @@ const rawSeasonData = {
       Apr: "2-4",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "San Antonio Spurs",
       Overall: "34-48",
       Home: "16-25",
@@ -28498,7 +28500,7 @@ const rawSeasonData = {
       Apr: "3-3",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Los Angeles Lakers",
       Overall: "33-49",
       Home: "21-20",
@@ -28524,7 +28526,7 @@ const rawSeasonData = {
       Apr: "2-4",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Sacramento Kings",
       Overall: "30-52",
       Home: "16-25",
@@ -28550,7 +28552,7 @@ const rawSeasonData = {
       Apr: "2-3",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Portland Trail Blazers",
       Overall: "27-55",
       Home: "17-24",
@@ -28576,7 +28578,7 @@ const rawSeasonData = {
       Apr: "0-6",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Indiana Pacers",
       Overall: "25-57",
       Home: "16-25",
@@ -28602,7 +28604,7 @@ const rawSeasonData = {
       Apr: "0-5",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Oklahoma City Thunder",
       Overall: "24-58",
       Home: "12-29",
@@ -28628,7 +28630,7 @@ const rawSeasonData = {
       Apr: "2-4",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Detroit Pistons",
       Overall: "23-59",
       Home: "13-28",
@@ -28654,7 +28656,7 @@ const rawSeasonData = {
       Apr: "2-3",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "Orlando Magic",
       Overall: "22-60",
       Home: "12-29",
@@ -28680,7 +28682,7 @@ const rawSeasonData = {
       Apr: "2-3",
     },
     {
-      Rk: 30,
+      Rk: "30",
       Team: "Houston Rockets",
       Overall: "20-62",
       Home: "11-30",
@@ -28708,7 +28710,7 @@ const rawSeasonData = {
   ],
   2023: [
     {
-      Rk: 1,
+      Rk: "1",
       Team: "Milwaukee Bucks",
       Overall: "58-24",
       Home: "32-9",
@@ -28734,7 +28736,7 @@ const rawSeasonData = {
       Apr: "3-2",
     },
     {
-      Rk: 2,
+      Rk: "2",
       Team: "Boston Celtics",
       Overall: "57-25",
       Home: "32-9",
@@ -28760,7 +28762,7 @@ const rawSeasonData = {
       Apr: "3-1",
     },
     {
-      Rk: 3,
+      Rk: "3",
       Team: "Philadelphia 76ers",
       Overall: "54-28",
       Home: "29-12",
@@ -28786,7 +28788,7 @@ const rawSeasonData = {
       Apr: "3-2",
     },
     {
-      Rk: 4,
+      Rk: "4",
       Team: "Denver Nuggets",
       Overall: "53-29",
       Home: "34-7",
@@ -28812,7 +28814,7 @@ const rawSeasonData = {
       Apr: "2-3",
     },
     {
-      Rk: 5,
+      Rk: "5",
       Team: "Cleveland Cavaliers",
       Overall: "51-31",
       Home: "31-10",
@@ -28838,7 +28840,7 @@ const rawSeasonData = {
       Apr: "3-1",
     },
     {
-      Rk: 6,
+      Rk: "6",
       Team: "Memphis Grizzlies",
       Overall: "51-31",
       Home: "35-6",
@@ -28864,7 +28866,7 @@ const rawSeasonData = {
       Apr: "2-3",
     },
     {
-      Rk: 7,
+      Rk: "7",
       Team: "Sacramento Kings",
       Overall: "48-34",
       Home: "23-18",
@@ -28890,7 +28892,7 @@ const rawSeasonData = {
       Apr: "1-4",
     },
     {
-      Rk: 8,
+      Rk: "8",
       Team: "New York Knicks",
       Overall: "47-35",
       Home: "23-18",
@@ -28916,7 +28918,7 @@ const rawSeasonData = {
       Apr: "2-2",
     },
     {
-      Rk: 9,
+      Rk: "9",
       Team: "Brooklyn Nets",
       Overall: "45-37",
       Home: "23-18",
@@ -28942,7 +28944,7 @@ const rawSeasonData = {
       Apr: "3-2",
     },
     {
-      Rk: 10,
+      Rk: "10",
       Team: "Phoenix Suns",
       Overall: "45-37",
       Home: "28-13",
@@ -28968,7 +28970,7 @@ const rawSeasonData = {
       Apr: "3-2",
     },
     {
-      Rk: 11,
+      Rk: "11",
       Team: "Golden State Warriors",
       Overall: "44-38",
       Home: "33-8",
@@ -28994,7 +28996,7 @@ const rawSeasonData = {
       Apr: "3-1",
     },
     {
-      Rk: 12,
+      Rk: "12",
       Team: "Los Angeles Clippers",
       Overall: "44-38",
       Home: "23-18",
@@ -29020,7 +29022,7 @@ const rawSeasonData = {
       Apr: "3-1",
     },
     {
-      Rk: 13,
+      Rk: "13",
       Team: "Miami Heat",
       Overall: "44-38",
       Home: "27-14",
@@ -29046,7 +29048,7 @@ const rawSeasonData = {
       Apr: "4-1",
     },
     {
-      Rk: 14,
+      Rk: "14",
       Team: "Los Angeles Lakers",
       Overall: "43-39",
       Home: "23-18",
@@ -29072,7 +29074,7 @@ const rawSeasonData = {
       Apr: "4-1",
     },
     {
-      Rk: 15,
+      Rk: "15",
       Team: "Minnesota Timberwolves",
       Overall: "42-40",
       Home: "22-19",
@@ -29098,7 +29100,7 @@ const rawSeasonData = {
       Apr: "3-1",
     },
     {
-      Rk: 16,
+      Rk: "16",
       Team: "New Orleans Pelicans",
       Overall: "42-40",
       Home: "27-14",
@@ -29124,7 +29126,7 @@ const rawSeasonData = {
       Apr: "3-2",
     },
     {
-      Rk: 17,
+      Rk: "17",
       Team: "Atlanta Hawks",
       Overall: "41-41",
       Home: "24-17",
@@ -29150,7 +29152,7 @@ const rawSeasonData = {
       Apr: "3-2",
     },
     {
-      Rk: 18,
+      Rk: "18",
       Team: "Toronto Raptors",
       Overall: "41-41",
       Home: "27-14",
@@ -29176,7 +29178,7 @@ const rawSeasonData = {
       Apr: "3-2",
     },
     {
-      Rk: 19,
+      Rk: "19",
       Team: "Chicago Bulls",
       Overall: "40-42",
       Home: "22-19",
@@ -29202,7 +29204,7 @@ const rawSeasonData = {
       Apr: "3-2",
     },
     {
-      Rk: 20,
+      Rk: "20",
       Team: "Oklahoma City Thunder",
       Overall: "40-42",
       Home: "24-17",
@@ -29228,7 +29230,7 @@ const rawSeasonData = {
       Apr: "2-2",
     },
     {
-      Rk: 21,
+      Rk: "21",
       Team: "Dallas Mavericks",
       Overall: "38-44",
       Home: "23-18",
@@ -29254,7 +29256,7 @@ const rawSeasonData = {
       Apr: "1-4",
     },
     {
-      Rk: 22,
+      Rk: "22",
       Team: "Utah Jazz",
       Overall: "37-45",
       Home: "23-18",
@@ -29280,7 +29282,7 @@ const rawSeasonData = {
       Apr: "1-4",
     },
     {
-      Rk: 23,
+      Rk: "23",
       Team: "Indiana Pacers",
       Overall: "35-47",
       Home: "20-21",
@@ -29306,7 +29308,7 @@ const rawSeasonData = {
       Apr: "1-3",
     },
     {
-      Rk: 24,
+      Rk: "24",
       Team: "Washington Wizards",
       Overall: "35-47",
       Home: "19-22",
@@ -29332,7 +29334,7 @@ const rawSeasonData = {
       Apr: "1-4",
     },
     {
-      Rk: 25,
+      Rk: "25",
       Team: "Orlando Magic",
       Overall: "34-48",
       Home: "20-21",
@@ -29358,7 +29360,7 @@ const rawSeasonData = {
       Apr: "1-4",
     },
     {
-      Rk: 26,
+      Rk: "26",
       Team: "Portland Trail Blazers",
       Overall: "33-49",
       Home: "17-24",
@@ -29384,7 +29386,7 @@ const rawSeasonData = {
       Apr: "1-4",
     },
     {
-      Rk: 27,
+      Rk: "27",
       Team: "Charlotte Hornets",
       Overall: "27-55",
       Home: "13-28",
@@ -29410,7 +29412,7 @@ const rawSeasonData = {
       Apr: "1-3",
     },
     {
-      Rk: 28,
+      Rk: "28",
       Team: "Houston Rockets",
       Overall: "22-60",
       Home: "14-27",
@@ -29436,7 +29438,7 @@ const rawSeasonData = {
       Apr: "3-1",
     },
     {
-      Rk: 29,
+      Rk: "29",
       Team: "San Antonio Spurs",
       Overall: "22-60",
       Home: "14-27",
@@ -29462,7 +29464,7 @@ const rawSeasonData = {
       Apr: "3-2",
     },
     {
-      Rk: 30,
+      Rk: "30",
       Team: "Detroit Pistons",
       Overall: "17-65",
       Home: "9-32",
@@ -29488,10 +29490,6 @@ const rawSeasonData = {
       Apr: "1-4",
     },
   ],
-  2024: [{"Rk":1,"Team":"Boston Celtics","Overall":"51-14","Home":"29-3","Road":"22-11","E":"33-7","W":"18-7","A":"15-1","C":"9-4","SE":"9-2","NW":"4-4","P":"5-3","SW":"9-0","Pre":"43-12","Post":"8-2","≤3":"4-5","≥10":"31-4","Oct":"3-0","Nov":"11-4","Dec":"12-2","Jan":"11-5","Feb":"9-1","Mar":"5-2","Apr":"0-0"},{"Rk":2,"Team":"Denver Nuggets","Overall":"45-20","Home":"27-6","Road":"18-14","E":"20-6","W":"25-14","A":"7-2","C":"7-2","SE":"6-2","NW":"6-5","P":"11-5","SW":"8-4","Pre":"36-19","Post":"9-1","≤3":"4-3","≥10":"20-9","Oct":"4-0","Nov":"9-6","Dec":"10-5","Jan":"10-5","Feb":"8-3","Mar":"4-1","Apr":"0-0"},{"Rk":3,"Team":"Minnesota Timberwolves","Overall":"45-21","Home":"23-8","Road":"22-13","E":"14-10","W":"31-11","A":"5-4","C":"4-3","SE":"5-3","NW":"9-2","P":"8-5","SW":"14-4","Pre":"39-16","Post":"6-5","≤3":"6-5","≥10":"25-8","Oct":"1-2","Nov":"13-2","Dec":"10-3","Jan":"10-7","Feb":"8-3","Mar":"3-4","Apr":"0-0"},{"Rk":4,"Team":"Oklahoma City Thunder","Overall":"45-20","Home":"26-7","Road":"19-13","E":"17-5","W":"28-15","A":"4-2","C":"5-2","SE":"8-1","NW":"11-4","P":"9-7","SW":"8-4","Pre":"37-17","Post":"8-3","≤3":"4-3","≥10":"26-7","Oct":"3-1","Nov":"9-5","Dec":"10-3","Jan":"11-6","Feb":"8-3","Mar":"4-2","Apr":"0-0"},{"Rk":5,"Team":"Milwaukee Bucks","Overall":"42-24","Home":"25-7","Road":"17-17","E":"29-13","W":"13-11","A":"9-3","C":"10-7","SE":"10-3","NW":"3-5","P":"4-4","SW":"6-2","Pre":"35-21","Post":"7-3","≤3":"4-5","≥10":"21-12","Oct":"2-1","Nov":"11-5","Dec":"11-2","Jan":"8-8","Feb":"7-5","Mar":"3-3","Apr":"0-0"},{"Rk":6,"Team":"Cleveland Cavaliers","Overall":"41-24","Home":"22-13","Road":"19-11","E":"27-17","W":"14-7","A":"8-8","C":"9-5","SE":"10-4","NW":"4-3","P":"4-3","SW":"6-1","Pre":"36-17","Post":"5-7","≤3":"8-3","≥10":"20-9","Oct":"1-3","Nov":"9-6","Dec":"8-5","Jan":"11-2","Feb":"9-4","Mar":"3-4","Apr":"0-0"},{"Rk":7,"Team":"Los Angeles Clippers","Overall":"41-23","Home":"22-10","Road":"19-13","E":"16-6","W":"25-17","A":"5-3","C":"4-3","SE":"7-0","NW":"6-8","P":"8-5","SW":"11-4","Pre":"36-17","Post":"5-6","≤3":"2-3","≥10":"23-11","Oct":"3-1","Nov":"5-9","Dec":"11-2","Jan":"12-3","Feb":"6-5","Mar":"4-3","Apr":"0-0"},{"Rk":8,"Team":"New Orleans Pelicans","Overall":"39-25","Home":"18-12","Road":"21-13","E":"15-7","W":"24-18","A":"7-1","C":"3-4","SE":"5-2","NW":"7-7","P":"8-5","SW":"9-6","Pre":"33-22","Post":"6-3","≤3":"1-6","≥10":"26-13","Oct":"2-1","Nov":"8-8","Dec":"9-5","Jan":"8-7","Feb":"8-4","Mar":"4-0","Apr":"0-0"},{"Rk":9,"Team":"New York Knicks","Overall":"38-27","Home":"22-13","Road":"16-14","E":"27-15","W":"11-12","A":"8-5","C":"7-6","SE":"12-4","NW":"4-3","P":"3-4","SW":"4-5","Pre":"33-22","Post":"5-5","≤3":"3-2","≥10":"25-14","Oct":"2-2","Nov":"9-5","Dec":"6-8","Jan":"14-2","Feb":"4-8","Mar":"3-2","Apr":"0-0"},{"Rk":10,"Team":"Phoenix Suns","Overall":"38-27","Home":"21-14","Road":"17-13","E":"16-8","W":"22-19","A":"3-5","C":"7-1","SE":"6-2","NW":"9-4","P":"7-8","SW":"6-7","Pre":"33-22","Post":"5-5","≤3":"7-5","≥10":"20-10","Oct":"2-2","Nov":"9-5","Dec":"6-8","Jan":"11-5","Feb":"7-4","Mar":"3-3","Apr":"0-0"},{"Rk":11,"Team":"Dallas Mavericks","Overall":"37-28","Home":"19-15","Road":"18-13","E":"16-10","W":"21-18","A":"6-4","C":"3-6","SE":"7-0","NW":"7-7","P":"6-6","SW":"8-5","Pre":"32-23","Post":"5-5","≤3":"3-2","≥10":"22-19","Oct":"3-0","Nov":"8-6","Dec":"8-8","Jan":"7-8","Feb":"8-3","Mar":"3-3","Apr":"0-0"},{"Rk":12,"Team":"Indiana Pacers","Overall":"37-29","Home":"20-13","Road":"17-16","E":"26-15","W":"11-14","A":"7-7","C":"10-2","SE":"9-6","NW":"2-7","P":"2-4","SW":"7-3","Pre":"31-25","Post":"6-4","≤3":"5-4","≥10":"21-15","Oct":"2-1","Nov":"7-7","Dec":"8-6","Jan":"10-7","Feb":"7-5","Mar":"3-3","Apr":"0-0"},{"Rk":13,"Team":"Orlando Magic","Overall":"37-28","Home":"21-9","Road":"16-19","E":"26-17","W":"11-11","A":"6-7","C":"12-4","SE":"8-6","NW":"6-3","P":"2-5","SW":"3-3","Pre":"30-25","Post":"7-3","≤3":"5-7","≥10":"20-17","Oct":"2-2","Nov":"11-3","Dec":"6-8","Jan":"6-10","Feb":"9-3","Mar":"3-2","Apr":"0-0"},{"Rk":14,"Team":"Sacramento Kings","Overall":"37-27","Home":"18-12","Road":"19-15","E":"12-10","W":"25-17","A":"2-2","C":"5-5","SE":"5-3","NW":"10-4","P":"8-6","SW":"7-7","Pre":"31-23","Post":"6-4","≤3":"5-3","≥10":"18-16","Oct":"2-1","Nov":"8-6","Dec":"9-5","Jan":"8-7","Feb":"6-6","Mar":"4-2","Apr":"0-0"},{"Rk":15,"Team":"Los Angeles Lakers","Overall":"36-30","Home":"24-11","Road":"12-19","E":"12-9","W":"24-21","A":"3-4","C":"5-1","SE":"4-4","NW":"9-7","P":"7-7","SW":"8-7","Pre":"30-26","Post":"6-4","≤3":"10-4","≥10":"14-21","Oct":"2-2","Nov":"9-7","Dec":"6-8","Jan":"7-8","Feb":"9-3","Mar":"3-2","Apr":"0-0"},{"Rk":16,"Team":"Philadelphia 76ers","Overall":"36-29","Home":"19-15","Road":"17-14","E":"24-19","W":"12-10","A":"6-8","C":"7-7","SE":"11-4","NW":"5-4","P":"3-2","SW":"4-4","Pre":"32-22","Post":"4-7","≤3":"3-2","≥10":"20-16","Oct":"2-1","Nov":"10-5","Dec":"10-4","Jan":"7-7","Feb":"4-8","Mar":"3-4","Apr":"0-0"},{"Rk":17,"Team":"Miami Heat","Overall":"35-29","Home":"17-14","Road":"18-15","E":"23-17","W":"12-12","A":"5-8","C":"7-6","SE":"11-3","NW":"2-6","P":"5-4","SW":"5-2","Pre":"30-25","Post":"5-4","≤3":"6-3","≥10":"13-11","Oct":"1-3","Nov":"10-5","Dec":"8-5","Jan":"6-10","Feb":"8-3","Mar":"2-3","Apr":"0-0"},{"Rk":18,"Team":"Golden State Warriors","Overall":"34-30","Home":"17-17","Road":"17-13","E":"17-8","W":"17-22","A":"7-2","C":"5-4","SE":"5-2","NW":"6-9","P":"5-9","SW":"6-4","Pre":"27-26","Post":"7-4","≤3":"4-10","≥10":"19-10","Oct":"3-1","Nov":"6-9","Dec":"6-7","Jan":"5-7","Feb":"11-3","Mar":"3-3","Apr":"0-0"},{"Rk":19,"Team":"Chicago Bulls","Overall":"31-34","Home":"16-16","Road":"15-18","E":"16-22","W":"15-12","A":"4-8","C":"4-9","SE":"8-5","NW":"4-4","P":"3-6","SW":"8-2","Pre":"26-29","Post":"5-5","≤3":"3-6","≥10":"9-18","Oct":"2-2","Nov":"4-12","Dec":"9-5","Jan":"8-7","Feb":"5-5","Mar":"3-3","Apr":"0-0"},{"Rk":20,"Team":"Houston Rockets","Overall":"30-35","Home":"21-11","Road":"9-24","E":"8-16","W":"22-19","A":"3-7","C":"3-5","SE":"2-4","NW":"6-6","P":"7-8","SW":"9-5","Pre":"24-30","Post":"6-5","≤3":"7-4","≥10":"15-13","Oct":"0-3","Nov":"8-5","Dec":"7-7","Jan":"7-10","Feb":"3-9","Mar":"5-1","Apr":"0-0"},{"Rk":21,"Team":"Atlanta Hawks","Overall":"29-35","Home":"16-17","Road":"13-18","E":"17-26","W":"12-9","A":"6-11","C":"4-9","SE":"7-6","NW":"3-2","P":"3-4","SW":"6-3","Pre":"24-31","Post":"5-4","≤3":"7-3","≥10":"11-16","Oct":"2-2","Nov":"7-7","Dec":"4-10","Jan":"7-8","Feb":"6-6","Mar":"3-2","Apr":"0-0"},{"Rk":22,"Team":"Utah Jazz","Overall":"28-37","Home":"19-13","Road":"9-24","E":"14-14","W":"14-23","A":"5-5","C":"5-4","SE":"4-5","NW":"5-7","P":"2-11","SW":"7-5","Pre":"26-30","Post":"2-7","≤3":"2-7","≥10":"15-23","Oct":"1-3","Nov":"5-10","Dec":"8-6","Jan":"10-6","Feb":"3-8","Mar":"1-4","Apr":"0-0"},{"Rk":23,"Team":"Brooklyn Nets","Overall":"26-39","Home":"16-18","Road":"10-21","E":"18-21","W":"8-18","A":"3-8","C":"5-6","SE":"10-7","NW":"2-8","P":"3-5","SW":"3-5","Pre":"21-33","Post":"5-6","≤3":"3-6","≥10":"15-21","Oct":"1-2","Nov":"8-7","Dec":"6-9","Jan":"4-10","Feb":"4-8","Mar":"3-3","Apr":"0-0"},{"Rk":24,"Team":"Memphis Grizzlies","Overall":"23-43","Home":"8-25","Road":"15-18","E":"10-14","W":"13-29","A":"3-6","C":"3-4","SE":"4-4","NW":"2-13","P":"4-9","SW":"7-7","Pre":"20-36","Post":"3-7","≤3":"4-2","≥10":"9-21","Oct":"0-4","Nov":"4-9","Dec":"6-9","Jan":"8-7","Feb":"2-10","Mar":"3-4","Apr":"0-0"},{"Rk":25,"Team":"Toronto Raptors","Overall":"23-42","Home":"13-19","Road":"10-23","E":"16-23","W":"7-19","A":"1-11","C":"7-7","SE":"8-5","NW":"1-7","P":"2-6","SW":"4-6","Pre":"19-36","Post":"4-6","≤3":"5-9","≥10":"10-19","Oct":"1-3","Nov":"8-7","Dec":"3-10","Jan":"5-10","Feb":"5-7","Mar":"1-5","Apr":"0-0"},{"Rk":26,"Team":"Portland Trail Blazers","Overall":"18-46","Home":"10-23","Road":"8-23","E":"10-11","W":"8-35","A":"5-3","C":"5-4","SE":"0-4","NW":"1-14","P":"2-12","SW":"5-9","Pre":"15-39","Post":"3-7","≤3":"4-3","≥10":"5-29","Oct":"1-3","Nov":"5-9","Dec":"3-10","Jan":"6-11","Feb":"0-9","Mar":"3-4","Apr":"0-0"},{"Rk":27,"Team":"Charlotte Hornets","Overall":"16-49","Home":"9-23","Road":"7-26","E":"10-32","W":"6-17","A":"4-11","C":"2-13","SE":"4-8","NW":"3-5","P":"1-6","SW":"2-6","Pre":"13-41","Post":"3-8","≤3":"6-1","≥10":"3-33","Oct":"1-2","Nov":"5-9","Dec":"1-12","Jan":"3-13","Feb":"5-8","Mar":"1-5","Apr":"0-0"},{"Rk":28,"Team":"San Antonio Spurs","Overall":"14-52","Home":"7-23","Road":"7-29","E":"5-22","W":"9-30","A":"1-6","C":"2-8","SE":"2-8","NW":"4-9","P":"4-10","SW":"1-11","Pre":"11-44","Post":"3-8","≤3":"2-6","≥10":"10-28","Oct":"2-2","Nov":"1-13","Dec":"2-12","Jan":"5-11","Feb":"2-10","Mar":"2-4","Apr":"0-0"},{"Rk":29,"Team":"Detroit Pistons","Overall":"11-53","Home":"6-26","Road":"5-27","E":"8-31","W":"3-22","A":"2-9","C":"2-12","SE":"4-10","NW":"2-7","P":"1-9","SW":"0-6","Pre":"8-46","Post":"3-7","≤3":"1-5","≥10":"7-27","Oct":"2-2","Nov":"0-15","Dec":"1-12","Jan":"3-12","Feb":"3-8","Mar":"2-4","Apr":"0-0"},{"Rk":30,"Team":"Washington Wizards","Overall":"11-54","Home":"4-26","Road":"7-28","E":"8-33","W":"3-21","A":"1-13","C":"3-9","SE":"4-11","NW":"1-7","P":"0-8","SW":"2-6","Pre":"9-45","Post":"2-9","≤3":"2-3","≥10":"6-29","Oct":"1-2","Nov":"2-13","Dec":"3-11","Jan":"3-12","Feb":"0-12","Mar":"2-4","Apr":"0-0"}]
-} as const;
+}
 
-type Season = keyof typeof rawSeasonData;
-
-export default rawSeasonData;
-export type { Season };
+export default pastSeasonData;

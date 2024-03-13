@@ -1,4 +1,4 @@
-import type { Teams } from "~/getSeasonData";
+import type { Teams } from "~/services/getPageData";
 
 type RankingsProps = {
   teams: Teams;

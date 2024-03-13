@@ -1,10 +1,11 @@
-import rawSeasonData from "~/rawSeasonData";
-import type { Season } from "~/rawSeasonData";
-
-type Conference = (typeof conferences)[number];
-type TeamName = (typeof rawSeasonData)[Season][number]["Team"];
-
-const conferences = ["East", "West"] as const;
+import { conferences } from "~/types";
+import type {
+  TeamName,
+  Conference,
+  SeasonData,
+  TeamRecord,
+  Season,
+} from "~/types";
 
 const teamConferences = {
   "Atlanta Hawks": "East",
@@ -92,8 +93,6 @@ const teamShortNames = {
   "San Diego Clippers": "Clippers",
 } as const satisfies Record<TeamName, string>;
 
-type TeamRecord = `${number}-${number}`;
-
 type GameStats = {
   wins: number;
   losses: number;
@@ -112,17 +111,22 @@ const parseWinStats = (record: TeamRecord): GameStats => {
   return { wins, losses, gamesPlayed, winRatio };
 };
 
-const getSeasonData = (season: Season, adjustmentWeight: number) => {
-  const teams = rawSeasonData[season].map((data) => {
+const getConference = (teamName: TeamName, season: Season): Conference => {
+  if (teamName === "New Orleans Hornets")
+    return season >= 2005 ? "West" : "East";
+
+  return teamConferences[teamName];
+};
+
+const getPageData = (
+  seasonData: SeasonData,
+  season: Season,
+  adjustmentWeight: number,
+) => {
+  const teams = seasonData.map((data) => {
     const teamName = data.Team;
     const shortTeamName = teamShortNames[teamName];
-    const conference =
-      teamName !== "New Orleans Hornets"
-        ? teamConferences[teamName]
-        : season >= 2005
-          ? "West"
-          : "East";
-    1;
+    const conference = getConference(teamName, season);
 
     const overall = parseWinStats(data.Overall);
     const vsEast = parseWinStats(data.E);
@@ -234,10 +238,10 @@ const getSeasonData = (season: Season, adjustmentWeight: number) => {
 };
 
 type InterConferenceStats = ReturnType<
-  typeof getSeasonData
+  typeof getPageData
 >["interConferenceStats"];
 
-type Teams = ReturnType<typeof getSeasonData>["teams"];
+type Teams = ReturnType<typeof getPageData>["teams"];
 
-export default getSeasonData;
+export default getPageData;
 export type { InterConferenceStats, Teams };

@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import type { Teams } from "~/getSeasonData";
+import type { Teams } from "~/services/getPageData";
 
 type AdjustedRankingsProps = {
   teams: Teams;
