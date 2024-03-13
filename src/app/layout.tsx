@@ -9,7 +9,7 @@ const inter = Inter({
 
 export const metadata = {
   title: "Unskew the League",
-  description: "NBA conference-adjusted rankings",
+  description: "Conference-Adjusted NBA Rankings",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
