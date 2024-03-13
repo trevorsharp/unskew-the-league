@@ -9,7 +9,7 @@ const getCurrentSeasonData = withCache(
   3600 * 6,
   async () => {
     try {
-      console.log("Fetching data from Basketball Reference");
+      console.error("Fetching data from Basketball Reference");
 
       const basketballReferenceHtml = await fetch(
         `https://www.basketball-reference.com/leagues/NBA_${currentSeason}_standings.html`,
