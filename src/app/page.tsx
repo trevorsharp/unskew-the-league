@@ -70,7 +70,7 @@ const HomePage = () => (
             </a>
             .
           </span>
-          <span>Last updated on March 11, 2024.</span>
+          <span>Last updated on March 12, 2024.</span>
         </div>
         <span>
           Send any feeback to{" "}
