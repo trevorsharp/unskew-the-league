@@ -19,8 +19,7 @@ const SeasonStats = ({ allSeasonData, seasonSelection }: SeasonStatsProps) => {
 
   const seasonData = allSeasonData[seasonSelection];
 
-  if (!seasonData)
-    return `Could not find data for the ${getSeasonName(seasonSelection)}`;
+  if (!seasonData) return `Could not find data for the ${getSeasonName(seasonSelection)}`;
 
   const { interConferenceStats, teams } = getPageData(
     seasonData,
@@ -30,9 +29,7 @@ const SeasonStats = ({ allSeasonData, seasonSelection }: SeasonStatsProps) => {
 
   return (
     <div className="flex flex-col items-center gap-12">
-      <AdjustmentWeightSelection
-        onSelectAdjustmentWeight={setAdjustmentWeight}
-      />
+      <AdjustmentWeightSelection onSelectAdjustmentWeight={setAdjustmentWeight} />
 
       <InterConferenceStatsTable interConferenceStats={interConferenceStats} />
 

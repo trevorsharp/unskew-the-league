@@ -29,10 +29,7 @@ const SeasonSelection = ({ allSeasonData }: SeasonSelectionProps) => {
         ))}
       </select>
 
-      <SeasonStats
-        allSeasonData={allSeasonData}
-        seasonSelection={seasonSelection}
-      />
+      <SeasonStats allSeasonData={allSeasonData} seasonSelection={seasonSelection} />
     </div>
   );
 };

@@ -24,11 +24,7 @@ const AdjustmentWeightSelection = ({
 
   useEffect(() => {
     onSelectAdjustmentWeight(adjustmentWeightSelection.weight);
-  }, [
-    onSelectAdjustmentWeight,
-    adjustmentWeightSelection,
-    adjustmentWeightSelection.weight,
-  ]);
+  }, [onSelectAdjustmentWeight, adjustmentWeightSelection, adjustmentWeightSelection.weight]);
 
   return (
     <div className="flex flex-col gap-3 self-start">
@@ -36,13 +32,8 @@ const AdjustmentWeightSelection = ({
         How much weight should be placed on the conference adjustments?
       </h2>
 
-      <RadioGroup
-        value={adjustmentWeightSelection}
-        onChange={setAdjustmentWeightSelection}
-      >
-        <RadioGroup.Label className="sr-only">
-          Adjust Conference Weight
-        </RadioGroup.Label>
+      <RadioGroup value={adjustmentWeightSelection} onChange={setAdjustmentWeightSelection}>
+        <RadioGroup.Label className="sr-only">Adjust Conference Weight</RadioGroup.Label>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {adjustmentWeightOptions.map((option) => (
             <RadioGroup.Option

@@ -30,8 +30,7 @@ const withCache =
 
     const result = await func(...args);
 
-    if (result)
-      await set<Awaited<ReturnType<TFunc>>>(fullCacheKey, result, ttl);
+    if (result) await set<Awaited<ReturnType<TFunc>>>(fullCacheKey, result, ttl);
 
     return result;
   };

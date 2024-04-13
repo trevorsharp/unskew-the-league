@@ -19,9 +19,9 @@ const Page = async () => {
           </div>
 
           <text className="max-w-xl text-base text-gray-700">
-            Our goal is to offer NBA league-wide rankings that have been
-            adjusted to reflect the differences in conference difficulty. This
-            website was inspired by the March 8, 2024 episode of the{" "}
+            Our goal is to offer NBA league-wide rankings that have been adjusted to reflect the
+            differences in conference difficulty. This website was inspired by the March 8, 2024
+            episode of the{" "}
             <a
               href="https://greatestofalltalk.com/"
               className="font-medium underline"
@@ -29,8 +29,7 @@ const Page = async () => {
             >
               Greatest Of All Talk
             </a>{" "}
-            podcast. For more information on these conference adjustments,
-            review our{" "}
+            podcast. For more information on these conference adjustments, review our{" "}
             <a href="#methodology" className="font-medium underline">
               methodology
             </a>
@@ -41,36 +40,27 @@ const Page = async () => {
         <SeasonSelection allSeasonData={allSeasonData} />
 
         <div className="flex flex-col gap-4">
-          <h3 className="text-xl font-semibold leading-6 text-gray-900">
-            Methodology
-          </h3>
+          <h3 className="text-xl font-semibold leading-6 text-gray-900">Methodology</h3>
 
           <text id="methodology" className="text-base text-gray-700">
-            To account for the difference in skill levels across conferences, we
-            analyze all games played between teams from the Eastern and Western
-            Conferences throughout the season. From this inter-conference data,
-            we determine the adjusted weight for a win against each conference,
-            referred to as the &quot;Win Value.&quot; The stronger conference
-            will have a Win Value greater than one, indicating that a victory
-            against teams from this conference will carry more weight in our
-            adjusted rankings. Conversely, wins against the weaker conference
-            will contribute less to the adjusted rankings. Losses are also
-            considered but are not weighted as heavily as wins, so losing to a
-            weaker conference opponent is slightly more favorable than losing to
-            a stronger conference opponent. You have the option to manually
-            adjust the extent to which conference adjustments influence the
-            rankings.
+            To account for the difference in skill levels across conferences, we analyze all games
+            played between teams from the Eastern and Western Conferences throughout the season.
+            From this inter-conference data, we determine the adjusted weight for a win against each
+            conference, referred to as the &quot;Win Value.&quot; The stronger conference will have
+            a Win Value greater than one, indicating that a victory against teams from this
+            conference will carry more weight in our adjusted rankings. Conversely, wins against the
+            weaker conference will contribute less to the adjusted rankings. Losses are also
+            considered but are not weighted as heavily as wins, so losing to a weaker conference
+            opponent is slightly more favorable than losing to a stronger conference opponent. You
+            have the option to manually adjust the extent to which conference adjustments influence
+            the rankings.
           </text>
         </div>
 
         <footer className="flex flex-col items-center justify-center gap-2 text-center text-sm md:flex-row">
           <span>
             Data from{" "}
-            <a
-              href="https://www.basketball-reference.com/"
-              className="underline"
-              target="_blank"
-            >
+            <a href="https://www.basketball-reference.com/" className="underline" target="_blank">
               Sports Reference
             </a>
             .

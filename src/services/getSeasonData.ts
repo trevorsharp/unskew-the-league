@@ -7,8 +7,7 @@ import type { AllSeasonData } from "~/types";
 
 const getLocalSeasonData = (season: number) => seasonData[season];
 
-const errorMessage = (season: number) =>
-  `Could not find NBA rankings for ${getSeasonName(season)}`;
+const errorMessage = (season: number) => `Could not find NBA rankings for ${getSeasonName(season)}`;
 
 const fetchSeasonData = (season: number) =>
   withCache(

@@ -8,9 +8,7 @@ type AdjustedRankingsProps = {
 const AdjustedRankings = ({ teams }: AdjustedRankingsProps) => {
   return (
     <div className="flex flex-col gap-8">
-      <h3 className="text-xl font-semibold leading-6 text-gray-900">
-        Adjusted Rankings
-      </h3>
+      <h3 className="text-xl font-semibold leading-6 text-gray-900">Adjusted Rankings</h3>
 
       <div className="inline-block min-w-full align-middle">
         <table className="min-w-full divide-y divide-gray-300">
@@ -35,10 +33,7 @@ const AdjustedRankings = ({ teams }: AdjustedRankingsProps) => {
             {teams
               .sort((a, b) => a.adjustedRanking - b.adjustedRanking)
               .map((team) => (
-                <tr
-                  key={team.teamName}
-                  className="whitespace-nowrap text-xs xs:text-sm"
-                >
+                <tr key={team.teamName} className="whitespace-nowrap text-xs xs:text-sm">
                   <td className="py-2 pl-2 pr-1 font-medium text-gray-900">
                     {team.adjustedRanking}
                   </td>

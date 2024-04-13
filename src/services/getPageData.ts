@@ -26,13 +26,9 @@ const getConferenceWinValues = (
   adjustmentWeight: number,
 ) => {
   const getWinValue = (conferenceWins: number) =>
-    Math.pow(
-      (2 * conferenceWins) / interConferenceGamesPlayed,
-      adjustmentWeight,
-    );
+    Math.pow((2 * conferenceWins) / interConferenceGamesPlayed, adjustmentWeight);
 
-  const getLossValue = (conferenceWins: number) =>
-    Math.pow(getWinValue(conferenceWins), 0.25);
+  const getLossValue = (conferenceWins: number) => Math.pow(getWinValue(conferenceWins), 0.25);
 
   return {
     eastWinValue: getWinValue(eastInterConferenceWins),
@@ -42,11 +38,7 @@ const getConferenceWinValues = (
   };
 };
 
-const getPageData = (
-  seasonData: SeasonData,
-  season: number,
-  adjustmentWeight: number,
-) => {
+const getPageData = (seasonData: SeasonData, season: number, adjustmentWeight: number) => {
   const teams = seasonData.map((data) => {
     const teamName = data.Team;
     const shortTeamName = getTeamShortName(teamName);
@@ -78,16 +70,14 @@ const getPageData = (
     .filter((team) => team.conference === "West")
     .reduce((acc, team) => acc + team.vsEast.wins, 0);
 
-  const interConferenceGamesPlayed =
-    eastInterConferenceWins + westInterConferenceWins;
+  const interConferenceGamesPlayed = eastInterConferenceWins + westInterConferenceWins;
 
-  const { eastWinValue, westWinValue, eastLossValue, westLossValue } =
-    getConferenceWinValues(
-      interConferenceGamesPlayed,
-      eastInterConferenceWins,
-      westInterConferenceWins,
-      adjustmentWeight,
-    );
+  const { eastWinValue, westWinValue, eastLossValue, westLossValue } = getConferenceWinValues(
+    interConferenceGamesPlayed,
+    eastInterConferenceWins,
+    westInterConferenceWins,
+    adjustmentWeight,
+  );
 
   const interConferenceStats = {
     gamesPlayed: interConferenceGamesPlayed,
@@ -102,11 +92,9 @@ const getPageData = (
   };
 
   const teamsWithAdjustedStats = teams.map((team) => {
-    const adjustedWins =
-      team.vsEast.wins * eastWinValue + team.vsWest.wins * westWinValue;
+    const adjustedWins = team.vsEast.wins * eastWinValue + team.vsWest.wins * westWinValue;
 
-    const adjustedLosses =
-      team.vsEast.losses * eastLossValue + team.vsWest.losses * westLossValue;
+    const adjustedLosses = team.vsEast.losses * eastLossValue + team.vsWest.losses * westLossValue;
 
     const adjusted: GameStats = {
       wins: adjustedWins,
@@ -147,9 +135,7 @@ const getPageData = (
   };
 };
 
-type InterConferenceStats = ReturnType<
-  typeof getPageData
->["interConferenceStats"];
+type InterConferenceStats = ReturnType<typeof getPageData>["interConferenceStats"];
 
 type Teams = ReturnType<typeof getPageData>["teams"];
 

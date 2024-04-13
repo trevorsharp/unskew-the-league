@@ -5,9 +5,7 @@ type interConferenceStatsTableProps = {
   interConferenceStats: InterConferenceStats;
 };
 
-const interConferenceStatsTable = ({
-  interConferenceStats,
-}: interConferenceStatsTableProps) => {
+const interConferenceStatsTable = ({ interConferenceStats }: interConferenceStatsTableProps) => {
   const stats = [
     {
       name: "Inter-Conference Games Played",
@@ -68,9 +66,7 @@ const interConferenceStatsTable = ({
               key={item.name}
               className="flex flex-col gap-2 overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6"
             >
-              <dd className="text-3xl font-semibold tracking-tight text-gray-900">
-                {item.stat}
-              </dd>
+              <dd className="text-3xl font-semibold tracking-tight text-gray-900">{item.stat}</dd>
               <dt className="text-sm font-medium text-gray-500">{item.name}</dt>
             </div>
           ))}
