@@ -1,97 +1,5 @@
-import { conferences } from "~/types";
-import type {
-  TeamName,
-  Conference,
-  SeasonData,
-  TeamRecord,
-  Season,
-} from "~/types";
-
-const teamConferences = {
-  "Atlanta Hawks": "East",
-  "Boston Celtics": "East",
-  "Brooklyn Nets": "East",
-  "Charlotte Hornets": "East",
-  "Chicago Bulls": "East",
-  "Cleveland Cavaliers": "East",
-  "Detroit Pistons": "East",
-  "Indiana Pacers": "East",
-  "Miami Heat": "East",
-  "Milwaukee Bucks": "East",
-  "New York Knicks": "East",
-  "Orlando Magic": "East",
-  "Philadelphia 76ers": "East",
-  "Toronto Raptors": "East",
-  "Washington Wizards": "East",
-  "Dallas Mavericks": "West",
-  "Denver Nuggets": "West",
-  "Golden State Warriors": "West",
-  "Houston Rockets": "West",
-  "Los Angeles Clippers": "West",
-  "Los Angeles Lakers": "West",
-  "Memphis Grizzlies": "West",
-  "Minnesota Timberwolves": "West",
-  "New Orleans Pelicans": "West",
-  "Oklahoma City Thunder": "West",
-  "Phoenix Suns": "West",
-  "Portland Trail Blazers": "West",
-  "Sacramento Kings": "West",
-  "San Antonio Spurs": "West",
-  "Utah Jazz": "West",
-  "Seattle SuperSonics": "West",
-  "New Jersey Nets": "East",
-  "Vancouver Grizzlies": "West",
-  "New Orleans/Oklahoma City Hornets": "West",
-  "Charlotte Bobcats": "East",
-  "Washington Bullets": "East",
-  "Kansas City Kings": "West",
-  "San Diego Clippers": "West",
-} as const satisfies Record<
-  Exclude<TeamName, "New Orleans Hornets">,
-  Conference
->;
-
-const teamShortNames = {
-  "Atlanta Hawks": "Hawks",
-  "Boston Celtics": "Celtics",
-  "Brooklyn Nets": "Nets",
-  "Charlotte Hornets": "Hornets",
-  "Chicago Bulls": "Bulls",
-  "Cleveland Cavaliers": "Cavaliers",
-  "Dallas Mavericks": "Mavericks",
-  "Denver Nuggets": "Nuggets",
-  "Detroit Pistons": "Pistons",
-  "Golden State Warriors": "Warriors",
-  "Houston Rockets": "Rockets",
-  "Indiana Pacers": "Pacers",
-  "Los Angeles Clippers": "Clippers",
-  "Los Angeles Lakers": "Lakers",
-  "Memphis Grizzlies": "Grizzlies",
-  "Miami Heat": "Heat",
-  "Milwaukee Bucks": "Bucks",
-  "Minnesota Timberwolves": "Timberwolves",
-  "New Orleans Pelicans": "Pelicans",
-  "New York Knicks": "Knicks",
-  "Oklahoma City Thunder": "Thunder",
-  "Orlando Magic": "Magic",
-  "Philadelphia 76ers": "76ers",
-  "Phoenix Suns": "Suns",
-  "Portland Trail Blazers": "Trail Blazers",
-  "Sacramento Kings": "Kings",
-  "San Antonio Spurs": "Spurs",
-  "Toronto Raptors": "Raptors",
-  "Utah Jazz": "Jazz",
-  "Washington Wizards": "Wizards",
-  "Seattle SuperSonics": "SuperSonics",
-  "New Jersey Nets": "Nets",
-  "Vancouver Grizzlies": "Grizzlies",
-  "New Orleans/Oklahoma City Hornets": "Hornets",
-  "Charlotte Bobcats": "Bobcats",
-  "New Orleans Hornets": "Hornets",
-  "Washington Bullets": "Bullets",
-  "Kansas City Kings": "Kings",
-  "San Diego Clippers": "Clippers",
-} as const satisfies Record<TeamName, string>;
+import { getConference, getTeamShortName } from "~/utilities";
+import type { SeasonData, TeamRecord } from "~/types";
 
 type GameStats = {
   wins: number;
@@ -111,21 +19,37 @@ const parseWinStats = (record: TeamRecord): GameStats => {
   return { wins, losses, gamesPlayed, winRatio };
 };
 
-const getConference = (teamName: TeamName, season: Season): Conference => {
-  if (teamName === "New Orleans Hornets")
-    return season >= 2005 ? "West" : "East";
+const getConferenceWinValues = (
+  interConferenceGamesPlayed: number,
+  eastInterConferenceWins: number,
+  westInterConferenceWins: number,
+  adjustmentWeight: number,
+) => {
+  const getWinValue = (conferenceWins: number) =>
+    Math.pow(
+      (2 * conferenceWins) / interConferenceGamesPlayed,
+      adjustmentWeight,
+    );
 
-  return teamConferences[teamName];
+  const getLossValue = (conferenceWins: number) =>
+    Math.pow(getWinValue(conferenceWins), 0.25);
+
+  return {
+    eastWinValue: getWinValue(eastInterConferenceWins),
+    westWinValue: getWinValue(westInterConferenceWins),
+    eastLossValue: getLossValue(eastInterConferenceWins),
+    westLossValue: getLossValue(westInterConferenceWins),
+  };
 };
 
 const getPageData = (
   seasonData: SeasonData,
-  season: Season,
+  season: number,
   adjustmentWeight: number,
 ) => {
   const teams = seasonData.map((data) => {
     const teamName = data.Team;
-    const shortTeamName = teamShortNames[teamName];
+    const shortTeamName = getTeamShortName(teamName);
     const conference = getConference(teamName, season);
 
     const overall = parseWinStats(data.Overall);
@@ -146,57 +70,43 @@ const getPageData = (
     };
   });
 
-  const interConferenceStats = teams.reduce(
-    (acc, team) => {
-      if (team.conference === "East") return acc;
+  const eastInterConferenceWins = teams
+    .filter((team) => team.conference === "East")
+    .reduce((acc, team) => acc + team.vsWest.wins, 0);
 
-      return {
-        ...acc,
-        gamesPlayed: acc.gamesPlayed + team.vsEast.wins + team.vsEast.losses,
-        East: {
-          ...acc.East,
-          wins: acc.East.wins + team.vsEast.losses,
-        },
-        West: {
-          ...acc.West,
-          wins: acc.West.wins + team.vsEast.wins,
-        },
-      };
-    },
-    {
-      gamesPlayed: 0,
-      East: {
-        wins: 0,
-        winValue: 0,
-        lossValue: 0,
-      },
-      West: {
-        wins: 0,
-        winValue: 0,
-        lossValue: 0,
-      },
-    },
-  );
+  const westInterConferenceWins = teams
+    .filter((team) => team.conference === "West")
+    .reduce((acc, team) => acc + team.vsEast.wins, 0);
 
-  conferences.forEach((conference) => {
-    interConferenceStats[conference].winValue = Math.pow(
-      (2 * interConferenceStats[conference].wins) /
-        interConferenceStats.gamesPlayed,
+  const interConferenceGamesPlayed =
+    eastInterConferenceWins + westInterConferenceWins;
+
+  const { eastWinValue, westWinValue, eastLossValue, westLossValue } =
+    getConferenceWinValues(
+      interConferenceGamesPlayed,
+      eastInterConferenceWins,
+      westInterConferenceWins,
       adjustmentWeight,
     );
 
-    interConferenceStats[conference].lossValue =
-      2 - Math.pow(interConferenceStats[conference].winValue, 0.25);
-  });
+  const interConferenceStats = {
+    gamesPlayed: interConferenceGamesPlayed,
+    East: {
+      wins: eastInterConferenceWins,
+      winValue: eastWinValue,
+    },
+    West: {
+      wins: westInterConferenceWins,
+      winValue: westWinValue,
+    },
+  };
 
   const teamsWithAdjustedStats = teams.map((team) => {
     const adjustedWins =
-      team.vsEast.wins * interConferenceStats.East.winValue +
-      team.vsWest.wins * interConferenceStats.West.winValue;
+      team.vsEast.wins * eastWinValue + team.vsWest.wins * westWinValue;
 
     const adjustedLosses =
-      team.vsEast.losses * interConferenceStats.East.lossValue +
-      team.vsWest.losses * interConferenceStats.West.lossValue;
+      team.vsEast.losses * eastLossValue + team.vsWest.losses * westLossValue;
 
     const adjusted: GameStats = {
       wins: adjustedWins,

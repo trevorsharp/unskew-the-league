@@ -1,8 +1,9 @@
 import SeasonSelection from "~/components/SeasonSelection";
-import getCurrentSeasonData from "~/services/getCurrentSeasonData";
+import { getAllSeasonData } from "~/services/getSeasonData";
+import { seasonOptions } from "~/types";
 
-const HomePage = async () => {
-  const currentSeasonData = await getCurrentSeasonData();
+const Page = async () => {
+  const allSeasonData = await getAllSeasonData(seasonOptions);
 
   return (
     <main className="flex w-max">
@@ -37,7 +38,7 @@ const HomePage = async () => {
           </text>
         </div>
 
-        <SeasonSelection currentSeasonData={currentSeasonData} />
+        <SeasonSelection allSeasonData={allSeasonData} />
 
         <div className="flex flex-col gap-4">
           <h3 className="text-xl font-semibold leading-6 text-gray-900">
@@ -87,6 +88,6 @@ const HomePage = async () => {
   );
 };
 
-export const revalidate = 3600 * 1;
+export const revalidate = 1 * 60 * 60;
 
-export default HomePage;
+export default Page;

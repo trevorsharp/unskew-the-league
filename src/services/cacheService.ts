@@ -1,5 +1,5 @@
 import { Redis } from "@upstash/redis";
-import { env } from '~/env';
+import { env } from "~/env";
 
 const redis = new Redis({
   url: env.UPSTASH_REDIS_REST_URL,
@@ -19,19 +19,19 @@ const set = async <T>(key: string, value: T, ttl: number) => {
 
 const withCache =
   <TFunc extends (...args: any[]) => Promise<any>>(
-    cachePrefix: string,
-    ttl: number,
+    { cacheKey, ttl }: { cacheKey: string; ttl: number },
     func: TFunc,
   ) =>
   async (...args: Parameters<TFunc>): Promise<Awaited<ReturnType<TFunc>>> => {
-    const cacheKey = `${cachePrefix}${args.join("-")}`;
-    const cacheResult = await get<Awaited<ReturnType<TFunc>>>(cacheKey);
+    const fullCacheKey = `${cacheKey}${args.length > 0 ? "-" : ""}${args.join("-")}`;
+    const cacheResult = await get<Awaited<ReturnType<TFunc>>>(fullCacheKey);
 
     if (cacheResult) return cacheResult;
 
     const result = await func(...args);
 
-    if (result) await set<Awaited<ReturnType<TFunc>>>(cacheKey, result, ttl);
+    if (result)
+      await set<Awaited<ReturnType<TFunc>>>(fullCacheKey, result, ttl);
 
     return result;
   };

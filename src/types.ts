@@ -1,15 +1,15 @@
 import { z } from "zod";
 
-const currentSeason = 2024;
+const currentYear = new Date().getUTCFullYear();
+const isAfterOctober = new Date().getUTCMonth() > 9;
+const currentSeason = isAfterOctober ? currentYear + 1 : currentYear;
 
-const pastSeasons = [
-  2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011,
-  2010, 2009, 2008, 2007, 2006, 2005, 2004, 2003, 2002, 2001, 2000, 1999, 1998,
-  1997, 1996, 1995, 1994, 1993, 1992, 1991, 1990, 1989, 1988, 1987, 1986, 1985,
-  1984, 1983, 1982, 1981,
-] as const;
+const seasonSchema = z.coerce.number().min(1981).max(currentSeason);
 
-const seasons = [currentSeason, ...pastSeasons] as const;
+const seasonOptions = Array.from(
+  { length: currentSeason - 1980 },
+  (_, index) => index + 1981,
+);
 
 const teamNames = [
   "Atlanta Hawks",
@@ -70,12 +70,6 @@ const seasonDataSchema = z.array(
     .passthrough(),
 );
 
-type CurrentSeason = typeof currentSeason;
-
-type PastSeason = (typeof pastSeasons)[number];
-
-type Season = (typeof seasons)[number];
-
 type TeamName = (typeof teamNames)[number];
 
 type Conference = (typeof conferences)[number];
@@ -84,20 +78,14 @@ type TeamRecord = z.infer<typeof teamRecordSchema>;
 
 type SeasonData = z.infer<typeof seasonDataSchema>;
 
+type AllSeasonData = Record<number, SeasonData | undefined>;
+
 export {
   currentSeason,
-  pastSeasons,
-  seasons,
+  seasonSchema,
+  seasonOptions,
   teamNames,
   conferences,
   seasonDataSchema,
 };
-export type {
-  CurrentSeason,
-  Season,
-  PastSeason,
-  TeamName,
-  Conference,
-  TeamRecord,
-  SeasonData,
-};
+export type { TeamName, Conference, TeamRecord, SeasonData, AllSeasonData };
