@@ -22,6 +22,7 @@ const fetchSeasonData = (season: number) =>
 
         const basketballReferenceHtml = await fetch(
           `https://www.basketball-reference.com/leagues/NBA_${season}_standings.html`,
+          { cache: "no-store" },
         )
           .then((res) => res.text())
           .catch(() => undefined);
