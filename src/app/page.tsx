@@ -78,6 +78,4 @@ const Page = async () => {
   );
 };
 
-export const revalidate = 1 * 60 * 60;
-
 export default Page;
