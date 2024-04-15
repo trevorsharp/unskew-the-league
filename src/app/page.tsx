@@ -2,6 +2,8 @@ import SeasonSelection from "~/components/SeasonSelection";
 import { getAllSeasonData } from "~/services/getSeasonData";
 import { seasonOptions } from "~/types";
 
+export const revalidate = 2 * 60 * 60;
+
 const Page = async () => {
   const allSeasonData = await getAllSeasonData(seasonOptions);
 

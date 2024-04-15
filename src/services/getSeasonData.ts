@@ -10,9 +10,11 @@ const errorMessage = (season: number) => `Could not find NBA rankings for ${getS
 
 const fetchSeasonData = async (season: number) => {
   try {
+    const hoursToCache = season === currentSeason ? 6 : 30 * 24;
+
     const basketballReferenceHtml = await fetch(
       `https://www.basketball-reference.com/leagues/NBA_${season}_standings.html`,
-      { next: { revalidate: season === currentSeason ? 6 * 60 * 60 : 7 * 24 * 60 * 60 } },
+      { next: { revalidate: hoursToCache * 60 * 60 } },
     )
       .then((res) => res.text())
       .catch(() => undefined);
