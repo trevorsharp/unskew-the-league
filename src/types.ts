@@ -6,7 +6,9 @@ const currentSeason = isAfterOctober ? currentYear + 1 : currentYear;
 
 const seasonSchema = z.coerce.number().min(1981).max(currentSeason);
 
-const seasonOptions = Array.from({ length: currentSeason - 1980 }, (_, index) => index + 1981);
+const seasonOptions = Array.from({ length: currentSeason - 1980 }, (_, index) => index + 1981).sort(
+  (a, b) => b - a,
+);
 
 const teamNames = [
   "Atlanta Hawks",
@@ -77,5 +79,5 @@ type SeasonData = z.infer<typeof seasonDataSchema>;
 
 type AllSeasonData = Record<number, SeasonData | undefined>;
 
-export { currentSeason, seasonSchema, seasonOptions, teamNames, conferences, seasonDataSchema };
-export type { TeamName, Conference, TeamRecord, SeasonData, AllSeasonData };
+export { conferences, currentSeason, seasonDataSchema, seasonOptions, seasonSchema, teamNames };
+export type { AllSeasonData, Conference, SeasonData, TeamName, TeamRecord };

@@ -1,9 +1,9 @@
+import { revalidateTag } from "next/cache";
 import { tabletojson as tableToJson } from "tabletojson";
 import seasonData from "~/seasonData";
-import { currentSeason, seasonDataSchema } from "~/types";
+import { currentSeason, seasonDataSchema, seasonOptions } from "~/types";
 import { getSeasonName } from "~/utilities";
 import type { AllSeasonData } from "~/types";
-import { revalidateTag } from "next/cache";
 
 const getLocalSeasonData = (season: number) => seasonData[season];
 
@@ -52,10 +52,10 @@ const fetchSeasonData = async (season: number) => {
 const getSeasonData = async (season: number) =>
   getLocalSeasonData(season) ?? (await fetchSeasonData(season));
 
-const getAllSeasonData = async (seasons: number[]) => {
+const getAllSeasonData = async () => {
   const allSeasonData: AllSeasonData = {};
 
-  const seasonDataTasks = seasons.map(async (season) => {
+  const seasonDataTasks = seasonOptions.map(async (season) => {
     const seasonData = await getSeasonData(season);
     if (seasonData) allSeasonData[season] = seasonData;
   });
@@ -65,4 +65,4 @@ const getAllSeasonData = async (seasons: number[]) => {
   return allSeasonData;
 };
 
-export { getSeasonData, getAllSeasonData };
+export { getAllSeasonData, getSeasonData };

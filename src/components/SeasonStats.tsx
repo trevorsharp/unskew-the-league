@@ -3,9 +3,9 @@
 import { useState } from "react";
 import getPageData from "~/services/getPageData";
 import { getSeasonName } from "~/utilities";
+import AdjustedRankings from "./AdjustedRankings";
 import AdjustmentWeightSelection from "./AdjustmentWeightSelection";
 import InterConferenceStatsTable from "./InterConferenceStatsTable";
-import AdjustedRankings from "./AdjustedRankings";
 import Rankings from "./Rankings";
 import type { AllSeasonData } from "~/types";
 

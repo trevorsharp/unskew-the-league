@@ -98,4 +98,4 @@ const getTeamShortName = (teamName: TeamName) =>
     }) as const
   )[teamName];
 
-export { getSeasonName, getConference, getTeamShortName };
+export { getConference, getSeasonName, getTeamShortName };
