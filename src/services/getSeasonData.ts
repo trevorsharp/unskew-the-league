@@ -19,6 +19,7 @@ const fetchSeasonData = async (season: number) => {
   try {
     const hoursToCache = season === currentSeason ? 6 : 30 * 24;
 
+    console.log("Fetching data from Basketball Reference");
     const basketballReferenceHtml = await fetch(
       `https://www.basketball-reference.com/leagues/NBA_${season}_standings.html`,
       { next: { revalidate: hoursToCache * 60 * 60, tags: [`standings-${season}`] } },
