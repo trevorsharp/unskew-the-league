@@ -1,17 +1,26 @@
-FROM node:alpine
-
+FROM node:lts-alpine AS base
 WORKDIR /app
-ENV NODE_ENV=production
 
-RUN apk add --no-cache curl bash
-RUN curl -fsSL https://bun.sh/install | BUN_INSTALL=/usr bash
+COPY ./package.json ./package.json
 
-COPY package.json ./
+# Install production dependencies
+FROM base AS install
 
-RUN bun install
+RUN npm install --omit=dev
+
+# Build project
+FROM install AS build
+
+RUN npm install
 
 COPY . .
+RUN npm run build
 
-RUN bun run build
+# Compose release container
+FROM base AS release
 
-CMD bun run start
+COPY --from=install /app/node_modules ./node_modules
+COPY --from=build /app/.next ./.next
+
+EXPOSE 3000
+CMD ["npm", "run", "start"]
