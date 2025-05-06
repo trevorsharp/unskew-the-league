@@ -20,7 +20,7 @@ const AdjustmentWeightSelection = ({
 }: AdjustmentWeightSelectionProps) => {
   const [adjustmentWeightSelection, setAdjustmentWeightSelection] = useState<
     (typeof adjustmentWeightOptions)[number]
-  >(adjustmentWeightOptions[1]);
+  >(adjustmentWeightOptions[2]);
 
   useEffect(() => {
     onSelectAdjustmentWeight(adjustmentWeightSelection.weight);
