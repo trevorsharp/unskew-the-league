@@ -1,23 +1,19 @@
 FROM oven/bun:1-alpine AS base
 WORKDIR /app
 
-# Build static UI
 FROM base AS build
 
-COPY ui/package.json ui/bun.lock ./
-RUN bun install --frozen-lockfile
-COPY ./ui .
-ENV NODE_ENV=production
+COPY . .
+RUN bun install --frozen-lockfile && cd ui && bun install --frozen-lockfile
 RUN bun run build
 
-# Compose release container
 FROM base AS release
 
-COPY package.json bun.lockb* ./
+COPY package.json bun.lock ./
 RUN bun install --frozen-lockfile --production
-COPY --from=build /static ./static
+COPY --from=build /app/static ./static
 COPY ./src ./src
+COPY ./tsconfig.json ./tsconfig.json
 
-# Run application
 EXPOSE 3001/tcp
-CMD bun run start
+CMD ["bun", "run", "start"]
