@@ -8,4 +8,4 @@ Bun.serve({
   idleTimeout: 120,
 });
 
-console.log(`Unskew the League listening on port ${port}`);
+console.log(`Unskew the League is up and running`);
