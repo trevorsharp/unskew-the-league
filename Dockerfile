@@ -15,5 +15,5 @@ COPY --from=build /app/static ./static
 COPY ./src ./src
 COPY ./tsconfig.json ./tsconfig.json
 
-EXPOSE 3001/tcp
+EXPOSE 3000/tcp
 CMD ["bun", "run", "start"]
