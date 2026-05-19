@@ -1,14 +1,10 @@
-"use client";
-
 import { useState } from "react";
-import { currentSeason, seasonOptions } from "~/types";
-import { getSeasonName } from "~/utilities";
-import SeasonStats from "./SeasonStats";
-import type { AllSeasonData } from "~/types";
+import { currentSeason, seasonOptions } from "@/types";
+import { getSeasonName } from "@/utilities";
+import SeasonStats from "@ui/components/SeasonStats";
+import type { AllSeasonData } from "@/types";
 
-type SeasonSelectionProps = {
-  allSeasonData: AllSeasonData;
-};
+type SeasonSelectionProps = { allSeasonData: AllSeasonData };
 
 const SeasonSelection = ({ allSeasonData }: SeasonSelectionProps) => {
   const [seasonSelection, setSeasonSelection] = useState<number>(currentSeason);
@@ -18,7 +14,7 @@ const SeasonSelection = ({ allSeasonData }: SeasonSelectionProps) => {
       <select
         id="season"
         name="season"
-        className="block w-full max-w-[10.5rem] rounded-md border-0 py-2 pl-3 pr-10 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-gray-600"
+        className="max-w-42 block w-full rounded-md border-0 py-2 pl-3 pr-10 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-gray-600"
         defaultValue={currentSeason}
         onChange={(event) => setSeasonSelection(parseInt(event.target.value))}
       >

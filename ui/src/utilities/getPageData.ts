@@ -1,5 +1,5 @@
-import { getConference, getTeamShortName } from "~/utilities";
-import type { SeasonData, TeamRecord } from "~/types";
+import { getConference, getTeamShortName } from "@/utilities";
+import type { SeasonData, TeamRecord } from "@/types";
 
 type GameStats = {
   wins: number;

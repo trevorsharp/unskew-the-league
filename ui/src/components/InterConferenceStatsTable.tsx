@@ -1,27 +1,13 @@
 import clsx from "clsx";
-import type { InterConferenceStats } from "~/services/getPageData";
+import type { InterConferenceStats } from "@ui/utilities/getPageData";
 
-type interConferenceStatsTableProps = {
-  interConferenceStats: InterConferenceStats;
-};
+type InterConferenceStatsTableProps = { interConferenceStats: InterConferenceStats };
 
-const interConferenceStatsTable = ({ interConferenceStats }: interConferenceStatsTableProps) => {
+const InterConferenceStatsTable = ({ interConferenceStats }: InterConferenceStatsTableProps) => {
   const stats = [
-    {
-      name: "Inter-Conference Games Played",
-      stat: interConferenceStats.gamesPlayed,
-    },
-    {
-      name: "Eastern Conference Wins",
-      stat: interConferenceStats.East.wins,
-    },
-    {
-      name: "Western Conference Wins",
-      stat: interConferenceStats.West.wins,
-    },
-  ];
-
-  const statsLower = [
+    { name: "Inter-Conference Games Played", stat: interConferenceStats.gamesPlayed },
+    { name: "Eastern Conference Wins", stat: interConferenceStats.East.wins },
+    { name: "Western Conference Wins", stat: interConferenceStats.West.wins },
     {
       name: "Stronger Conference",
       stat:
@@ -58,7 +44,6 @@ const interConferenceStatsTable = ({ interConferenceStats }: interConferenceStat
       <h3 className="text-xl font-semibold leading-6 text-gray-900">
         Inter-Conference Performance
       </h3>
-
       <div className="flex flex-col items-center gap-5">
         <dl className="grid grid-cols-1 gap-5 sm:grid-cols-3">
           {stats.map((item) => (
@@ -66,17 +51,7 @@ const interConferenceStatsTable = ({ interConferenceStats }: interConferenceStat
               key={item.name}
               className="flex flex-col gap-2 overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6"
             >
-              <dd className="text-3xl font-semibold tracking-tight text-gray-900">{item.stat}</dd>
-              <dt className="text-sm font-medium text-gray-500">{item.name}</dt>
-            </div>
-          ))}
-          {statsLower.map((item) => (
-            <div
-              key={item.name}
-              className="flex flex-col gap-2 overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6"
-            >
               <dd
-                key={item.name}
                 className={clsx(
                   "text-3xl font-semibold tracking-tight text-gray-900",
                   item.className,
@@ -93,4 +68,4 @@ const interConferenceStatsTable = ({ interConferenceStats }: interConferenceStat
   );
 };
 
-export default interConferenceStatsTable;
+export default InterConferenceStatsTable;

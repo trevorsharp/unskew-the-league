@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import { RadioGroup } from "@headlessui/react";
 import clsx from "clsx";
@@ -11,9 +9,7 @@ const adjustmentWeightOptions = [
   { name: "High", weight: 3 },
 ] as const;
 
-type AdjustmentWeightSelectionProps = {
-  onSelectAdjustmentWeight: (weight: number) => void;
-};
+type AdjustmentWeightSelectionProps = { onSelectAdjustmentWeight: (weight: number) => void };
 
 const AdjustmentWeightSelection = ({
   onSelectAdjustmentWeight,
@@ -24,14 +20,13 @@ const AdjustmentWeightSelection = ({
 
   useEffect(() => {
     onSelectAdjustmentWeight(adjustmentWeightSelection.weight);
-  }, [onSelectAdjustmentWeight, adjustmentWeightSelection, adjustmentWeightSelection.weight]);
+  }, [onSelectAdjustmentWeight, adjustmentWeightSelection]);
 
   return (
     <div className="flex flex-col gap-3 self-start">
       <h2 className="text-base font-medium leading-6 text-gray-900">
         How much weight should be placed on the conference adjustments?
       </h2>
-
       <RadioGroup value={adjustmentWeightSelection} onChange={setAdjustmentWeightSelection}>
         <RadioGroup.Label className="sr-only">Adjust Conference Weight</RadioGroup.Label>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">

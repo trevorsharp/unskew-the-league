@@ -1,4 +1,4 @@
-import type { Conference, TeamName } from "~/types";
+import type { Conference, TeamName } from "@/types";
 
 const getSeasonName = (season: number) =>
   `${season - 1}-${String(season % 100).padStart(2, "0")} Season`;

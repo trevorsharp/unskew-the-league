@@ -1,15 +1,15 @@
-import { revalidateTag } from "next/cache";
 import { tabletojson as tableToJson } from "tabletojson";
-import seasonData from "~/seasonData";
-import { currentSeason, seasonDataSchema, seasonOptions } from "~/types";
-import { getSeasonName } from "~/utilities";
-import type { AllSeasonData } from "~/types";
+import seasonData from "@/seasonData";
+import { currentSeason, seasonDataSchema, seasonOptions } from "@/types";
+import { getSeasonName } from "@/utilities";
+import type { AllSeasonData } from "@/types";
+
+const cache = new Map<number, { data: AllSeasonData[number]; expiresAt: number }>();
 
 const getLocalSeasonData = (season: number) => seasonData[season];
 
 const getError = (season: number) => () => {
   console.log(`Could not find NBA rankings for ${getSeasonName(season)}`);
-  revalidateTag(`standings-${season}`);
   return undefined;
 };
 
@@ -17,12 +17,9 @@ const fetchSeasonData = async (season: number) => {
   const error = getError(season);
 
   try {
-    const hoursToCache = season === currentSeason ? 6 : 30 * 24;
-
     console.log("Fetching data from Basketball Reference");
     const basketballReferenceHtml = await fetch(
       `https://www.basketball-reference.com/leagues/NBA_${season}_standings.html`,
-      { next: { revalidate: hoursToCache * 60 * 60, tags: [`standings-${season}`] } },
     )
       .then((res) => res.text())
       .catch(() => undefined);
@@ -50,8 +47,22 @@ const fetchSeasonData = async (season: number) => {
   }
 };
 
-const getSeasonData = async (season: number) =>
-  getLocalSeasonData(season) ?? (await fetchSeasonData(season));
+const getSeasonData = async (season: number) => {
+  const localSeasonData = getLocalSeasonData(season);
+  if (localSeasonData) return localSeasonData;
+
+  const cachedSeasonData = cache.get(season);
+  if (cachedSeasonData && cachedSeasonData.expiresAt > Date.now()) return cachedSeasonData.data;
+
+  const fetchedSeasonData = await fetchSeasonData(season);
+  const hoursToCache = season === currentSeason ? 6 : 30 * 24;
+  cache.set(season, {
+    data: fetchedSeasonData,
+    expiresAt: Date.now() + hoursToCache * 60 * 60 * 1000,
+  });
+
+  return fetchedSeasonData;
+};
 
 const getAllSeasonData = async () => {
   const allSeasonData: AllSeasonData = {};

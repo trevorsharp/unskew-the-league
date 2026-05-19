@@ -1,27 +1,23 @@
-FROM node:lts-alpine AS base
+FROM oven/bun:1-alpine AS base
 WORKDIR /app
 
-COPY ./package.json ./package.json
+# Build static UI
+FROM base AS build
 
-# Install production dependencies
-FROM base AS install
-
-RUN npm install --omit=dev
-
-# Build project
-FROM install AS build
-
-RUN npm install
-
-COPY . .
-RUN npm run build
+COPY ui/package.json ui/bun.lock ./
+RUN bun install --frozen-lockfile
+COPY ./ui .
+ENV NODE_ENV=production
+RUN bun run build
 
 # Compose release container
 FROM base AS release
 
-COPY --from=install /app/node_modules ./node_modules
-COPY --from=build /app/public ./public
-COPY --from=build /app/.next ./.next
+COPY package.json bun.lockb* ./
+RUN bun install --frozen-lockfile --production
+COPY --from=build /static ./static
+COPY ./src ./src
 
-EXPOSE 3000
-CMD ["npm", "run", "start"]
+# Run application
+EXPOSE 3001/tcp
+CMD bun run start
